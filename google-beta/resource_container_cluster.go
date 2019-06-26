@@ -703,13 +703,11 @@ func resourceContainerCluster() *schema.Resource {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Optional: true,
-				ForceNew: true,
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"identity_namespace": {
 							Type:     schema.TypeString,
 							Required: true,
-							ForceNew: true,
 						},
 					},
 				},
@@ -1786,6 +1784,26 @@ func resourceContainerClusterUpdate(d *schema.ResourceData, meta interface{}) er
 			log.Printf("[INFO] GKE cluster %s vertical pod autoscaling has been updated", d.Id())
 
 			d.SetPartial("vertical_pod_autoscaling")
+		}
+	}
+
+	if d.HasChange("workload_identity_config") {
+		if ac, ok := d.GetOk("workload_identity_config"); ok {
+			req := &containerBeta.UpdateClusterRequest{
+				Update: &containerBeta.ClusterUpdate{
+					DesiredWorkloadIdentityConfig: expandWorkloadIdentityConfig(ac),
+				},
+			}
+
+			updateF := updateFunc(req, "updating GKE cluster workload identity config")
+			// Call update serially.
+			if err := lockedCall(lockKey, updateF); err != nil {
+				return err
+			}
+
+			log.Printf("[INFO] GKE cluster %s workload identity config has been updated", d.Id())
+
+			d.SetPartial("workload_identity_config")
 		}
 	}
 

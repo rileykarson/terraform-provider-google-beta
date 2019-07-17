@@ -1788,23 +1788,32 @@ func resourceContainerClusterUpdate(d *schema.ResourceData, meta interface{}) er
 	}
 
 	if d.HasChange("workload_identity_config") {
-		if ac, ok := d.GetOk("workload_identity_config"); ok {
-			req := &containerBeta.UpdateClusterRequest{
-				Update: &containerBeta.ClusterUpdate{
-					DesiredWorkloadIdentityConfig: expandWorkloadIdentityConfig(ac),
+		// Because GKE uses a non-RESTful update function, when removing the
+		// feature you need to specify a fairly full request body or it fails:
+		// "update": {"desiredWorkloadIdentityConfig": {"identityNamespace": ""}}
+		req := &containerBeta.UpdateClusterRequest{}
+		if v, ok := d.GetOk("workload_identity_config"); !ok {
+			req.Update = &containerBeta.ClusterUpdate{
+				DesiredWorkloadIdentityConfig: &containerBeta.WorkloadIdentityConfig{
+					IdentityNamespace: "",
+					ForceSendFields:   []string{"IdentityNamespace"},
 				},
 			}
-
-			updateF := updateFunc(req, "updating GKE cluster workload identity config")
-			// Call update serially.
-			if err := lockedCall(lockKey, updateF); err != nil {
-				return err
+		} else {
+			req.Update = &containerBeta.ClusterUpdate{
+				DesiredWorkloadIdentityConfig: expandWorkloadIdentityConfig(v),
 			}
-
-			log.Printf("[INFO] GKE cluster %s workload identity config has been updated", d.Id())
-
-			d.SetPartial("workload_identity_config")
 		}
+
+		updateF := updateFunc(req, "updating GKE cluster workload identity config")
+		// Call update serially.
+		if err := lockedCall(lockKey, updateF); err != nil {
+			return err
+		}
+
+		log.Printf("[INFO] GKE cluster %s workload identity config has been updated", d.Id())
+
+		d.SetPartial("workload_identity_config")
 	}
 
 	if d.HasChange("resource_labels") {
@@ -2254,7 +2263,7 @@ func expandVerticalPodAutoscaling(configured interface{}) *containerBeta.Vertica
 
 func expandWorkloadIdentityConfig(configured interface{}) *containerBeta.WorkloadIdentityConfig {
 	l := configured.([]interface{})
-	if len(l) == 0 {
+	if len(l) == 0 || l[0] == nil {
 		return nil
 	}
 	config := l[0].(map[string]interface{})

@@ -82,6 +82,7 @@ which means the first character must be a lowercase letter, and all
 following characters must be a dash, lowercase letter, or digit,
 except the last character, which cannot be a dash.`,
 				},
+				ApiField: true,
 			},
 			"address": {
 				Schema: schema.Schema{
@@ -93,6 +94,7 @@ except the last character, which cannot be a dash.`,
 The IP address must be inside the specified subnetwork,
 if any. Set by the API if undefined.`,
 				},
+				ApiField: true,
 			},
 			"address_type": {
 				Schema: schema.Schema{
@@ -112,6 +114,7 @@ Note: if you set this argument's value as 'INTERNAL' you need to leave the 'netw
 					ForceNew:    true,
 					Description: `An optional description of this resource.`,
 				},
+				ApiField: false,
 			},
 			"ip_version": {
 				Schema: schema.Schema{

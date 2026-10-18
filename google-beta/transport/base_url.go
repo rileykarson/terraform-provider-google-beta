@@ -24,6 +24,7 @@ import (
 
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/registry"
 
+	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	"google.golang.org/api/transport"
 )
@@ -36,6 +37,7 @@ func IsMtls() bool {
 	regularEndpoint := "https://mockservice.googleapis.com/v1/"
 	mtlsEndpoint := GetMtlsEndpoint(regularEndpoint)
 	_, endpoint, err := transport.NewHTTPClient(context.Background(),
+		option.WithoutAuthentication(),
 		internaloption.WithDefaultEndpoint(regularEndpoint),
 		internaloption.WithDefaultMTLSEndpoint(mtlsEndpoint),
 	)

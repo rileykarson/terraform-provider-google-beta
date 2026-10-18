@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_cross_site_network",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeCrossSiteNetwork(),
+		SchemaFunc:  ResourceComputeCrossSiteNetwork,
 	}.Register()
 }
 

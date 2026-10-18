@@ -112,7 +112,7 @@ func init() {
 		Name:        "google_clouddomains_registration",
 		ProductName: "clouddomains",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceClouddomainsRegistration(),
+		SchemaFunc:  ResourceClouddomainsRegistration,
 	}.Register()
 }
 

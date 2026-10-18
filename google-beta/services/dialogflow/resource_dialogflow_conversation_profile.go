@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_conversation_profile",
 		ProductName: "dialogflow",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowConversationProfile(),
+		SchemaFunc:  ResourceDialogflowConversationProfile,
 	}.Register()
 }
 

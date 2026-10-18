@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_batch_operations_job",
 		ProductName: "storagebatchoperations",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageBatchOperationsJob(),
+		SchemaFunc:  ResourceStorageBatchOperationsJob,
 	}.Register()
 }
 

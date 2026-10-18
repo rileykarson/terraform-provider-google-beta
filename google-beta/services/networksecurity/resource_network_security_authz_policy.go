@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_authz_policy",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityAuthzPolicy(),
+		SchemaFunc:  ResourceNetworkSecurityAuthzPolicy,
 	}.Register()
 }
 

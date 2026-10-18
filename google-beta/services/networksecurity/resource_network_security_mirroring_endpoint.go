@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_mirroring_endpoint",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityMirroringEndpoint(),
+		SchemaFunc:  ResourceNetworkSecurityMirroringEndpoint,
 	}.Register()
 }
 

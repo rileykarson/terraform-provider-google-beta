@@ -127,7 +127,7 @@ func init() {
 		Name:        "google_apigee_security_action",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeSecurityAction(),
+		SchemaFunc:  ResourceApigeeSecurityAction,
 	}.Register()
 }
 

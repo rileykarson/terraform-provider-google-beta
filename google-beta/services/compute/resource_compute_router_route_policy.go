@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_router_route_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRouterRoutePolicy(),
+		SchemaFunc:  ResourceComputeRouterRoutePolicy,
 	}.Register()
 }
 

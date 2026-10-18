@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_kms_ekm_connection",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceKMSEkmConnection(),
+		SchemaFunc:  ResourceKMSEkmConnection,
 	}.Register()
 }
 

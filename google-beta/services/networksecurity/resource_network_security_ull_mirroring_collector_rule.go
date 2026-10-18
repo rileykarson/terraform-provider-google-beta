@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_ull_mirroring_collector_rule",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityUllMirroringCollectorRule(),
+		SchemaFunc:  ResourceNetworkSecurityUllMirroringCollectorRule,
 	}.Register()
 }
 

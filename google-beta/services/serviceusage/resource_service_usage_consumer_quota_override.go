@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_service_usage_consumer_quota_override",
 		ProductName: "serviceusage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceServiceUsageConsumerQuotaOverride(),
+		SchemaFunc:  ResourceServiceUsageConsumerQuotaOverride,
 	}.Register()
 }
 

@@ -113,6 +113,6 @@ func init() {
 		Name:        "google_container_attached_install_manifest",
 		ProductName: "containerattached",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleContainerAttachedInstallManifest(),
+		SchemaFunc:  DataSourceGoogleContainerAttachedInstallManifest,
 	}.Register()
 }

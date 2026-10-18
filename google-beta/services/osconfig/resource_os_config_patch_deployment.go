@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_os_config_patch_deployment",
 		ProductName: "osconfig",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOSConfigPatchDeployment(),
+		SchemaFunc:  ResourceOSConfigPatchDeployment,
 	}.Register()
 }
 

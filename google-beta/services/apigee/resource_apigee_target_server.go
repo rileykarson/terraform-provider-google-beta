@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_target_server",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeTargetServer(),
+		SchemaFunc:  ResourceApigeeTargetServer,
 	}.Register()
 }
 

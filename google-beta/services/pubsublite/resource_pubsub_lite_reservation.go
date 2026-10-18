@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_pubsub_lite_reservation",
 		ProductName: "pubsublite",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePubsubLiteReservation(),
+		SchemaFunc:  ResourcePubsubLiteReservation,
 	}.Register()
 }
 

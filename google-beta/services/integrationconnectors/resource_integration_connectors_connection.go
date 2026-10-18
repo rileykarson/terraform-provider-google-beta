@@ -110,7 +110,7 @@ func init() {
 		Name:        "google_integration_connectors_connection",
 		ProductName: "integrationconnectors",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIntegrationConnectorsConnection(),
+		SchemaFunc:  ResourceIntegrationConnectorsConnection,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_tags_tag_key_iam_binding",
 		ProductName: "Tags",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer, TagsTagKeyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer, TagsTagKeyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_tags_tag_key_iam_member",
 		ProductName: "Tags",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewTagsTagKeyIamMemberResource(),
+		SchemaFunc:  NewTagsTagKeyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_tags_tag_key_iam_policy",
 		ProductName: "Tags",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer, TagsTagKeyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer, TagsTagKeyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_tags_tag_key_iam_policy",
 		ProductName: "Tags",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(TagsTagKeyIamSchema, TagsTagKeyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

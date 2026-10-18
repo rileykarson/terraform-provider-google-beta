@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_tunnel_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapTunnelIamSchema, IapTunnelIamUpdaterProducer, IapTunnelIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapTunnelIamSchema, IapTunnelIamUpdaterProducer, IapTunnelIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_tunnel_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapTunnelIamMemberResource(),
+		SchemaFunc:  NewIapTunnelIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_tunnel_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapTunnelIamSchema, IapTunnelIamUpdaterProducer, IapTunnelIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapTunnelIamSchema, IapTunnelIamUpdaterProducer, IapTunnelIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_tunnel_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapTunnelIamSchema, IapTunnelIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapTunnelIamSchema, IapTunnelIamUpdaterProducer)
+		},
 	}.Register()
 }
 

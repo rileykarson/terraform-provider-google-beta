@@ -301,6 +301,6 @@ func init() {
 		Name:        "google_compute_machine_types",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeMachineTypes(),
+		SchemaFunc:  DataSourceGoogleComputeMachineTypes,
 	}.Register()
 }

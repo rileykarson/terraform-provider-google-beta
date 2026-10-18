@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iam_workload_identity_pool_iam_binding",
 		ProductName: "IAMBeta",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer, IAMBetaWorkloadIdentityPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer, IAMBetaWorkloadIdentityPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workload_identity_pool_iam_member",
 		ProductName: "IAMBeta",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIAMBetaWorkloadIdentityPoolIamMemberResource(),
+		SchemaFunc:  NewIAMBetaWorkloadIdentityPoolIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workload_identity_pool_iam_policy",
 		ProductName: "IAMBeta",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer, IAMBetaWorkloadIdentityPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer, IAMBetaWorkloadIdentityPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workload_identity_pool_iam_policy",
 		ProductName: "IAMBeta",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IAMBetaWorkloadIdentityPoolIamSchema, IAMBetaWorkloadIdentityPoolIamUpdaterProducer)
+		},
 	}.Register()
 }
 

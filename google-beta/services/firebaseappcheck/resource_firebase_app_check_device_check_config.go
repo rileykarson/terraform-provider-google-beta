@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_device_check_config",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckDeviceCheckConfig(),
+		SchemaFunc:  ResourceFirebaseAppCheckDeviceCheckConfig,
 	}.Register()
 }
 

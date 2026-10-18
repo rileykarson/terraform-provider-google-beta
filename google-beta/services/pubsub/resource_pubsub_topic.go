@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_pubsub_topic",
 		ProductName: "pubsub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePubsubTopic(),
+		SchemaFunc:  ResourcePubsubTopic,
 	}.Register()
 }
 

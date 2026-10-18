@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_colab_runtime_template_iam_binding",
 		ProductName: "Colab",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer, ColabRuntimeTemplateIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer, ColabRuntimeTemplateIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_colab_runtime_template_iam_member",
 		ProductName: "Colab",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewColabRuntimeTemplateIamMemberResource(),
+		SchemaFunc:  NewColabRuntimeTemplateIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_colab_runtime_template_iam_policy",
 		ProductName: "Colab",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer, ColabRuntimeTemplateIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer, ColabRuntimeTemplateIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_colab_runtime_template_iam_policy",
 		ProductName: "Colab",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ColabRuntimeTemplateIamSchema, ColabRuntimeTemplateIamUpdaterProducer)
+		},
 	}.Register()
 }
 

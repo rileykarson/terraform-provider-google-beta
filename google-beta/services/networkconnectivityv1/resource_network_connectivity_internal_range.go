@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_internal_range",
 		ProductName: "networkconnectivityv1",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityv1InternalRange(),
+		SchemaFunc:  ResourceNetworkConnectivityv1InternalRange,
 	}.Register()
 }
 

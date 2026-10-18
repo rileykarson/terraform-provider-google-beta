@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apihub_curation",
 		ProductName: "apihub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApihubCuration(),
+		SchemaFunc:  ResourceApihubCuration,
 	}.Register()
 }
 

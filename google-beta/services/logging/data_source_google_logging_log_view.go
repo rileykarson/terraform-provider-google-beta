@@ -63,6 +63,6 @@ func init() {
 		Name:        "google_logging_log_view",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleLoggingLogView(),
+		SchemaFunc:  DataSourceGoogleLoggingLogView,
 	}.Register()
 }

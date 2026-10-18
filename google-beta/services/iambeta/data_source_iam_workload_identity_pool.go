@@ -63,6 +63,6 @@ func init() {
 		Name:        "google_iam_workload_identity_pool",
 		ProductName: "iambeta",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceIAMBetaWorkloadIdentityPool(),
+		SchemaFunc:  DataSourceIAMBetaWorkloadIdentityPool,
 	}.Register()
 }

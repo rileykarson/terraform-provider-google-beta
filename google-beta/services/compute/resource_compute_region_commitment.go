@@ -97,7 +97,7 @@ func init() {
 		Name:        "google_compute_region_commitment",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionCommitment(),
+		SchemaFunc:  ResourceComputeRegionCommitment,
 	}.Register()
 }
 

@@ -203,24 +203,32 @@ func init() {
 		Name:        "google_storage_bucket_iam_member",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamMember(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20)),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamMember(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20))
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_storage_bucket_iam_binding",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20)),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20))
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_storage_bucket_iam_policy",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20)),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(StorageBucketIamSchema, StorageBucketIamUpdaterProducer, StorageBucketIdParseFunc, tpgiamresource.IamCreateTimeOut(20))
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_storage_bucket_iam_policy",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(StorageBucketIamSchema, StorageBucketIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(StorageBucketIamSchema, StorageBucketIamUpdaterProducer)
+		},
 	}.Register()
 }

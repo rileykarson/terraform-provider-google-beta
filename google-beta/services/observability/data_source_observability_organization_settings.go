@@ -58,6 +58,6 @@ func init() {
 		Name:        "google_observability_organization_settings",
 		ProductName: "observability",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceObservabilityOrganizationSettings(),
+		SchemaFunc:  DataSourceObservabilityOrganizationSettings,
 	}.Register()
 }

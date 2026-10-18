@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_redis_cluster_acl_policy",
 		ProductName: "redis",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceRedisClusterAclPolicy(),
+		SchemaFunc:  ResourceRedisClusterAclPolicy,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_dataset",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcareDataset(),
+		SchemaFunc:  ResourceHealthcareDataset,
 	}.Register()
 }
 

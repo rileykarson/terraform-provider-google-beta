@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_apple_app",
 		ProductName: "firebase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppleApp(),
+		SchemaFunc:  ResourceFirebaseAppleApp,
 	}.Register()
 }
 

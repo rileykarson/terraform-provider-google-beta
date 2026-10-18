@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firestore_change_stream",
 		ProductName: "firestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirestoreChangeStream(),
+		SchemaFunc:  ResourceFirestoreChangeStream,
 	}.Register()
 }
 

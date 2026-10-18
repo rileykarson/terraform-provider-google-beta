@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_kms_organization_kaj_policy_config",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceKMSOrganizationKajPolicyConfig(),
+		SchemaFunc:  ResourceKMSOrganizationKajPolicyConfig,
 	}.Register()
 }
 

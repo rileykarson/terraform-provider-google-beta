@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_acl_config",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineAclConfig(),
+		SchemaFunc:  ResourceDiscoveryEngineAclConfig,
 	}.Register()
 }
 

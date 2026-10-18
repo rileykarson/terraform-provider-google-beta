@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_ai_logic_prompt_template_lock",
 		ProductName: "firebaseailogic",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAILogicPromptTemplateLock(),
+		SchemaFunc:  ResourceFirebaseAILogicPromptTemplateLock,
 	}.Register()
 }
 

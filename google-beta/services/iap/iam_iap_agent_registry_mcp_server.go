@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_agent_registry_mcp_server_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer, IapAgentRegistryMcpServerIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer, IapAgentRegistryMcpServerIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_mcp_server_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapAgentRegistryMcpServerIamMemberResource(),
+		SchemaFunc:  NewIapAgentRegistryMcpServerIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_mcp_server_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer, IapAgentRegistryMcpServerIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer, IapAgentRegistryMcpServerIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_mcp_server_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapAgentRegistryMcpServerIamSchema, IapAgentRegistryMcpServerIamUpdaterProducer)
+		},
 	}.Register()
 }
 

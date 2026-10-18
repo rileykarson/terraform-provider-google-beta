@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_url_map",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionUrlMap(),
+		SchemaFunc:  ResourceComputeRegionUrlMap,
 	}.Register()
 }
 

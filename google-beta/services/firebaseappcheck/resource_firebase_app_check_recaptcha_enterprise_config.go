@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_recaptcha_enterprise_config",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckRecaptchaEnterpriseConfig(),
+		SchemaFunc:  ResourceFirebaseAppCheckRecaptchaEnterpriseConfig,
 	}.Register()
 }
 

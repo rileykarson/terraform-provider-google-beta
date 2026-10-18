@@ -114,6 +114,6 @@ func init() {
 		Name:        "google_tpu_v2_accelerator_types",
 		ProductName: "tpuv2",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceTpuV2AcceleratorTypes(),
+		SchemaFunc:  DataSourceTpuV2AcceleratorTypes,
 	}.Register()
 }

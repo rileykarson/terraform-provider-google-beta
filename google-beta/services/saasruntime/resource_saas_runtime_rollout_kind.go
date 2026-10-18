@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_saas_runtime_rollout_kind",
 		ProductName: "saasruntime",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSaasRuntimeRolloutKind(),
+		SchemaFunc:  ResourceSaasRuntimeRolloutKind,
 	}.Register()
 }
 

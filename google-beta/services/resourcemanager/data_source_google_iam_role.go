@@ -83,6 +83,6 @@ func init() {
 		Name:        "google_iam_role",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleIamRole(),
+		SchemaFunc:  DataSourceGoogleIamRole,
 	}.Register()
 }

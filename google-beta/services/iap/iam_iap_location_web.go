@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_location_web_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer, IapLocationWebIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer, IapLocationWebIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_location_web_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapLocationWebIamMemberResource(),
+		SchemaFunc:  NewIapLocationWebIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_location_web_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer, IapLocationWebIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer, IapLocationWebIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_location_web_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapLocationWebIamSchema, IapLocationWebIamUpdaterProducer)
+		},
 	}.Register()
 }
 

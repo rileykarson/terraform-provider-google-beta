@@ -154,7 +154,7 @@ func init() {
 		Name:        "google_org_policy_policy",
 		ProductName: "orgpolicy",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOrgPolicyPolicy(),
+		SchemaFunc:  ResourceOrgPolicyPolicy,
 	}.Register()
 }
 

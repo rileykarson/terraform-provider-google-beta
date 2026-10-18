@@ -166,7 +166,7 @@ func init() {
 		Name:        "google_bigquery_data_transfer_config",
 		ProductName: "bigquerydatatransfer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryDataTransferConfig(),
+		SchemaFunc:  ResourceBigqueryDataTransferConfig,
 	}.Register()
 }
 

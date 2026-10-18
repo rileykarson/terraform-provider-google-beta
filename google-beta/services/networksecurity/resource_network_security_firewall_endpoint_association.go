@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_firewall_endpoint_association",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityFirewallEndpointAssociation(),
+		SchemaFunc:  ResourceNetworkSecurityFirewallEndpointAssociation,
 	}.Register()
 }
 

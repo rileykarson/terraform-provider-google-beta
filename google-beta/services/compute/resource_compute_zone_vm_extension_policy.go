@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_zone_vm_extension_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeZoneVmExtensionPolicy(),
+		SchemaFunc:  ResourceComputeZoneVmExtensionPolicy,
 	}.Register()
 }
 

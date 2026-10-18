@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_certificate_manager_dns_authorization",
 		ProductName: "certificatemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCertificateManagerDnsAuthorization(),
+		SchemaFunc:  ResourceCertificateManagerDnsAuthorization,
 	}.Register()
 }
 

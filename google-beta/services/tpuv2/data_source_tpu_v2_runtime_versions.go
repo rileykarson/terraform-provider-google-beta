@@ -114,6 +114,6 @@ func init() {
 		Name:        "google_tpu_v2_runtime_versions",
 		ProductName: "tpuv2",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceTpuV2RuntimeVersions(),
+		SchemaFunc:  DataSourceTpuV2RuntimeVersions,
 	}.Register()
 }

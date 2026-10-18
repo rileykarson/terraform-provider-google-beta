@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_chat_engine",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineChatEngine(),
+		SchemaFunc:  ResourceDiscoveryEngineChatEngine,
 	}.Register()
 }
 

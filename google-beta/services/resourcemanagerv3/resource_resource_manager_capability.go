@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_resource_manager_capability",
 		ProductName: "resourcemanagerv3",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceResourceManagerV3Capability(),
+		SchemaFunc:  ResourceResourceManagerV3Capability,
 	}.Register()
 }
 

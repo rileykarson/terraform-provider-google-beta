@@ -96,7 +96,7 @@ func init() {
 		Name:        "google_bigquery_job",
 		ProductName: "bigquery",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigQueryJob(),
+		SchemaFunc:  ResourceBigQueryJob,
 	}.Register()
 }
 

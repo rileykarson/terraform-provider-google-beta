@@ -69,6 +69,6 @@ func init() {
 		Name:        "google_firebase_android_app",
 		ProductName: "firebase",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleFirebaseAndroidApp(),
+		SchemaFunc:  DataSourceGoogleFirebaseAndroidApp,
 	}.Register()
 }

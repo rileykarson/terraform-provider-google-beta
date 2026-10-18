@@ -46,13 +46,15 @@ func init() {
 		Name:        "google_pubsub_topic_iam_binding",
 		ProductName: "Pubsub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer, PubsubTopicIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer, PubsubTopicIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_pubsub_topic_iam_member",
 		ProductName: "Pubsub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewPubsubTopicIamMemberResource(),
+		SchemaFunc:  NewPubsubTopicIamMemberResource,
 	}.Register()
 	registry.FrameworkListResource{
 		Name:        "google_pubsub_topic_iam_member",
@@ -63,13 +65,17 @@ func init() {
 		Name:        "google_pubsub_topic_iam_policy",
 		ProductName: "Pubsub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer, PubsubTopicIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer, PubsubTopicIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_pubsub_topic_iam_policy",
 		ProductName: "Pubsub",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(PubsubTopicIamSchema, PubsubTopicIamUpdaterProducer)
+		},
 	}.Register()
 }
 

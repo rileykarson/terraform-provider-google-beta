@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_oauth_client_credential",
 		ProductName: "iamworkforcepool",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAMWorkforcePoolOauthClientCredential(),
+		SchemaFunc:  ResourceIAMWorkforcePoolOauthClientCredential,
 	}.Register()
 }
 

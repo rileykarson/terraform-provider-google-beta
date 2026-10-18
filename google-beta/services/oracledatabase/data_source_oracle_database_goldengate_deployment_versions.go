@@ -188,6 +188,6 @@ func init() {
 		Name:        "google_oracle_database_goldengate_deployment_versions",
 		ProductName: "oracledatabase",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceOracleDatabaseGoldengateDeploymentVersions(),
+		SchemaFunc:  DataSourceOracleDatabaseGoldengateDeploymentVersions,
 	}.Register()
 }

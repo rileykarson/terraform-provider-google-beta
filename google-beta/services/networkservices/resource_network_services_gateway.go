@@ -214,7 +214,7 @@ func init() {
 		Name:        "google_network_services_gateway",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesGateway(),
+		SchemaFunc:  ResourceNetworkServicesGateway,
 	}.Register()
 }
 

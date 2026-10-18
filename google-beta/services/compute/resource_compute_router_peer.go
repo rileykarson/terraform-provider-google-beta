@@ -1897,6 +1897,6 @@ func init() {
 		Name:        "google_compute_router_peer",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRouterBgpPeer(),
+		SchemaFunc:  ResourceComputeRouterBgpPeer,
 	}.Register()
 }

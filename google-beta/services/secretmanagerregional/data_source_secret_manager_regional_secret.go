@@ -68,6 +68,6 @@ func init() {
 		Name:        "google_secret_manager_regional_secret",
 		ProductName: "secretmanagerregional",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceSecretManagerRegionalRegionalSecret(),
+		SchemaFunc:  DataSourceSecretManagerRegionalRegionalSecret,
 	}.Register()
 }

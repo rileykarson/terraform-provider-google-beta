@@ -194,7 +194,7 @@ func init() {
 		Name:        "google_compute_vpn_tunnel",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeVpnTunnel(),
+		SchemaFunc:  ResourceComputeVpnTunnel,
 	}.Register()
 }
 

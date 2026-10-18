@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_rag_engine_config",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIRagEngineConfig(),
+		SchemaFunc:  ResourceVertexAIRagEngineConfig,
 	}.Register()
 }
 

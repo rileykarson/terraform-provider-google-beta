@@ -170,6 +170,6 @@ func init() {
 		Name:        "google_iam_testable_permissions",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleIamTestablePermissions(),
+		SchemaFunc:  DataSourceGoogleIamTestablePermissions,
 	}.Register()
 }

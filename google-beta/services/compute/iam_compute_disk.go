@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_disk_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer, ComputeDiskIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer, ComputeDiskIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_disk_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeDiskIamMemberResource(),
+		SchemaFunc:  NewComputeDiskIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_disk_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer, ComputeDiskIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer, ComputeDiskIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_disk_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeDiskIamSchema, ComputeDiskIamUpdaterProducer)
+		},
 	}.Register()
 }
 

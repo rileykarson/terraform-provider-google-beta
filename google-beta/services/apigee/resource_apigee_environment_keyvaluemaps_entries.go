@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_environment_keyvaluemaps_entries",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeEnvironmentKeyvaluemapsEntries(),
+		SchemaFunc:  ResourceApigeeEnvironmentKeyvaluemapsEntries,
 	}.Register()
 }
 

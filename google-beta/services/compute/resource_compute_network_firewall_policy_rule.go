@@ -101,7 +101,7 @@ func init() {
 		Name:        "google_compute_network_firewall_policy_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNetworkFirewallPolicyRule(),
+		SchemaFunc:  ResourceComputeNetworkFirewallPolicyRule,
 	}.Register()
 }
 

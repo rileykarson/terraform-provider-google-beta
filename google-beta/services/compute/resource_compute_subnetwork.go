@@ -487,7 +487,7 @@ func init() {
 		Name:        "google_compute_subnetwork",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeSubnetwork(),
+		SchemaFunc:  ResourceComputeSubnetwork,
 	}.Register()
 }
 

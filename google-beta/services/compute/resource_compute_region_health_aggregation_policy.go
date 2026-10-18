@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_health_aggregation_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionHealthAggregationPolicy(),
+		SchemaFunc:  ResourceComputeRegionHealthAggregationPolicy,
 	}.Register()
 }
 

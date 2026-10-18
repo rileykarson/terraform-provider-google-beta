@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_android_app",
 		ProductName: "firebase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAndroidApp(),
+		SchemaFunc:  ResourceFirebaseAndroidApp,
 	}.Register()
 }
 

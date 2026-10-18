@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_authz_extension",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesAuthzExtension(),
+		SchemaFunc:  ResourceNetworkServicesAuthzExtension,
 	}.Register()
 }
 

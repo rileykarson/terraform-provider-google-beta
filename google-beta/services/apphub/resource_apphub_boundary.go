@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apphub_boundary",
 		ProductName: "apphub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApphubBoundary(),
+		SchemaFunc:  ResourceApphubBoundary,
 	}.Register()
 }
 

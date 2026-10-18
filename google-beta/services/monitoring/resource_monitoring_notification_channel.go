@@ -107,7 +107,7 @@ func init() {
 		Name:        "google_monitoring_notification_channel",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringNotificationChannel(),
+		SchemaFunc:  ResourceMonitoringNotificationChannel,
 	}.Register()
 }
 

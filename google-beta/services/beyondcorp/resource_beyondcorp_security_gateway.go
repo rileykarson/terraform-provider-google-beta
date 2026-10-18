@@ -104,7 +104,7 @@ func init() {
 		Name:        "google_beyondcorp_security_gateway",
 		ProductName: "beyondcorp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBeyondcorpSecurityGateway(),
+		SchemaFunc:  ResourceBeyondcorpSecurityGateway,
 	}.Register()
 }
 

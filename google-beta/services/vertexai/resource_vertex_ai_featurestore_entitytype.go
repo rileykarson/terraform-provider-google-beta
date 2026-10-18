@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_featurestore_entitytype",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIFeaturestoreEntitytype(),
+		SchemaFunc:  ResourceVertexAIFeaturestoreEntitytype,
 	}.Register()
 }
 

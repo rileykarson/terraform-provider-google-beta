@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_observability_trace_scope",
 		ProductName: "observability",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceObservabilityTraceScope(),
+		SchemaFunc:  ResourceObservabilityTraceScope,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_case_close_definition",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleCaseCloseDefinition(),
+		SchemaFunc:  ResourceChronicleCaseCloseDefinition,
 	}.Register()
 }
 

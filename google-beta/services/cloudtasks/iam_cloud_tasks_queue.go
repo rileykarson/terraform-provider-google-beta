@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_cloud_tasks_queue_iam_binding",
 		ProductName: "CloudTasks",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer, CloudTasksQueueIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer, CloudTasksQueueIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_tasks_queue_iam_member",
 		ProductName: "CloudTasks",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewCloudTasksQueueIamMemberResource(),
+		SchemaFunc:  NewCloudTasksQueueIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_tasks_queue_iam_policy",
 		ProductName: "CloudTasks",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer, CloudTasksQueueIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer, CloudTasksQueueIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_tasks_queue_iam_policy",
 		ProductName: "CloudTasks",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(CloudTasksQueueIamSchema, CloudTasksQueueIamUpdaterProducer)
+		},
 	}.Register()
 }
 

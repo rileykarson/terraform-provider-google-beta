@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_cmek_config",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineCmekConfig(),
+		SchemaFunc:  ResourceDiscoveryEngineCmekConfig,
 	}.Register()
 }
 

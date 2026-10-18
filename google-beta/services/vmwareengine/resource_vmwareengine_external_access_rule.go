@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vmwareengine_external_access_rule",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVmwareengineExternalAccessRule(),
+		SchemaFunc:  ResourceVmwareengineExternalAccessRule,
 	}.Register()
 }
 

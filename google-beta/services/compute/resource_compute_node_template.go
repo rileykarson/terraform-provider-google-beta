@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_node_template",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNodeTemplate(),
+		SchemaFunc:  ResourceComputeNodeTemplate,
 	}.Register()
 }
 

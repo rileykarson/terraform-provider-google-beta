@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_findings_refinement",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleFindingsRefinement(),
+		SchemaFunc:  ResourceChronicleFindingsRefinement,
 	}.Register()
 }
 

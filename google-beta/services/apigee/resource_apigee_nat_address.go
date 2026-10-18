@@ -112,7 +112,7 @@ func init() {
 		Name:        "google_apigee_nat_address",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeNatAddress(),
+		SchemaFunc:  ResourceApigeeNatAddress,
 	}.Register()
 }
 

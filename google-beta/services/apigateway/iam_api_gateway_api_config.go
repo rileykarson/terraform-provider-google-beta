@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_api_gateway_api_config_iam_binding",
 		ProductName: "ApiGateway",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer, ApiGatewayApiConfigIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer, ApiGatewayApiConfigIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_api_gateway_api_config_iam_member",
 		ProductName: "ApiGateway",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewApiGatewayApiConfigIamMemberResource(),
+		SchemaFunc:  NewApiGatewayApiConfigIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_api_gateway_api_config_iam_policy",
 		ProductName: "ApiGateway",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer, ApiGatewayApiConfigIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer, ApiGatewayApiConfigIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_api_gateway_api_config_iam_policy",
 		ProductName: "ApiGateway",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ApiGatewayApiConfigIamSchema, ApiGatewayApiConfigIamUpdaterProducer)
+		},
 	}.Register()
 }
 

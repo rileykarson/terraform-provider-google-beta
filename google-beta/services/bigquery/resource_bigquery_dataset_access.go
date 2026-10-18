@@ -214,7 +214,7 @@ func init() {
 		Name:        "google_bigquery_dataset_access",
 		ProductName: "bigquery",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigQueryDatasetAccess(),
+		SchemaFunc:  ResourceBigQueryDatasetAccess,
 	}.Register()
 }
 

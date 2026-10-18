@@ -4171,6 +4171,6 @@ func init() {
 		Name:        "google_dataproc_workflow_template",
 		ProductName: "dataproc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocWorkflowTemplate(),
+		SchemaFunc:  ResourceDataprocWorkflowTemplate,
 	}.Register()
 }

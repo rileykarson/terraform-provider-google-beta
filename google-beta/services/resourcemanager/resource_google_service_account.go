@@ -497,6 +497,6 @@ func init() {
 		Name:        "google_service_account",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGoogleServiceAccount(),
+		SchemaFunc:  ResourceGoogleServiceAccount,
 	}.Register()
 }

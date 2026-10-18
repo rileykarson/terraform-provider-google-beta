@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_service_network_settings",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineServiceNetworkSettings(),
+		SchemaFunc:  ResourceAppEngineServiceNetworkSettings,
 	}.Register()
 }
 

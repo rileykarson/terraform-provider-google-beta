@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigtable_logical_view",
 		ProductName: "bigtable",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigtableLogicalView(),
+		SchemaFunc:  ResourceBigtableLogicalView,
 	}.Register()
 }
 

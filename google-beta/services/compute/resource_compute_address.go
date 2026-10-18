@@ -118,7 +118,7 @@ func init() {
 		Name:        "google_compute_address",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeAddress(),
+		SchemaFunc:  ResourceComputeAddress,
 	}.Register()
 }
 

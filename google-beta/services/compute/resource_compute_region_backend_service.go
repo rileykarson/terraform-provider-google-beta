@@ -180,7 +180,7 @@ func init() {
 		Name:        "google_compute_region_backend_service",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionBackendService(),
+		SchemaFunc:  ResourceComputeRegionBackendService,
 	}.Register()
 }
 

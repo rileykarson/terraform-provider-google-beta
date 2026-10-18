@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_instant_snapshot_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer, ComputeInstantSnapshotIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer, ComputeInstantSnapshotIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instant_snapshot_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeInstantSnapshotIamMemberResource(),
+		SchemaFunc:  NewComputeInstantSnapshotIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instant_snapshot_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer, ComputeInstantSnapshotIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer, ComputeInstantSnapshotIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instant_snapshot_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeInstantSnapshotIamSchema, ComputeInstantSnapshotIamUpdaterProducer)
+		},
 	}.Register()
 }
 

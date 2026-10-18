@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gke_hub_scope_rbac_role_binding",
 		ProductName: "gkehub2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGKEHub2ScopeRBACRoleBinding(),
+		SchemaFunc:  ResourceGKEHub2ScopeRBACRoleBinding,
 	}.Register()
 }
 

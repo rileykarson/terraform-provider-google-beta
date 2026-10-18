@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_rollout_plan",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRolloutPlan(),
+		SchemaFunc:  ResourceComputeRolloutPlan,
 	}.Register()
 }
 

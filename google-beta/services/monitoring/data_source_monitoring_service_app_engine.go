@@ -55,6 +55,6 @@ func init() {
 		Name:        "google_monitoring_app_engine_service",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceMonitoringServiceAppEngine(),
+		SchemaFunc:  DataSourceMonitoringServiceAppEngine,
 	}.Register()
 }

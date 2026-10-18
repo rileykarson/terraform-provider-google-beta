@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firestore_backup_schedule",
 		ProductName: "firestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirestoreBackupSchedule(),
+		SchemaFunc:  ResourceFirestoreBackupSchedule,
 	}.Register()
 }
 

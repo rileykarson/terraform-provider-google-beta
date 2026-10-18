@@ -99,7 +99,7 @@ func init() {
 		Name:        "google_cloud_tasks_queue",
 		ProductName: "cloudtasks",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudTasksQueue(),
+		SchemaFunc:  ResourceCloudTasksQueue,
 	}.Register()
 }
 

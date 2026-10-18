@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_health_source",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionHealthSource(),
+		SchemaFunc:  ResourceComputeRegionHealthSource,
 	}.Register()
 }
 

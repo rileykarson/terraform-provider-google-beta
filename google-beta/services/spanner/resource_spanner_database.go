@@ -166,7 +166,7 @@ func init() {
 		Name:        "google_spanner_database",
 		ProductName: "spanner",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSpannerDatabase(),
+		SchemaFunc:  ResourceSpannerDatabase,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_ai_logic_prompt_template",
 		ProductName: "firebaseailogic",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAILogicPromptTemplate(),
+		SchemaFunc:  ResourceFirebaseAILogicPromptTemplate,
 	}.Register()
 }
 

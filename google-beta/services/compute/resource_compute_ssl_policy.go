@@ -112,7 +112,7 @@ func init() {
 		Name:        "google_compute_ssl_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeSslPolicy(),
+		SchemaFunc:  ResourceComputeSslPolicy,
 	}.Register()
 }
 

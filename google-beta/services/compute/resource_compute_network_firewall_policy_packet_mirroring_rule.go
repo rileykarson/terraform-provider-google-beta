@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_network_firewall_policy_packet_mirroring_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNetworkFirewallPolicyPacketMirroringRule(),
+		SchemaFunc:  ResourceComputeNetworkFirewallPolicyPacketMirroringRule,
 	}.Register()
 }
 

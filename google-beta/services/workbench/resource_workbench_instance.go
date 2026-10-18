@@ -417,7 +417,7 @@ func init() {
 		Name:        "google_workbench_instance",
 		ProductName: "workbench",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceWorkbenchInstance(),
+		SchemaFunc:  ResourceWorkbenchInstance,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_v2_organization_source",
 		ProductName: "securitycenterv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterV2OrganizationSource(),
+		SchemaFunc:  ResourceSecurityCenterV2OrganizationSource,
 	}.Register()
 }
 

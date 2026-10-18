@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_persistent_resource",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIPersistentResource(),
+		SchemaFunc:  ResourceVertexAIPersistentResource,
 	}.Register()
 }
 

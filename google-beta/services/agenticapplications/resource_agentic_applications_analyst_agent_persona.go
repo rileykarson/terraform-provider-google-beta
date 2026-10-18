@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_agentic_applications_analyst_agent_persona",
 		ProductName: "agenticapplications",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAgenticApplicationsAnalystAgentPersona(),
+		SchemaFunc:  ResourceAgenticApplicationsAnalystAgentPersona,
 	}.Register()
 }
 

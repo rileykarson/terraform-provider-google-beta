@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_looker_instance",
 		ProductName: "looker",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLookerInstance(),
+		SchemaFunc:  ResourceLookerInstance,
 	}.Register()
 }
 

@@ -244,6 +244,6 @@ func init() {
 		Name:        "google_project_usage_export_bucket",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceProjectUsageBucket(),
+		SchemaFunc:  ResourceProjectUsageBucket,
 	}.Register()
 }

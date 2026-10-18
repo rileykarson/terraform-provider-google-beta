@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_web_region_forwarding_rule_service_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer, IapWebRegionForwardingRuleServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer, IapWebRegionForwardingRuleServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_forwarding_rule_service_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapWebRegionForwardingRuleServiceIamMemberResource(),
+		SchemaFunc:  NewIapWebRegionForwardingRuleServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_forwarding_rule_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer, IapWebRegionForwardingRuleServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer, IapWebRegionForwardingRuleServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_forwarding_rule_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapWebRegionForwardingRuleServiceIamSchema, IapWebRegionForwardingRuleServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

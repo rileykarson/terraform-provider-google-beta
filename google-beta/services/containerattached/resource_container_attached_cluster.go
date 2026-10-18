@@ -102,7 +102,7 @@ func init() {
 		Name:        "google_container_attached_cluster",
 		ProductName: "containerattached",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContainerAttachedCluster(),
+		SchemaFunc:  ResourceContainerAttachedCluster,
 	}.Register()
 }
 

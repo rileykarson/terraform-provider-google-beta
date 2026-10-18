@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataplex_entry_group",
 		ProductName: "dataplex",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataplexEntryGroup(),
+		SchemaFunc:  ResourceDataplexEntryGroup,
 	}.Register()
 }
 

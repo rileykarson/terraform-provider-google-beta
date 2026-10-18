@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_instance_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer, ComputeInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer, ComputeInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instance_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeInstanceIamMemberResource(),
+		SchemaFunc:  NewComputeInstanceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instance_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer, ComputeInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer, ComputeInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_instance_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeInstanceIamSchema, ComputeInstanceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

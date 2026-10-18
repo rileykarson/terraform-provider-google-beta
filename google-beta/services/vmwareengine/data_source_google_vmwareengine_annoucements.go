@@ -181,6 +181,6 @@ func init() {
 		Name:        "google_vmwareengine_announcements",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceVmwareengineAnnouncements(),
+		SchemaFunc:  DataSourceVmwareengineAnnouncements,
 	}.Register()
 }

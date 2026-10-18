@@ -181,7 +181,7 @@ func init() {
 		Name:        "google_cloud_scheduler_job",
 		ProductName: "cloudscheduler",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudSchedulerJob(),
+		SchemaFunc:  ResourceCloudSchedulerJob,
 	}.Register()
 }
 

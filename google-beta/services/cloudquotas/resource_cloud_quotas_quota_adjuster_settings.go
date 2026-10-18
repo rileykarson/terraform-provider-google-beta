@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_quotas_quota_adjuster_settings",
 		ProductName: "cloudquotas",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudQuotasQuotaAdjusterSettings(),
+		SchemaFunc:  ResourceCloudQuotasQuotaAdjusterSettings,
 	}.Register()
 }
 

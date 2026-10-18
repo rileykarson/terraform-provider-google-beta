@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_filestore_snapshot",
 		ProductName: "filestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFilestoreSnapshot(),
+		SchemaFunc:  ResourceFilestoreSnapshot,
 	}.Register()
 }
 

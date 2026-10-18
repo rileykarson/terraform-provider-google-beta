@@ -325,7 +325,9 @@ func init() {
 		Name:        "google_logging_billing_account_exclusion",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingExclusion(BillingAccountLoggingExclusionSchema, NewBillingAccountLoggingExclusionUpdater, BillingAccountLoggingExclusionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return ResourceLoggingExclusion(BillingAccountLoggingExclusionSchema, NewBillingAccountLoggingExclusionUpdater, BillingAccountLoggingExclusionIdParseFunc)
+		},
 	}.Register()
 }
 
@@ -334,7 +336,9 @@ func init() {
 		Name:        "google_logging_folder_exclusion",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingExclusion(FolderLoggingExclusionSchema, NewFolderLoggingExclusionUpdater, FolderLoggingExclusionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return ResourceLoggingExclusion(FolderLoggingExclusionSchema, NewFolderLoggingExclusionUpdater, FolderLoggingExclusionIdParseFunc)
+		},
 	}.Register()
 }
 
@@ -343,7 +347,9 @@ func init() {
 		Name:        "google_logging_organization_exclusion",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingExclusion(OrganizationLoggingExclusionSchema, NewOrganizationLoggingExclusionUpdater, OrganizationLoggingExclusionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return ResourceLoggingExclusion(OrganizationLoggingExclusionSchema, NewOrganizationLoggingExclusionUpdater, OrganizationLoggingExclusionIdParseFunc)
+		},
 	}.Register()
 }
 
@@ -352,6 +358,8 @@ func init() {
 		Name:        "google_logging_project_exclusion",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingExclusion(ProjectLoggingExclusionSchema, NewProjectLoggingExclusionUpdater, ProjectLoggingExclusionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return ResourceLoggingExclusion(ProjectLoggingExclusionSchema, NewProjectLoggingExclusionUpdater, ProjectLoggingExclusionIdParseFunc)
+		},
 	}.Register()
 }

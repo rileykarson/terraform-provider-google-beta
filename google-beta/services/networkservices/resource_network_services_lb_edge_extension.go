@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_lb_edge_extension",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesLbEdgeExtension(),
+		SchemaFunc:  ResourceNetworkServicesLbEdgeExtension,
 	}.Register()
 }
 

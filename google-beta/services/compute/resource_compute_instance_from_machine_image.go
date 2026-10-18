@@ -474,6 +474,6 @@ func init() {
 		Name:        "google_compute_instance_from_machine_image",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstanceFromMachineImage(),
+		SchemaFunc:  ResourceComputeInstanceFromMachineImage,
 	}.Register()
 }

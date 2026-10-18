@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_environment_group",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleEnvironmentGroup(),
+		SchemaFunc:  ResourceChronicleEnvironmentGroup,
 	}.Register()
 }
 

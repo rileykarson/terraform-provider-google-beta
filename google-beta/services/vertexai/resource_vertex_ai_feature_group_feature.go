@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_feature_group_feature",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIFeatureGroupFeature(),
+		SchemaFunc:  ResourceVertexAIFeatureGroupFeature,
 	}.Register()
 }
 

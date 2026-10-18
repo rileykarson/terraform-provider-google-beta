@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_service_directory_endpoint",
 		ProductName: "servicedirectory",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceServiceDirectoryEndpoint(),
+		SchemaFunc:  ResourceServiceDirectoryEndpoint,
 	}.Register()
 }
 

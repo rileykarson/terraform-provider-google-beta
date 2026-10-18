@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_org_policy_custom_constraint",
 		ProductName: "orgpolicy",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOrgPolicyCustomConstraint(),
+		SchemaFunc:  ResourceOrgPolicyCustomConstraint,
 	}.Register()
 }
 

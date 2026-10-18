@@ -377,6 +377,6 @@ func init() {
 		Name:        "google_firebaserules_release",
 		ProductName: "firebaserules",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaserulesRelease(),
+		SchemaFunc:  ResourceFirebaserulesRelease,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vector_search_index",
 		ProductName: "vectorsearch",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVectorSearchIndex(),
+		SchemaFunc:  ResourceVectorSearchIndex,
 	}.Register()
 }
 

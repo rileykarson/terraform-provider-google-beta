@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_rag_corpus",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIRagCorpus(),
+		SchemaFunc:  ResourceVertexAIRagCorpus,
 	}.Register()
 }
 

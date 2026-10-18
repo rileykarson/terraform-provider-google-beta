@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_connection",
 		ProductName: "bigqueryconnection",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryConnectionConnection(),
+		SchemaFunc:  ResourceBigqueryConnectionConnection,
 	}.Register()
 }
 

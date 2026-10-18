@@ -58,6 +58,6 @@ func init() {
 		Name:        "google_folder_organization_policy",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleFolderOrganizationPolicy(),
+		SchemaFunc:  DataSourceGoogleFolderOrganizationPolicy,
 	}.Register()
 }

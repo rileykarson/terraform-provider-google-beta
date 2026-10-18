@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_service_perimeter_dry_run_resource",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerServicePerimeterDryRunResource(),
+		SchemaFunc:  ResourceAccessContextManagerServicePerimeterDryRunResource,
 	}.Register()
 }
 

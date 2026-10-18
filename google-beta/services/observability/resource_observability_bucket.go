@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_observability_bucket",
 		ProductName: "observability",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceObservabilityBucket(),
+		SchemaFunc:  ResourceObservabilityBucket,
 	}.Register()
 }
 

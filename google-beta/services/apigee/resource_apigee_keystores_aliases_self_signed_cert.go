@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_keystores_aliases_self_signed_cert",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeKeystoresAliasesSelfSignedCert(),
+		SchemaFunc:  ResourceApigeeKeystoresAliasesSelfSignedCert,
 	}.Register()
 }
 

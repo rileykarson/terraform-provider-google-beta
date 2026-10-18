@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dataform_repository_iam_binding",
 		ProductName: "Dataform",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer, DataformRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer, DataformRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataform_repository_iam_member",
 		ProductName: "Dataform",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataformRepositoryIamMemberResource(),
+		SchemaFunc:  NewDataformRepositoryIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataform_repository_iam_policy",
 		ProductName: "Dataform",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer, DataformRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer, DataformRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataform_repository_iam_policy",
 		ProductName: "Dataform",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataformRepositoryIamSchema, DataformRepositoryIamUpdaterProducer)
+		},
 	}.Register()
 }
 

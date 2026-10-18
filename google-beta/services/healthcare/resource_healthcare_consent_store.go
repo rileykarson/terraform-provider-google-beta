@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_consent_store",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcareConsentStore(),
+		SchemaFunc:  ResourceHealthcareConsentStore,
 	}.Register()
 }
 

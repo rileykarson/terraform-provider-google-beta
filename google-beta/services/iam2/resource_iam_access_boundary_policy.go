@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_access_boundary_policy",
 		ProductName: "iam2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAM2AccessBoundaryPolicy(),
+		SchemaFunc:  ResourceIAM2AccessBoundaryPolicy,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_biglake_iceberg_catalog_iam_binding",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer, BiglakeIcebergIcebergCatalogIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer, BiglakeIcebergIcebergCatalogIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_catalog_iam_member",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBiglakeIcebergIcebergCatalogIamMemberResource(),
+		SchemaFunc:  NewBiglakeIcebergIcebergCatalogIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_catalog_iam_policy",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer, BiglakeIcebergIcebergCatalogIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer, BiglakeIcebergIcebergCatalogIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_catalog_iam_policy",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BiglakeIcebergIcebergCatalogIamSchema, BiglakeIcebergIcebergCatalogIamUpdaterProducer)
+		},
 	}.Register()
 }
 

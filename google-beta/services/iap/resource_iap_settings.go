@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iap_settings",
 		ProductName: "iap",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIapSettings(),
+		SchemaFunc:  ResourceIapSettings,
 	}.Register()
 }
 

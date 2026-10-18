@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_secret_manager_regional_secret_iam_binding",
 		ProductName: "SecretManagerRegional",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer, SecretManagerRegionalRegionalSecretIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer, SecretManagerRegionalRegionalSecretIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secret_manager_regional_secret_iam_member",
 		ProductName: "SecretManagerRegional",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecretManagerRegionalRegionalSecretIamMemberResource(),
+		SchemaFunc:  NewSecretManagerRegionalRegionalSecretIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_secret_manager_regional_secret_iam_policy",
 		ProductName: "SecretManagerRegional",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer, SecretManagerRegionalRegionalSecretIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer, SecretManagerRegionalRegionalSecretIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secret_manager_regional_secret_iam_policy",
 		ProductName: "SecretManagerRegional",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecretManagerRegionalRegionalSecretIamSchema, SecretManagerRegionalRegionalSecretIamUpdaterProducer)
+		},
 	}.Register()
 }
 

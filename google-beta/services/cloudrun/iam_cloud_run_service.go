@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_cloud_run_service_iam_binding",
 		ProductName: "CloudRun",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer, CloudRunServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer, CloudRunServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_service_iam_member",
 		ProductName: "CloudRun",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewCloudRunServiceIamMemberResource(),
+		SchemaFunc:  NewCloudRunServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_service_iam_policy",
 		ProductName: "CloudRun",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer, CloudRunServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer, CloudRunServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_service_iam_policy",
 		ProductName: "CloudRun",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(CloudRunServiceIamSchema, CloudRunServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

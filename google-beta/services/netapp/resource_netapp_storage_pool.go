@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_storage_pool",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappStoragePool(),
+		SchemaFunc:  ResourceNetappStoragePool,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_sql_database",
 		ProductName: "sql",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSQLDatabase(),
+		SchemaFunc:  ResourceSQLDatabase,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_cx_webhook",
 		ProductName: "dialogflowcx",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowCXWebhook(),
+		SchemaFunc:  ResourceDialogflowCXWebhook,
 	}.Register()
 }
 

@@ -130,6 +130,6 @@ func init() {
 		Name:        "google_compute_default_service_account",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeDefaultServiceAccount(),
+		SchemaFunc:  DataSourceGoogleComputeDefaultServiceAccount,
 	}.Register()
 }

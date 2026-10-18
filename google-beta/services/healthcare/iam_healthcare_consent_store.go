@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_healthcare_consent_store_iam_binding",
 		ProductName: "Healthcare",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer, HealthcareConsentStoreIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer, HealthcareConsentStoreIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_healthcare_consent_store_iam_member",
 		ProductName: "Healthcare",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewHealthcareConsentStoreIamMemberResource(),
+		SchemaFunc:  NewHealthcareConsentStoreIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_healthcare_consent_store_iam_policy",
 		ProductName: "Healthcare",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer, HealthcareConsentStoreIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer, HealthcareConsentStoreIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_healthcare_consent_store_iam_policy",
 		ProductName: "Healthcare",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(HealthcareConsentStoreIamSchema, HealthcareConsentStoreIamUpdaterProducer)
+		},
 	}.Register()
 }
 

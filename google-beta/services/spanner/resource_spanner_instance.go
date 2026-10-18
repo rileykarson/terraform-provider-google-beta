@@ -148,7 +148,7 @@ func init() {
 		Name:        "google_spanner_instance",
 		ProductName: "spanner",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSpannerInstance(),
+		SchemaFunc:  ResourceSpannerInstance,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_authorized_orgs_desc",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerAuthorizedOrgsDesc(),
+		SchemaFunc:  ResourceAccessContextManagerAuthorizedOrgsDesc,
 	}.Register()
 }
 

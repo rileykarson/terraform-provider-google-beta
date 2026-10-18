@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_mirroring_deployment_group",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityMirroringDeploymentGroup(),
+		SchemaFunc:  ResourceNetworkSecurityMirroringDeploymentGroup,
 	}.Register()
 }
 

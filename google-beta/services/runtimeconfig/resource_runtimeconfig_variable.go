@@ -293,6 +293,6 @@ func init() {
 		Name:        "google_runtimeconfig_variable",
 		ProductName: "runtimeconfig",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceRuntimeconfigVariable(),
+		SchemaFunc:  ResourceRuntimeconfigVariable,
 	}.Register()
 }

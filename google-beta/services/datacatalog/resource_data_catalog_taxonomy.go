@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_data_catalog_taxonomy",
 		ProductName: "datacatalog",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataCatalogTaxonomy(),
+		SchemaFunc:  ResourceDataCatalogTaxonomy,
 	}.Register()
 }
 

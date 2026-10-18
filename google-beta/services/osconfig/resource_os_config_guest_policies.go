@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_os_config_guest_policies",
 		ProductName: "osconfig",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOSConfigGuestPolicies(),
+		SchemaFunc:  ResourceOSConfigGuestPolicies,
 	}.Register()
 }
 

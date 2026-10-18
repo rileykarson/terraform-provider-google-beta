@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_soar_domain",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleSoarDomain(),
+		SchemaFunc:  ResourceChronicleSoarDomain,
 	}.Register()
 }
 

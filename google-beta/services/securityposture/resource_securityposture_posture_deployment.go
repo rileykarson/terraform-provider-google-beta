@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_securityposture_posture_deployment",
 		ProductName: "securityposture",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityposturePostureDeployment(),
+		SchemaFunc:  ResourceSecurityposturePostureDeployment,
 	}.Register()
 }
 

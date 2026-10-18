@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_ai_logic_config",
 		ProductName: "firebaseailogic",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAILogicConfig(),
+		SchemaFunc:  ResourceFirebaseAILogicConfig,
 	}.Register()
 }
 

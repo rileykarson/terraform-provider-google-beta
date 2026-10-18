@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gkeonprem_vmware_node_pool",
 		ProductName: "gkeonprem",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGkeonpremVmwareNodePool(),
+		SchemaFunc:  ResourceGkeonpremVmwareNodePool,
 	}.Register()
 }
 

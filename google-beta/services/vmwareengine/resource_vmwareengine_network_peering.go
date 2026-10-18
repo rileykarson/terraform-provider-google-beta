@@ -98,7 +98,7 @@ func init() {
 		Name:        "google_vmwareengine_network_peering",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVmwareengineNetworkPeering(),
+		SchemaFunc:  ResourceVmwareengineNetworkPeering,
 	}.Register()
 }
 

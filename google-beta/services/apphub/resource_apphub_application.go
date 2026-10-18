@@ -109,7 +109,7 @@ func init() {
 		Name:        "google_apphub_application",
 		ProductName: "apphub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApphubApplication(),
+		SchemaFunc:  ResourceApphubApplication,
 	}.Register()
 }
 

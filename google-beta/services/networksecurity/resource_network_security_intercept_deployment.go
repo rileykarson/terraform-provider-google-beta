@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_intercept_deployment",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityInterceptDeployment(),
+		SchemaFunc:  ResourceNetworkSecurityInterceptDeployment,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_wasm_plugin",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesWasmPlugin(),
+		SchemaFunc:  ResourceNetworkServicesWasmPlugin,
 	}.Register()
 }
 

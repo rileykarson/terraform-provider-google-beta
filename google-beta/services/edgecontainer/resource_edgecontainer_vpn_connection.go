@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_edgecontainer_vpn_connection",
 		ProductName: "edgecontainer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEdgecontainerVpnConnection(),
+		SchemaFunc:  ResourceEdgecontainerVpnConnection,
 	}.Register()
 }
 

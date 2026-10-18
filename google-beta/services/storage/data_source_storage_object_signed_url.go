@@ -442,6 +442,6 @@ func init() {
 		Name:        "google_storage_object_signed_url",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleSignedUrl(),
+		SchemaFunc:  DataSourceGoogleSignedUrl,
 	}.Register()
 }

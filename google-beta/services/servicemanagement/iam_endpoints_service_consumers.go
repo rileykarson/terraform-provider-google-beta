@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_endpoints_service_consumers_iam_binding",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer, ServiceManagementServiceConsumersIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer, ServiceManagementServiceConsumersIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_consumers_iam_member",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewServiceManagementServiceConsumersIamMemberResource(),
+		SchemaFunc:  NewServiceManagementServiceConsumersIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_consumers_iam_policy",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer, ServiceManagementServiceConsumersIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer, ServiceManagementServiceConsumersIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_consumers_iam_policy",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ServiceManagementServiceConsumersIamSchema, ServiceManagementServiceConsumersIamUpdaterProducer)
+		},
 	}.Register()
 }
 

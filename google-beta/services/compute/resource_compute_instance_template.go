@@ -2480,6 +2480,6 @@ func init() {
 		Name:        "google_compute_instance_template",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstanceTemplate(),
+		SchemaFunc:  ResourceComputeInstanceTemplate,
 	}.Register()
 }

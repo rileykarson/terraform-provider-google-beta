@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_clouddeploy_delivery_pipeline_iam_binding",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer, ClouddeployDeliveryPipelineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer, ClouddeployDeliveryPipelineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_delivery_pipeline_iam_member",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewClouddeployDeliveryPipelineIamMemberResource(),
+		SchemaFunc:  NewClouddeployDeliveryPipelineIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_delivery_pipeline_iam_policy",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer, ClouddeployDeliveryPipelineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer, ClouddeployDeliveryPipelineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_delivery_pipeline_iam_policy",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ClouddeployDeliveryPipelineIamSchema, ClouddeployDeliveryPipelineIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_memorystore_instance_desired_user_created_endpoints",
 		ProductName: "memorystore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMemorystoreInstanceDesiredUserCreatedEndpoints(),
+		SchemaFunc:  ResourceMemorystoreInstanceDesiredUserCreatedEndpoints,
 	}.Register()
 }
 

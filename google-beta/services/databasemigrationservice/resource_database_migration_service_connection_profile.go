@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_database_migration_service_connection_profile",
 		ProductName: "databasemigrationservice",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDatabaseMigrationServiceConnectionProfile(),
+		SchemaFunc:  ResourceDatabaseMigrationServiceConnectionProfile,
 	}.Register()
 }
 

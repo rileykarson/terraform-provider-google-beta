@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_sourcerepo_repository_iam_binding",
 		ProductName: "SourceRepo",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer, SourceRepoRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer, SourceRepoRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_sourcerepo_repository_iam_member",
 		ProductName: "SourceRepo",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSourceRepoRepositoryIamMemberResource(),
+		SchemaFunc:  NewSourceRepoRepositoryIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_sourcerepo_repository_iam_policy",
 		ProductName: "SourceRepo",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer, SourceRepoRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer, SourceRepoRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_sourcerepo_repository_iam_policy",
 		ProductName: "SourceRepo",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SourceRepoRepositoryIamSchema, SourceRepoRepositoryIamUpdaterProducer)
+		},
 	}.Register()
 }
 

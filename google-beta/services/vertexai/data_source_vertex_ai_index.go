@@ -66,6 +66,6 @@ func init() {
 		Name:        "google_vertex_ai_index",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceVertexAIIndex(),
+		SchemaFunc:  DataSourceVertexAIIndex,
 	}.Register()
 }

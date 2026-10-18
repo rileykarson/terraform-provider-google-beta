@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_support_support_event_subscription",
 		ProductName: "cloudsupport",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudSupportSupportEventSubscription(),
+		SchemaFunc:  ResourceCloudSupportSupportEventSubscription,
 	}.Register()
 }
 

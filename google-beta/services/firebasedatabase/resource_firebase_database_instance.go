@@ -133,7 +133,7 @@ func init() {
 		Name:        "google_firebase_database_instance",
 		ProductName: "firebasedatabase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseDatabaseInstance(),
+		SchemaFunc:  ResourceFirebaseDatabaseInstance,
 	}.Register()
 }
 

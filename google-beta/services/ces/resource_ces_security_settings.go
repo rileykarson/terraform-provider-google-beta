@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_ces_security_settings",
 		ProductName: "ces",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCESSecuritySettings(),
+		SchemaFunc:  ResourceCESSecuritySettings,
 	}.Register()
 }
 

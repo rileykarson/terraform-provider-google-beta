@@ -122,6 +122,6 @@ func init() {
 		Name:        "google_active_folder",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleActiveFolder(),
+		SchemaFunc:  DataSourceGoogleActiveFolder,
 	}.Register()
 }

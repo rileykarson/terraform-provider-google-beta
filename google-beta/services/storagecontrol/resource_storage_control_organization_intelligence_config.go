@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_control_organization_intelligence_config",
 		ProductName: "storagecontrol",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageControlOrganizationIntelligenceConfig(),
+		SchemaFunc:  ResourceStorageControlOrganizationIntelligenceConfig,
 	}.Register()
 }
 

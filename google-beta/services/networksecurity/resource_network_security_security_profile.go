@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_security_profile",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecuritySecurityProfile(),
+		SchemaFunc:  ResourceNetworkSecuritySecurityProfile,
 	}.Register()
 }
 

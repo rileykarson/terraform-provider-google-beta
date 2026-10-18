@@ -100,7 +100,7 @@ func init() {
 		Name:        "google_cloud_quotas_quota_preference",
 		ProductName: "cloudquotas",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudQuotasQuotaPreference(),
+		SchemaFunc:  ResourceCloudQuotasQuotaPreference,
 	}.Register()
 }
 

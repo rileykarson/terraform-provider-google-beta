@@ -151,7 +151,7 @@ func init() {
 		Name:        "google_data_catalog_tag_template",
 		ProductName: "datacatalog",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataCatalogTagTemplate(),
+		SchemaFunc:  ResourceDataCatalogTagTemplate,
 	}.Register()
 }
 

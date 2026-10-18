@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_bigquery_routine_iam_binding",
 		ProductName: "BigQuery",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer, BigQueryRoutineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer, BigQueryRoutineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_routine_iam_member",
 		ProductName: "BigQuery",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBigQueryRoutineIamMemberResource(),
+		SchemaFunc:  NewBigQueryRoutineIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_routine_iam_policy",
 		ProductName: "BigQuery",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer, BigQueryRoutineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer, BigQueryRoutineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_routine_iam_policy",
 		ProductName: "BigQuery",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BigQueryRoutineIamSchema, BigQueryRoutineIamUpdaterProducer)
+		},
 	}.Register()
 }
 

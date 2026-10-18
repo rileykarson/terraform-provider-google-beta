@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_service_binding",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesServiceBinding(),
+		SchemaFunc:  ResourceNetworkServicesServiceBinding,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_storage_pool_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer, ComputeStoragePoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer, ComputeStoragePoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_storage_pool_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeStoragePoolIamMemberResource(),
+		SchemaFunc:  NewComputeStoragePoolIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_storage_pool_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer, ComputeStoragePoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer, ComputeStoragePoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_storage_pool_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeStoragePoolIamSchema, ComputeStoragePoolIamUpdaterProducer)
+		},
 	}.Register()
 }
 

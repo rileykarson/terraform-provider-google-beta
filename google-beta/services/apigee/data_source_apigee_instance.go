@@ -62,6 +62,6 @@ func init() {
 		Name:        "google_apigee_instance",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceApigeeInstance(),
+		SchemaFunc:  DataSourceApigeeInstance,
 	}.Register()
 }

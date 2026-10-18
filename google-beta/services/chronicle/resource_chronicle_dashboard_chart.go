@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_dashboard_chart",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleDashboardChart(),
+		SchemaFunc:  ResourceChronicleDashboardChart,
 	}.Register()
 }
 

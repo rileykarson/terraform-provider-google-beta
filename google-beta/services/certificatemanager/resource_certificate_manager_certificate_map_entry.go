@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_certificate_manager_certificate_map_entry",
 		ProductName: "certificatemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCertificateManagerCertificateMapEntry(),
+		SchemaFunc:  ResourceCertificateManagerCertificateMapEntry,
 	}.Register()
 }
 

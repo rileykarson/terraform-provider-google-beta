@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_data_table_row",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleDataTableRow(),
+		SchemaFunc:  ResourceChronicleDataTableRow,
 	}.Register()
 }
 

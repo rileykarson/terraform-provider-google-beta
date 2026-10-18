@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_autoscaler",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeAutoscaler(),
+		SchemaFunc:  ResourceComputeAutoscaler,
 	}.Register()
 }
 

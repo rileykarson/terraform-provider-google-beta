@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_secure_source_manager_instance_iam_binding",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer, SecureSourceManagerInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer, SecureSourceManagerInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_instance_iam_member",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecureSourceManagerInstanceIamMemberResource(),
+		SchemaFunc:  NewSecureSourceManagerInstanceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_instance_iam_policy",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer, SecureSourceManagerInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer, SecureSourceManagerInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_instance_iam_policy",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecureSourceManagerInstanceIamSchema, SecureSourceManagerInstanceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

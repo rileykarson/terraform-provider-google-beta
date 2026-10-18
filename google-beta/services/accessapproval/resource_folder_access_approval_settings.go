@@ -115,7 +115,7 @@ func init() {
 		Name:        "google_folder_access_approval_settings",
 		ProductName: "accessapproval",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessApprovalFolderSettings(),
+		SchemaFunc:  ResourceAccessApprovalFolderSettings,
 	}.Register()
 }
 

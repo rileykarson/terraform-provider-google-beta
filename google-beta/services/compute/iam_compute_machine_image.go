@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_machine_image_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer, ComputeMachineImageIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer, ComputeMachineImageIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_machine_image_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeMachineImageIamMemberResource(),
+		SchemaFunc:  NewComputeMachineImageIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_machine_image_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer, ComputeMachineImageIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer, ComputeMachineImageIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_machine_image_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeMachineImageIamSchema, ComputeMachineImageIamUpdaterProducer)
+		},
 	}.Register()
 }
 

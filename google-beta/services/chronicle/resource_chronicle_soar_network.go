@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_soar_network",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleSoarNetwork(),
+		SchemaFunc:  ResourceChronicleSoarNetwork,
 	}.Register()
 }
 

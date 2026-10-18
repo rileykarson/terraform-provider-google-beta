@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_data_pipeline_pipeline",
 		ProductName: "datapipeline",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataPipelinePipeline(),
+		SchemaFunc:  ResourceDataPipelinePipeline,
 	}.Register()
 }
 

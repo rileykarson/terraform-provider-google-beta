@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_data_transfer_data_source_enrollment",
 		ProductName: "bigquerydatatransfer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryDataTransferDataSourceEnrollment(),
+		SchemaFunc:  ResourceBigqueryDataTransferDataSourceEnrollment,
 	}.Register()
 }
 

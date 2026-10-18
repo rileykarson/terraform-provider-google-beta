@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_data_export",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleDataExport(),
+		SchemaFunc:  ResourceChronicleDataExport,
 	}.Register()
 }
 

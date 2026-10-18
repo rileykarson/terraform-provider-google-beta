@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_storage_bucket",
 		ProductName: "firebasestorage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseStorageBucket(),
+		SchemaFunc:  ResourceFirebaseStorageBucket,
 	}.Register()
 }
 

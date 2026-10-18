@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_gemini_repository_group_iam_binding",
 		ProductName: "Gemini",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer, GeminiRepositoryGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer, GeminiRepositoryGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gemini_repository_group_iam_member",
 		ProductName: "Gemini",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewGeminiRepositoryGroupIamMemberResource(),
+		SchemaFunc:  NewGeminiRepositoryGroupIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_gemini_repository_group_iam_policy",
 		ProductName: "Gemini",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer, GeminiRepositoryGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer, GeminiRepositoryGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gemini_repository_group_iam_policy",
 		ProductName: "Gemini",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(GeminiRepositoryGroupIamSchema, GeminiRepositoryGroupIamUpdaterProducer)
+		},
 	}.Register()
 }
 

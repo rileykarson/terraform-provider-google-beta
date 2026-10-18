@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_regional_endpoint",
 		ProductName: "networkconnectivity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityRegionalEndpoint(),
+		SchemaFunc:  ResourceNetworkConnectivityRegionalEndpoint,
 	}.Register()
 }
 

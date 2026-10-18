@@ -119,7 +119,7 @@ func init() {
 		Name:        "google_firebase_project",
 		ProductName: "firebase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseProject(),
+		SchemaFunc:  ResourceFirebaseProject,
 	}.Register()
 }
 

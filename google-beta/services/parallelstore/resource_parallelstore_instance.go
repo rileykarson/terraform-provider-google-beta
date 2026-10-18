@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_parallelstore_instance",
 		ProductName: "parallelstore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceParallelstoreInstance(),
+		SchemaFunc:  ResourceParallelstoreInstance,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_agent_registry_endpoint_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer, IapAgentRegistryEndpointIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer, IapAgentRegistryEndpointIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_endpoint_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapAgentRegistryEndpointIamMemberResource(),
+		SchemaFunc:  NewIapAgentRegistryEndpointIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_endpoint_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer, IapAgentRegistryEndpointIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer, IapAgentRegistryEndpointIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_agent_registry_endpoint_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapAgentRegistryEndpointIamSchema, IapAgentRegistryEndpointIamUpdaterProducer)
+		},
 	}.Register()
 }
 

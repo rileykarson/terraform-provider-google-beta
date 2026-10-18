@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_native_dashboard",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleNativeDashboard(),
+		SchemaFunc:  ResourceChronicleNativeDashboard,
 	}.Register()
 }
 

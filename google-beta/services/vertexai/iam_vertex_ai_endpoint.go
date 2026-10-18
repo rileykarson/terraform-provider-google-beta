@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_vertex_ai_endpoint_iam_binding",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer, VertexAIEndpointIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer, VertexAIEndpointIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_endpoint_iam_member",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewVertexAIEndpointIamMemberResource(),
+		SchemaFunc:  NewVertexAIEndpointIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_endpoint_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer, VertexAIEndpointIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer, VertexAIEndpointIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_endpoint_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(VertexAIEndpointIamSchema, VertexAIEndpointIamUpdaterProducer)
+		},
 	}.Register()
 }
 

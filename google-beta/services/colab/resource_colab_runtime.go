@@ -131,7 +131,7 @@ func init() {
 		Name:        "google_colab_runtime",
 		ProductName: "colab",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceColabRuntime(),
+		SchemaFunc:  ResourceColabRuntime,
 	}.Register()
 }
 

@@ -129,7 +129,7 @@ func init() {
 		Name:        "google_vertex_ai_semantic_governance_policy_engine",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAISemanticGovernancePolicyEngine(),
+		SchemaFunc:  ResourceVertexAISemanticGovernancePolicyEngine,
 	}.Register()
 }
 

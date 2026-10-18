@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_memorystore_acl_policy",
 		ProductName: "memorystore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMemorystoreAclPolicy(),
+		SchemaFunc:  ResourceMemorystoreAclPolicy,
 	}.Register()
 }
 

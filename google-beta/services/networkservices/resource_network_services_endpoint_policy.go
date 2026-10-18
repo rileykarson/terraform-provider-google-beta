@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_endpoint_policy",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesEndpointPolicy(),
+		SchemaFunc:  ResourceNetworkServicesEndpointPolicy,
 	}.Register()
 }
 

@@ -106,7 +106,7 @@ func init() {
 		Name:        "google_binary_authorization_policy",
 		ProductName: "binaryauthorization",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBinaryAuthorizationPolicy(),
+		SchemaFunc:  ResourceBinaryAuthorizationPolicy,
 	}.Register()
 }
 

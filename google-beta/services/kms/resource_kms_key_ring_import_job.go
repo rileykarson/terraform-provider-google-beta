@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_kms_key_ring_import_job",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceKMSKeyRingImportJob(),
+		SchemaFunc:  ResourceKMSKeyRingImportJob,
 	}.Register()
 }
 

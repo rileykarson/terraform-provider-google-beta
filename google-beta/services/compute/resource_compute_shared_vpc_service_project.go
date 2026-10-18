@@ -231,6 +231,6 @@ func init() {
 		Name:        "google_compute_shared_vpc_service_project",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeSharedVpcServiceProject(),
+		SchemaFunc:  ResourceComputeSharedVpcServiceProject,
 	}.Register()
 }

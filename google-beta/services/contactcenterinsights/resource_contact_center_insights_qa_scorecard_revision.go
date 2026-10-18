@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_contact_center_insights_qa_scorecard_revision",
 		ProductName: "contactcenterinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContactCenterInsightsQaScorecardRevision(),
+		SchemaFunc:  ResourceContactCenterInsightsQaScorecardRevision,
 	}.Register()
 }
 

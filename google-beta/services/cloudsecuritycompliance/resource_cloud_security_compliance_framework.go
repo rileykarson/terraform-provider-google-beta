@@ -105,7 +105,7 @@ func init() {
 		Name:        "google_cloud_security_compliance_framework",
 		ProductName: "cloudsecuritycompliance",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudSecurityComplianceFramework(),
+		SchemaFunc:  ResourceCloudSecurityComplianceFramework,
 	}.Register()
 }
 

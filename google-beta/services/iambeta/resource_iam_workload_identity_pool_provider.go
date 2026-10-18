@@ -137,7 +137,7 @@ func init() {
 		Name:        "google_iam_workload_identity_pool_provider",
 		ProductName: "iambeta",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAMBetaWorkloadIdentityPoolProvider(),
+		SchemaFunc:  ResourceIAMBetaWorkloadIdentityPoolProvider,
 	}.Register()
 }
 

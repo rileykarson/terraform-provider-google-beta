@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vmwareengine_external_address",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVmwareengineExternalAddress(),
+		SchemaFunc:  ResourceVmwareengineExternalAddress,
 	}.Register()
 }
 

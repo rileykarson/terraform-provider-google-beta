@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_biglake_iceberg_catalog",
 		ProductName: "biglakeiceberg",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBiglakeIcebergIcebergCatalog(),
+		SchemaFunc:  ResourceBiglakeIcebergIcebergCatalog,
 	}.Register()
 }
 

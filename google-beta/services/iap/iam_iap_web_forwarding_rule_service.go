@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_web_forwarding_rule_service_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer, IapWebForwardingRuleServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer, IapWebForwardingRuleServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_forwarding_rule_service_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapWebForwardingRuleServiceIamMemberResource(),
+		SchemaFunc:  NewIapWebForwardingRuleServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_forwarding_rule_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer, IapWebForwardingRuleServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer, IapWebForwardingRuleServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_forwarding_rule_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapWebForwardingRuleServiceIamSchema, IapWebForwardingRuleServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

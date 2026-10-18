@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gkeonprem_bare_metal_cluster",
 		ProductName: "gkeonprem",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGkeonpremBareMetalCluster(),
+		SchemaFunc:  ResourceGkeonpremBareMetalCluster,
 	}.Register()
 }
 

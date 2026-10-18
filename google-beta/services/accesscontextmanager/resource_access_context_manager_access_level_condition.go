@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_access_level_condition",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerAccessLevelCondition(),
+		SchemaFunc:  ResourceAccessContextManagerAccessLevelCondition,
 	}.Register()
 }
 

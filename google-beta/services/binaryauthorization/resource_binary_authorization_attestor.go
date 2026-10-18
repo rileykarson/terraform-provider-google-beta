@@ -119,7 +119,7 @@ func init() {
 		Name:        "google_binary_authorization_attestor",
 		ProductName: "binaryauthorization",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBinaryAuthorizationAttestor(),
+		SchemaFunc:  ResourceBinaryAuthorizationAttestor,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firestore_user_creds",
 		ProductName: "firestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirestoreUserCreds(),
+		SchemaFunc:  ResourceFirestoreUserCreds,
 	}.Register()
 }
 

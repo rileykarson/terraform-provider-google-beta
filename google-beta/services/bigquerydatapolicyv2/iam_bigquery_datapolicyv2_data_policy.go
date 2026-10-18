@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_bigquery_datapolicyv2_data_policy_iam_binding",
 		ProductName: "BigqueryDatapolicyv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer, BigqueryDatapolicyv2DataPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer, BigqueryDatapolicyv2DataPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicyv2_data_policy_iam_member",
 		ProductName: "BigqueryDatapolicyv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBigqueryDatapolicyv2DataPolicyIamMemberResource(),
+		SchemaFunc:  NewBigqueryDatapolicyv2DataPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicyv2_data_policy_iam_policy",
 		ProductName: "BigqueryDatapolicyv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer, BigqueryDatapolicyv2DataPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer, BigqueryDatapolicyv2DataPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicyv2_data_policy_iam_policy",
 		ProductName: "BigqueryDatapolicyv2",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BigqueryDatapolicyv2DataPolicyIamSchema, BigqueryDatapolicyv2DataPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

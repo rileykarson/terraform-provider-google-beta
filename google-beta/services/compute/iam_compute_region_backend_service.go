@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_region_backend_service_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer, ComputeRegionBackendServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer, ComputeRegionBackendServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_backend_service_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeRegionBackendServiceIamMemberResource(),
+		SchemaFunc:  NewComputeRegionBackendServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_backend_service_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer, ComputeRegionBackendServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer, ComputeRegionBackendServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_backend_service_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeRegionBackendServiceIamSchema, ComputeRegionBackendServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

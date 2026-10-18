@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataproc_session_template",
 		ProductName: "dataproc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocSessionTemplate(),
+		SchemaFunc:  ResourceDataprocSessionTemplate,
 	}.Register()
 }
 

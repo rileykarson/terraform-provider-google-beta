@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_data_fusion_instance_iam_binding",
 		ProductName: "DataFusion",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer, DataFusionInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer, DataFusionInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_fusion_instance_iam_member",
 		ProductName: "DataFusion",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataFusionInstanceIamMemberResource(),
+		SchemaFunc:  NewDataFusionInstanceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_fusion_instance_iam_policy",
 		ProductName: "DataFusion",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer, DataFusionInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer, DataFusionInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_fusion_instance_iam_policy",
 		ProductName: "DataFusion",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataFusionInstanceIamSchema, DataFusionInstanceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

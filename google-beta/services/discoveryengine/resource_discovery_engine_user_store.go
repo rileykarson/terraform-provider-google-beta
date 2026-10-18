@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_user_store",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineUserStore(),
+		SchemaFunc:  ResourceDiscoveryEngineUserStore,
 	}.Register()
 }
 

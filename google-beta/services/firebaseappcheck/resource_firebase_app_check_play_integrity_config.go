@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_play_integrity_config",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckPlayIntegrityConfig(),
+		SchemaFunc:  ResourceFirebaseAppCheckPlayIntegrityConfig,
 	}.Register()
 }
 

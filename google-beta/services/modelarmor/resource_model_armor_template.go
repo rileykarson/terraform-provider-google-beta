@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_model_armor_template",
 		ProductName: "modelarmor",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceModelArmorTemplate(),
+		SchemaFunc:  ResourceModelArmorTemplate,
 	}.Register()
 }
 

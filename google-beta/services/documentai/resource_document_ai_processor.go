@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_document_ai_processor",
 		ProductName: "documentai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDocumentAIProcessor(),
+		SchemaFunc:  ResourceDocumentAIProcessor,
 	}.Register()
 }
 

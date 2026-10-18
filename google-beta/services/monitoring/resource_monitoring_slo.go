@@ -106,7 +106,7 @@ func init() {
 		Name:        "google_monitoring_slo",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringSlo(),
+		SchemaFunc:  ResourceMonitoringSlo,
 	}.Register()
 }
 

@@ -97,7 +97,7 @@ func init() {
 		Name:        "google_resource_manager_lien",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceResourceManagerLien(),
+		SchemaFunc:  ResourceResourceManagerLien,
 	}.Register()
 }
 

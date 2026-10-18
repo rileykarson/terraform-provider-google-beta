@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_binary_authorization_attestor_iam_binding",
 		ProductName: "BinaryAuthorization",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer, BinaryAuthorizationAttestorIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer, BinaryAuthorizationAttestorIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_binary_authorization_attestor_iam_member",
 		ProductName: "BinaryAuthorization",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBinaryAuthorizationAttestorIamMemberResource(),
+		SchemaFunc:  NewBinaryAuthorizationAttestorIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_binary_authorization_attestor_iam_policy",
 		ProductName: "BinaryAuthorization",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer, BinaryAuthorizationAttestorIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer, BinaryAuthorizationAttestorIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_binary_authorization_attestor_iam_policy",
 		ProductName: "BinaryAuthorization",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BinaryAuthorizationAttestorIamSchema, BinaryAuthorizationAttestorIamUpdaterProducer)
+		},
 	}.Register()
 }
 

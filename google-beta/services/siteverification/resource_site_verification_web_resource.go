@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_site_verification_web_resource",
 		ProductName: "siteverification",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSiteVerificationWebResource(),
+		SchemaFunc:  ResourceSiteVerificationWebResource,
 	}.Register()
 }
 

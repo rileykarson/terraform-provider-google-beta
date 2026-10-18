@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_hl7_v2_store",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcareHl7V2Store(),
+		SchemaFunc:  ResourceHealthcareHl7V2Store,
 	}.Register()
 }
 

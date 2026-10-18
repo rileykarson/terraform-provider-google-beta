@@ -289,6 +289,6 @@ func init() {
 		Name:        "google_compute_addresses",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeAddresses(),
+		SchemaFunc:  DataSourceGoogleComputeAddresses,
 	}.Register()
 }

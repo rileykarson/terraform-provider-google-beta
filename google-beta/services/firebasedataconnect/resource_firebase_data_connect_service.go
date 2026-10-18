@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_data_connect_service",
 		ProductName: "firebasedataconnect",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseDataConnectService(),
+		SchemaFunc:  ResourceFirebaseDataConnectService,
 	}.Register()
 }
 

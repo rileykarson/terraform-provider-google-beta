@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_evaluation_metric",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIEvaluationMetric(),
+		SchemaFunc:  ResourceVertexAIEvaluationMetric,
 	}.Register()
 }
 

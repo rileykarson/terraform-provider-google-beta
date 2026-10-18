@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_saas_runtime_release",
 		ProductName: "saasruntime",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSaasRuntimeRelease(),
+		SchemaFunc:  ResourceSaasRuntimeRelease,
 	}.Register()
 }
 

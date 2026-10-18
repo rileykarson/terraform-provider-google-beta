@@ -173,6 +173,6 @@ func init() {
 		Name:        "google_kms_secret_asymmetric",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleKmsSecretAsymmetric(),
+		SchemaFunc:  DataSourceGoogleKmsSecretAsymmetric,
 	}.Register()
 }

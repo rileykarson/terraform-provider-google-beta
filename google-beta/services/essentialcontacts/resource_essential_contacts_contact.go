@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_essential_contacts_contact",
 		ProductName: "essentialcontacts",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEssentialContactsContact(),
+		SchemaFunc:  ResourceEssentialContactsContact,
 	}.Register()
 }
 

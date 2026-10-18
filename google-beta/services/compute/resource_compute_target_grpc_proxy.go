@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_target_grpc_proxy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeTargetGrpcProxy(),
+		SchemaFunc:  ResourceComputeTargetGrpcProxy,
 	}.Register()
 }
 

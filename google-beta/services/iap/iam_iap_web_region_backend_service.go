@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_web_region_backend_service_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer, IapWebRegionBackendServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer, IapWebRegionBackendServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_backend_service_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapWebRegionBackendServiceIamMemberResource(),
+		SchemaFunc:  NewIapWebRegionBackendServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_backend_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer, IapWebRegionBackendServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer, IapWebRegionBackendServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_region_backend_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapWebRegionBackendServiceIamSchema, IapWebRegionBackendServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

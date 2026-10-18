@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_security_policy_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionSecurityPolicyRule(),
+		SchemaFunc:  ResourceComputeRegionSecurityPolicyRule,
 	}.Register()
 }
 

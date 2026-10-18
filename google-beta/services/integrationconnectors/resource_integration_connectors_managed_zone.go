@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_integration_connectors_managed_zone",
 		ProductName: "integrationconnectors",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIntegrationConnectorsManagedZone(),
+		SchemaFunc:  ResourceIntegrationConnectorsManagedZone,
 	}.Register()
 }
 

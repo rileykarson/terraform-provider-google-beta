@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_network_connectivity_hub_iam_binding",
 		ProductName: "NetworkConnectivity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer, NetworkConnectivityHubIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer, NetworkConnectivityHubIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_connectivity_hub_iam_member",
 		ProductName: "NetworkConnectivity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewNetworkConnectivityHubIamMemberResource(),
+		SchemaFunc:  NewNetworkConnectivityHubIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_connectivity_hub_iam_policy",
 		ProductName: "NetworkConnectivity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer, NetworkConnectivityHubIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer, NetworkConnectivityHubIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_connectivity_hub_iam_policy",
 		ProductName: "NetworkConnectivity",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(NetworkConnectivityHubIamSchema, NetworkConnectivityHubIamUpdaterProducer)
+		},
 	}.Register()
 }
 

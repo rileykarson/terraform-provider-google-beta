@@ -195,6 +195,6 @@ func init() {
 		Name:        "google_compute_interconnect_location",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeInterconnectLocation(),
+		SchemaFunc:  DataSourceGoogleComputeInterconnectLocation,
 	}.Register()
 }

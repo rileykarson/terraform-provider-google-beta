@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_analytics_hub_data_exchange",
 		ProductName: "bigqueryanalyticshub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryAnalyticsHubDataExchange(),
+		SchemaFunc:  ResourceBigqueryAnalyticsHubDataExchange,
 	}.Register()
 }
 

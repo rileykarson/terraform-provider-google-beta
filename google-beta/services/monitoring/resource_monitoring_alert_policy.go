@@ -96,7 +96,7 @@ func init() {
 		Name:        "google_monitoring_alert_policy",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringAlertPolicy(),
+		SchemaFunc:  ResourceMonitoringAlertPolicy,
 	}.Register()
 }
 

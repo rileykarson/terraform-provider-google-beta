@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_management_project_security_health_analytics_custom_module",
 		ProductName: "securitycentermanagement",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterManagementProjectSecurityHealthAnalyticsCustomModule(),
+		SchemaFunc:  ResourceSecurityCenterManagementProjectSecurityHealthAnalyticsCustomModule,
 	}.Register()
 }
 

@@ -2476,6 +2476,6 @@ func init() {
 		Name:        "google_compute_instance_group_manager",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstanceGroupManager(),
+		SchemaFunc:  ResourceComputeInstanceGroupManager,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firestore_database",
 		ProductName: "firestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirestoreDatabase(),
+		SchemaFunc:  ResourceFirestoreDatabase,
 	}.Register()
 }
 

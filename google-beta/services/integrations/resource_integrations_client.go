@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_integrations_client",
 		ProductName: "integrations",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIntegrationsClient(),
+		SchemaFunc:  ResourceIntegrationsClient,
 	}.Register()
 }
 

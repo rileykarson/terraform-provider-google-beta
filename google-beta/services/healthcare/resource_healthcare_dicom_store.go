@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_dicom_store",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcareDicomStore(),
+		SchemaFunc:  ResourceHealthcareDicomStore,
 	}.Register()
 }
 

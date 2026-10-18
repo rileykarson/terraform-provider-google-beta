@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_multicast_group_consumer_activation",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesMulticastGroupConsumerActivation(),
+		SchemaFunc:  ResourceNetworkServicesMulticastGroupConsumerActivation,
 	}.Register()
 }
 

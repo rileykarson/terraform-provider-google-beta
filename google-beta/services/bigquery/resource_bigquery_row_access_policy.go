@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_row_access_policy",
 		ProductName: "bigquery",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigQueryRowAccessPolicy(),
+		SchemaFunc:  ResourceBigQueryRowAccessPolicy,
 	}.Register()
 }
 

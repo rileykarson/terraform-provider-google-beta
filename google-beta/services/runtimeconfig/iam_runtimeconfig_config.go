@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_runtimeconfig_config_iam_binding",
 		ProductName: "RuntimeConfig",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer, RuntimeConfigConfigIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer, RuntimeConfigConfigIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_runtimeconfig_config_iam_member",
 		ProductName: "RuntimeConfig",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewRuntimeConfigConfigIamMemberResource(),
+		SchemaFunc:  NewRuntimeConfigConfigIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_runtimeconfig_config_iam_policy",
 		ProductName: "RuntimeConfig",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer, RuntimeConfigConfigIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer, RuntimeConfigConfigIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_runtimeconfig_config_iam_policy",
 		ProductName: "RuntimeConfig",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(RuntimeConfigConfigIamSchema, RuntimeConfigConfigIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_transcoder_job",
 		ProductName: "transcoder",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceTranscoderJob(),
+		SchemaFunc:  ResourceTranscoderJob,
 	}.Register()
 }
 

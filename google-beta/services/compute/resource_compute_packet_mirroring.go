@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_packet_mirroring",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputePacketMirroring(),
+		SchemaFunc:  ResourceComputePacketMirroring,
 	}.Register()
 }
 

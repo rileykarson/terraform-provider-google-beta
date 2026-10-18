@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apphub_workload",
 		ProductName: "apphub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApphubWorkload(),
+		SchemaFunc:  ResourceApphubWorkload,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_bulk_per_instance_config",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeBulkPerInstanceConfig(),
+		SchemaFunc:  ResourceComputeBulkPerInstanceConfig,
 	}.Register()
 }
 

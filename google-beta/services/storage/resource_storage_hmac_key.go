@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_hmac_key",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageHmacKey(),
+		SchemaFunc:  ResourceStorageHmacKey,
 	}.Register()
 }
 

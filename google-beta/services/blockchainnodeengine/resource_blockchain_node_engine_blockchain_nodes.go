@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_blockchain_node_engine_blockchain_nodes",
 		ProductName: "blockchainnodeengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBlockchainNodeEngineBlockchainNodes(),
+		SchemaFunc:  ResourceBlockchainNodeEngineBlockchainNodes,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_sac_realm",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecuritySacRealm(),
+		SchemaFunc:  ResourceNetworkSecuritySacRealm,
 	}.Register()
 }
 

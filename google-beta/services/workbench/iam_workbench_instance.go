@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_workbench_instance_iam_binding",
 		ProductName: "Workbench",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer, WorkbenchInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer, WorkbenchInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_workbench_instance_iam_member",
 		ProductName: "Workbench",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewWorkbenchInstanceIamMemberResource(),
+		SchemaFunc:  NewWorkbenchInstanceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_workbench_instance_iam_policy",
 		ProductName: "Workbench",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer, WorkbenchInstanceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer, WorkbenchInstanceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_workbench_instance_iam_policy",
 		ProductName: "Workbench",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(WorkbenchInstanceIamSchema, WorkbenchInstanceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

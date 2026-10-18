@@ -113,7 +113,7 @@ func init() {
 		Name:        "google_data_fusion_instance",
 		ProductName: "datafusion",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataFusionInstance(),
+		SchemaFunc:  ResourceDataFusionInstance,
 	}.Register()
 }
 

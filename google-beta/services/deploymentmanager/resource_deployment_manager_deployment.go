@@ -116,7 +116,7 @@ func init() {
 		Name:        "google_deployment_manager_deployment",
 		ProductName: "deploymentmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDeploymentManagerDeployment(),
+		SchemaFunc:  ResourceDeploymentManagerDeployment,
 	}.Register()
 }
 

@@ -86,6 +86,6 @@ func init() {
 		Name:        "google_monitoring_cluster_istio_service",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceMonitoringServiceClusterIstio(),
+		SchemaFunc:  DataSourceMonitoringServiceClusterIstio,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_database_migration_service_migration_job",
 		ProductName: "databasemigrationservice",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDatabaseMigrationServiceMigrationJob(),
+		SchemaFunc:  ResourceDatabaseMigrationServiceMigrationJob,
 	}.Register()
 }
 

@@ -75,6 +75,6 @@ func init() {
 		Name:        "google_composer_environment",
 		ProductName: "composer",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComposerEnvironment(),
+		SchemaFunc:  DataSourceGoogleComposerEnvironment,
 	}.Register()
 }

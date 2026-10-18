@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_eventarc_message_bus",
 		ProductName: "eventarc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEventarcMessageBus(),
+		SchemaFunc:  ResourceEventarcMessageBus,
 	}.Register()
 }
 

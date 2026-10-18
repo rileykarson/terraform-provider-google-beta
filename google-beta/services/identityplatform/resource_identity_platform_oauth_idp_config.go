@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_identity_platform_oauth_idp_config",
 		ProductName: "identityplatform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIdentityPlatformOauthIdpConfig(),
+		SchemaFunc:  ResourceIdentityPlatformOauthIdpConfig,
 	}.Register()
 }
 

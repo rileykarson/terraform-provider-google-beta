@@ -96,7 +96,7 @@ func init() {
 		Name:        "google_apphub_service_project_attachment",
 		ProductName: "apphub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApphubServiceProjectAttachment(),
+		SchemaFunc:  ResourceApphubServiceProjectAttachment,
 	}.Register()
 }
 

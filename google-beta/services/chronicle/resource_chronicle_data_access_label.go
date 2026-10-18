@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_data_access_label",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleDataAccessLabel(),
+		SchemaFunc:  ResourceChronicleDataAccessLabel,
 	}.Register()
 }
 

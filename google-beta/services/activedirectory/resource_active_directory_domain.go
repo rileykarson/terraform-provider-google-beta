@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_active_directory_domain",
 		ProductName: "activedirectory",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceActiveDirectoryDomain(),
+		SchemaFunc:  ResourceActiveDirectoryDomain,
 	}.Register()
 }
 

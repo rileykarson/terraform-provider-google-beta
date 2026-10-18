@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_projects_policy_binding",
 		ProductName: "iam3",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAM3ProjectsPolicyBinding(),
+		SchemaFunc:  ResourceIAM3ProjectsPolicyBinding,
 	}.Register()
 }
 

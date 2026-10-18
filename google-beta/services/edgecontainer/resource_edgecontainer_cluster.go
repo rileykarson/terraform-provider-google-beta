@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_edgecontainer_cluster",
 		ProductName: "edgecontainer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEdgecontainerCluster(),
+		SchemaFunc:  ResourceEdgecontainerCluster,
 	}.Register()
 }
 

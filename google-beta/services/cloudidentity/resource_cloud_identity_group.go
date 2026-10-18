@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_identity_group",
 		ProductName: "cloudidentity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudIdentityGroup(),
+		SchemaFunc:  ResourceCloudIdentityGroup,
 	}.Register()
 }
 

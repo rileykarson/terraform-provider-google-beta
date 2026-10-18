@@ -125,7 +125,7 @@ func init() {
 		Name:        "google_pubsub_subscription",
 		ProductName: "pubsub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePubsubSubscription(),
+		SchemaFunc:  ResourcePubsubSubscription,
 	}.Register()
 }
 

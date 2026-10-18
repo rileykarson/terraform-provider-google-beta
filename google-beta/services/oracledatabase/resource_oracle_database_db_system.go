@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_oracle_database_db_system",
 		ProductName: "oracledatabase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOracleDatabaseDbSystem(),
+		SchemaFunc:  ResourceOracleDatabaseDbSystem,
 	}.Register()
 }
 

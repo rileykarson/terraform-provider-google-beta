@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dataproc_autoscaling_policy_iam_binding",
 		ProductName: "Dataproc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer, DataprocAutoscalingPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer, DataprocAutoscalingPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_autoscaling_policy_iam_member",
 		ProductName: "Dataproc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataprocAutoscalingPolicyIamMemberResource(),
+		SchemaFunc:  NewDataprocAutoscalingPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_autoscaling_policy_iam_policy",
 		ProductName: "Dataproc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer, DataprocAutoscalingPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer, DataprocAutoscalingPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_autoscaling_policy_iam_policy",
 		ProductName: "Dataproc",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataprocAutoscalingPolicyIamSchema, DataprocAutoscalingPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_biglake_table",
 		ProductName: "biglake",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBiglakeTable(),
+		SchemaFunc:  ResourceBiglakeTable,
 	}.Register()
 }
 

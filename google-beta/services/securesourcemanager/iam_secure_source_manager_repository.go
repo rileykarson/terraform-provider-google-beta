@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_secure_source_manager_repository_iam_binding",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer, SecureSourceManagerRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer, SecureSourceManagerRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_repository_iam_member",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecureSourceManagerRepositoryIamMemberResource(),
+		SchemaFunc:  NewSecureSourceManagerRepositoryIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_repository_iam_policy",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer, SecureSourceManagerRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer, SecureSourceManagerRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secure_source_manager_repository_iam_policy",
 		ProductName: "SecureSourceManager",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecureSourceManagerRepositoryIamSchema, SecureSourceManagerRepositoryIamUpdaterProducer)
+		},
 	}.Register()
 }
 

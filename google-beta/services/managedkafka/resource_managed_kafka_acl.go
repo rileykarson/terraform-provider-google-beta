@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_managed_kafka_acl",
 		ProductName: "managedkafka",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceManagedKafkaAcl(),
+		SchemaFunc:  ResourceManagedKafkaAcl,
 	}.Register()
 }
 

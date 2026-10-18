@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_extensions_instance",
 		ProductName: "firebaseextensions",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseExtensionsInstance(),
+		SchemaFunc:  ResourceFirebaseExtensionsInstance,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_oracle_database_exadb_vm_cluster",
 		ProductName: "oracledatabase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOracleDatabaseExadbVmCluster(),
+		SchemaFunc:  ResourceOracleDatabaseExadbVmCluster,
 	}.Register()
 }
 

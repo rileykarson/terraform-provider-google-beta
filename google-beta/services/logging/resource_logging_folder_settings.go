@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_logging_folder_settings",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingFolderSettings(),
+		SchemaFunc:  ResourceLoggingFolderSettings,
 	}.Register()
 }
 

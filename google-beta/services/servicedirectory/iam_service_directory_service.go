@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_service_directory_service_iam_binding",
 		ProductName: "ServiceDirectory",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer, ServiceDirectoryServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer, ServiceDirectoryServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_service_directory_service_iam_member",
 		ProductName: "ServiceDirectory",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewServiceDirectoryServiceIamMemberResource(),
+		SchemaFunc:  NewServiceDirectoryServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_service_directory_service_iam_policy",
 		ProductName: "ServiceDirectory",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer, ServiceDirectoryServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer, ServiceDirectoryServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_service_directory_service_iam_policy",
 		ProductName: "ServiceDirectory",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ServiceDirectoryServiceIamSchema, ServiceDirectoryServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

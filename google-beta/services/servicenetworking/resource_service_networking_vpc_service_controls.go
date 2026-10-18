@@ -168,7 +168,7 @@ func init() {
 		Name:        "google_service_networking_vpc_service_controls",
 		ProductName: "servicenetworking",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceServiceNetworkingVPCServiceControls(),
+		SchemaFunc:  ResourceServiceNetworkingVPCServiceControls,
 	}.Register()
 }
 

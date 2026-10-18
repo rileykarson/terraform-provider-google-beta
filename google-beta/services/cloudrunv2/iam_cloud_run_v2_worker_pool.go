@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_cloud_run_v2_worker_pool_iam_binding",
 		ProductName: "CloudRunV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer, CloudRunV2WorkerPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer, CloudRunV2WorkerPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_v2_worker_pool_iam_member",
 		ProductName: "CloudRunV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewCloudRunV2WorkerPoolIamMemberResource(),
+		SchemaFunc:  NewCloudRunV2WorkerPoolIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_v2_worker_pool_iam_policy",
 		ProductName: "CloudRunV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer, CloudRunV2WorkerPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer, CloudRunV2WorkerPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloud_run_v2_worker_pool_iam_policy",
 		ProductName: "CloudRunV2",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(CloudRunV2WorkerPoolIamSchema, CloudRunV2WorkerPoolIamUpdaterProducer)
+		},
 	}.Register()
 }
 

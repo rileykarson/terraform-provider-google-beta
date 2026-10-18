@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_beyondcorp_security_gateway_application_iam_binding",
 		ProductName: "Beyondcorp",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer, BeyondcorpSecurityGatewayApplicationIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer, BeyondcorpSecurityGatewayApplicationIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_beyondcorp_security_gateway_application_iam_member",
 		ProductName: "Beyondcorp",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBeyondcorpSecurityGatewayApplicationIamMemberResource(),
+		SchemaFunc:  NewBeyondcorpSecurityGatewayApplicationIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_beyondcorp_security_gateway_application_iam_policy",
 		ProductName: "Beyondcorp",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer, BeyondcorpSecurityGatewayApplicationIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer, BeyondcorpSecurityGatewayApplicationIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_beyondcorp_security_gateway_application_iam_policy",
 		ProductName: "Beyondcorp",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BeyondcorpSecurityGatewayApplicationIamSchema, BeyondcorpSecurityGatewayApplicationIamUpdaterProducer)
+		},
 	}.Register()
 }
 

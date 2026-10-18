@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_kms_secret_ciphertext",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceKMSSecretCiphertext(),
+		SchemaFunc:  ResourceKMSSecretCiphertext,
 	}.Register()
 }
 

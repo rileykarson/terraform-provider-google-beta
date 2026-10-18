@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_spanner_instance_partition",
 		ProductName: "spanner",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSpannerInstancePartition(),
+		SchemaFunc:  ResourceSpannerInstancePartition,
 	}.Register()
 }
 

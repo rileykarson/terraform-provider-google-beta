@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_firewall_rule",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineFirewallRule(),
+		SchemaFunc:  ResourceAppEngineFirewallRule,
 	}.Register()
 }
 

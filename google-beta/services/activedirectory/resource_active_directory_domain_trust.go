@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_active_directory_domain_trust",
 		ProductName: "activedirectory",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceActiveDirectoryDomainTrust(),
+		SchemaFunc:  ResourceActiveDirectoryDomainTrust,
 	}.Register()
 }
 

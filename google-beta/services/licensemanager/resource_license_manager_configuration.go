@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_license_manager_configuration",
 		ProductName: "licensemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLicenseManagerConfiguration(),
+		SchemaFunc:  ResourceLicenseManagerConfiguration,
 	}.Register()
 }
 

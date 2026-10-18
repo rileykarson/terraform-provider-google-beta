@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_data_lineage_config",
 		ProductName: "datalineage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataLineageConfig(),
+		SchemaFunc:  ResourceDataLineageConfig,
 	}.Register()
 }
 

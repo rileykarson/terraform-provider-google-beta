@@ -104,7 +104,7 @@ func init() {
 		Name:        "google_monitoring_uptime_check_config",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringUptimeCheckConfig(),
+		SchemaFunc:  ResourceMonitoringUptimeCheckConfig,
 	}.Register()
 }
 

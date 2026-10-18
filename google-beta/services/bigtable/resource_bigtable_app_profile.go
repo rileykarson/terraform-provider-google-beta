@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigtable_app_profile",
 		ProductName: "bigtable",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigtableAppProfile(),
+		SchemaFunc:  ResourceBigtableAppProfile,
 	}.Register()
 }
 

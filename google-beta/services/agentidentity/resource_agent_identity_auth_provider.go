@@ -116,7 +116,7 @@ func init() {
 		Name:        "google_agent_identity_auth_provider",
 		ProductName: "agentidentity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAgentIdentityAuthProvider(),
+		SchemaFunc:  ResourceAgentIdentityAuthProvider,
 	}.Register()
 }
 

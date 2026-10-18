@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_instant_snapshot",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstantSnapshot(),
+		SchemaFunc:  ResourceComputeInstantSnapshot,
 	}.Register()
 }
 

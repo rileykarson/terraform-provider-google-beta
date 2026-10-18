@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_debug_token",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckDebugToken(),
+		SchemaFunc:  ResourceFirebaseAppCheckDebugToken,
 	}.Register()
 }
 

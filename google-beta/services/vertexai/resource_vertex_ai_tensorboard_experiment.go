@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_tensorboard_experiment",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAITensorboardExperiment(),
+		SchemaFunc:  ResourceVertexAITensorboardExperiment,
 	}.Register()
 }
 

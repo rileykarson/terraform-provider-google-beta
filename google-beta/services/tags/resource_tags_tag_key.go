@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_tags_tag_key",
 		ProductName: "tags",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceTagsTagKey(),
+		SchemaFunc:  ResourceTagsTagKey,
 	}.Register()
 }
 

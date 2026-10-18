@@ -100,7 +100,7 @@ func init() {
 		Name:        "google_chronicle_rule",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleRule(),
+		SchemaFunc:  ResourceChronicleRule,
 	}.Register()
 }
 

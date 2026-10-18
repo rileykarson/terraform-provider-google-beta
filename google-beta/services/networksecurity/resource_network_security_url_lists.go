@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_url_lists",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityUrlLists(),
+		SchemaFunc:  ResourceNetworkSecurityUrlLists,
 	}.Register()
 }
 

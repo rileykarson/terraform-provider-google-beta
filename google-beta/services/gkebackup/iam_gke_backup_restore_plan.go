@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_gke_backup_restore_plan_iam_binding",
 		ProductName: "GKEBackup",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer, GKEBackupRestorePlanIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer, GKEBackupRestorePlanIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_backup_restore_plan_iam_member",
 		ProductName: "GKEBackup",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewGKEBackupRestorePlanIamMemberResource(),
+		SchemaFunc:  NewGKEBackupRestorePlanIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_backup_restore_plan_iam_policy",
 		ProductName: "GKEBackup",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer, GKEBackupRestorePlanIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer, GKEBackupRestorePlanIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_backup_restore_plan_iam_policy",
 		ProductName: "GKEBackup",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(GKEBackupRestorePlanIamSchema, GKEBackupRestorePlanIamUpdaterProducer)
+		},
 	}.Register()
 }
 

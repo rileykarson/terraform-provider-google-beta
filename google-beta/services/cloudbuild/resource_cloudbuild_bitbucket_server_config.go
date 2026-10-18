@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloudbuild_bitbucket_server_config",
 		ProductName: "cloudbuild",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudBuildBitbucketServerConfig(),
+		SchemaFunc:  ResourceCloudBuildBitbucketServerConfig,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_network_security_address_group_iam_binding",
 		ProductName: "NetworkSecurity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer, NetworkSecurityProjectAddressGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer, NetworkSecurityProjectAddressGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_security_address_group_iam_member",
 		ProductName: "NetworkSecurity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewNetworkSecurityProjectAddressGroupIamMemberResource(),
+		SchemaFunc:  NewNetworkSecurityProjectAddressGroupIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_security_address_group_iam_policy",
 		ProductName: "NetworkSecurity",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer, NetworkSecurityProjectAddressGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer, NetworkSecurityProjectAddressGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_network_security_address_group_iam_policy",
 		ProductName: "NetworkSecurity",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(NetworkSecurityProjectAddressGroupIamSchema, NetworkSecurityProjectAddressGroupIamUpdaterProducer)
+		},
 	}.Register()
 }
 

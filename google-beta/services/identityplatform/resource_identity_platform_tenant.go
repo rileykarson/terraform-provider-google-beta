@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_identity_platform_tenant",
 		ProductName: "identityplatform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIdentityPlatformTenant(),
+		SchemaFunc:  ResourceIdentityPlatformTenant,
 	}.Register()
 }
 

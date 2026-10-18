@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_firewall_policy_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer, ComputeFirewallPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer, ComputeFirewallPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_firewall_policy_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeFirewallPolicyIamMemberResource(),
+		SchemaFunc:  NewComputeFirewallPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_firewall_policy_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer, ComputeFirewallPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer, ComputeFirewallPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_firewall_policy_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeFirewallPolicyIamSchema, ComputeFirewallPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

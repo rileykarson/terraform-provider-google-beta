@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_eventarc_pipeline",
 		ProductName: "eventarc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEventarcPipeline(),
+		SchemaFunc:  ResourceEventarcPipeline,
 	}.Register()
 }
 

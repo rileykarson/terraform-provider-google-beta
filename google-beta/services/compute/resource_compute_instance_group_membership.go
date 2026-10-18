@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_instance_group_membership",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstanceGroupMembership(),
+		SchemaFunc:  ResourceComputeInstanceGroupMembership,
 	}.Register()
 }
 

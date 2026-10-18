@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_case_tag_definition",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleCaseTagDefinition(),
+		SchemaFunc:  ResourceChronicleCaseTagDefinition,
 	}.Register()
 }
 

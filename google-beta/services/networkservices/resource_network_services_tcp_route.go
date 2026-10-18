@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_tcp_route",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesTcpRoute(),
+		SchemaFunc:  ResourceNetworkServicesTcpRoute,
 	}.Register()
 }
 

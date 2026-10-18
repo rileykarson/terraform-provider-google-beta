@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_document_ai_processor_default_version",
 		ProductName: "documentai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDocumentAIProcessorDefaultVersion(),
+		SchemaFunc:  ResourceDocumentAIProcessorDefaultVersion,
 	}.Register()
 }
 

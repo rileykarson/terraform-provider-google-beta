@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_backend_authentication_config",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityBackendAuthenticationConfig(),
+		SchemaFunc:  ResourceNetworkSecurityBackendAuthenticationConfig,
 	}.Register()
 }
 

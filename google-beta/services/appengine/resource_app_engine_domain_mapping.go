@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_domain_mapping",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineDomainMapping(),
+		SchemaFunc:  ResourceAppEngineDomainMapping,
 	}.Register()
 }
 

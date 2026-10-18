@@ -200,6 +200,6 @@ func init() {
 		Name:        "google_kms_crypto_key_latest_version",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleKmsLatestCryptoKeyVersion(),
+		SchemaFunc:  DataSourceGoogleKmsLatestCryptoKeyVersion,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_logging_log_scope",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingLogScope(),
+		SchemaFunc:  ResourceLoggingLogScope,
 	}.Register()
 }
 

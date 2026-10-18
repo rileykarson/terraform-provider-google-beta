@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_control_plane_access",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeControlPlaneAccess(),
+		SchemaFunc:  ResourceApigeeControlPlaneAccess,
 	}.Register()
 }
 

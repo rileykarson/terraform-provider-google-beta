@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_privateca_certificate",
 		ProductName: "privateca",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePrivatecaCertificate(),
+		SchemaFunc:  ResourcePrivatecaCertificate,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataform_team_folder",
 		ProductName: "dataform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataformTeamFolder(),
+		SchemaFunc:  ResourceDataformTeamFolder,
 	}.Register()
 }
 

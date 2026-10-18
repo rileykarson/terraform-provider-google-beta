@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_network_policy_traffic_classification_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionNetworkPolicyTrafficClassificationRule(),
+		SchemaFunc:  ResourceComputeRegionNetworkPolicyTrafficClassificationRule,
 	}.Register()
 }
 

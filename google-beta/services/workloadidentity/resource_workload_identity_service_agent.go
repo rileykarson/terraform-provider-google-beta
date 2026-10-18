@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_workload_identity_service_agent",
 		ProductName: "workloadidentity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceWorkloadIdentityServiceAgent(),
+		SchemaFunc:  ResourceWorkloadIdentityServiceAgent,
 	}.Register()
 }
 

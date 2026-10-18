@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_eventarc_google_channel_config",
 		ProductName: "eventarc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEventarcGoogleChannelConfig(),
+		SchemaFunc:  ResourceEventarcGoogleChannelConfig,
 	}.Register()
 }
 

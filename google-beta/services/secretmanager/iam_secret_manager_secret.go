@@ -46,13 +46,15 @@ func init() {
 		Name:        "google_secret_manager_secret_iam_binding",
 		ProductName: "SecretManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer, SecretManagerSecretIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer, SecretManagerSecretIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secret_manager_secret_iam_member",
 		ProductName: "SecretManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecretManagerSecretIamMemberResource(),
+		SchemaFunc:  NewSecretManagerSecretIamMemberResource,
 	}.Register()
 	registry.FrameworkListResource{
 		Name:        "google_secret_manager_secret_iam_member",
@@ -63,13 +65,17 @@ func init() {
 		Name:        "google_secret_manager_secret_iam_policy",
 		ProductName: "SecretManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer, SecretManagerSecretIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer, SecretManagerSecretIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_secret_manager_secret_iam_policy",
 		ProductName: "SecretManager",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecretManagerSecretIamSchema, SecretManagerSecretIamUpdaterProducer)
+		},
 	}.Register()
 }
 

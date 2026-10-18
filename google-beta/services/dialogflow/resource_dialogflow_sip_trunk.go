@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_sip_trunk",
 		ProductName: "dialogflow",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowSipTrunk(),
+		SchemaFunc:  ResourceDialogflowSipTrunk,
 	}.Register()
 }
 

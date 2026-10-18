@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gke_backup_restore_plan",
 		ProductName: "gkebackup",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGKEBackupRestorePlan(),
+		SchemaFunc:  ResourceGKEBackupRestorePlan,
 	}.Register()
 }
 

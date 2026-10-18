@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_destination",
 		ProductName: "networkconnectivity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityDestination(),
+		SchemaFunc:  ResourceNetworkConnectivityDestination,
 	}.Register()
 }
 

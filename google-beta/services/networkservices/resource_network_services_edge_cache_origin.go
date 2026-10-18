@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_edge_cache_origin",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesEdgeCacheOrigin(),
+		SchemaFunc:  ResourceNetworkServicesEdgeCacheOrigin,
 	}.Register()
 }
 

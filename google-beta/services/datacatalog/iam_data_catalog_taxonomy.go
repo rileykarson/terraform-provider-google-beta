@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_data_catalog_taxonomy_iam_binding",
 		ProductName: "DataCatalog",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer, DataCatalogTaxonomyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer, DataCatalogTaxonomyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_catalog_taxonomy_iam_member",
 		ProductName: "DataCatalog",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataCatalogTaxonomyIamMemberResource(),
+		SchemaFunc:  NewDataCatalogTaxonomyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_catalog_taxonomy_iam_policy",
 		ProductName: "DataCatalog",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer, DataCatalogTaxonomyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer, DataCatalogTaxonomyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_data_catalog_taxonomy_iam_policy",
 		ProductName: "DataCatalog",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataCatalogTaxonomyIamSchema, DataCatalogTaxonomyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

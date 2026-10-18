@@ -1578,6 +1578,6 @@ func init() {
 		Name:        "google_container_aws_cluster",
 		ProductName: "containeraws",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContainerAwsCluster(),
+		SchemaFunc:  ResourceContainerAwsCluster,
 	}.Register()
 }

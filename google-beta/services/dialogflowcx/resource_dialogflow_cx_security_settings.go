@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_cx_security_settings",
 		ProductName: "dialogflowcx",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowCXSecuritySettings(),
+		SchemaFunc:  ResourceDialogflowCXSecuritySettings,
 	}.Register()
 }
 

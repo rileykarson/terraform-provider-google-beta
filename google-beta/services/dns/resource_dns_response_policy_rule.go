@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dns_response_policy_rule",
 		ProductName: "dns",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDNSResponsePolicyRule(),
+		SchemaFunc:  ResourceDNSResponsePolicyRule,
 	}.Register()
 }
 

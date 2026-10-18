@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_contact_center_insights_encryption_spec",
 		ProductName: "contactcenterinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContactCenterInsightsEncryptionSpec(),
+		SchemaFunc:  ResourceContactCenterInsightsEncryptionSpec,
 	}.Register()
 }
 

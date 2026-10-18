@@ -3253,6 +3253,6 @@ func init() {
 		Name:        "google_composer_environment",
 		ProductName: "composer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComposerEnvironment(),
+		SchemaFunc:  ResourceComposerEnvironment,
 	}.Register()
 }

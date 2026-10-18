@@ -106,7 +106,7 @@ func init() {
 		Name:        "google_cloudfunctions2_function",
 		ProductName: "cloudfunctions2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudfunctions2function(),
+		SchemaFunc:  ResourceCloudfunctions2function,
 	}.Register()
 }
 

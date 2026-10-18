@@ -166,6 +166,6 @@ func init() {
 		Name:        "google_site_verification_token",
 		ProductName: "siteverification",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceSiteVerificationToken(),
+		SchemaFunc:  DataSourceSiteVerificationToken,
 	}.Register()
 }

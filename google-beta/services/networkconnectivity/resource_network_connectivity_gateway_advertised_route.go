@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_gateway_advertised_route",
 		ProductName: "networkconnectivity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityGatewayAdvertisedRoute(),
+		SchemaFunc:  ResourceNetworkConnectivityGatewayAdvertisedRoute,
 	}.Register()
 }
 

@@ -122,6 +122,6 @@ func init() {
 		Name:        "google_composer_image_versions",
 		ProductName: "composer",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComposerImageVersions(),
+		SchemaFunc:  DataSourceGoogleComposerImageVersions,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_active_directory",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappActiveDirectory(),
+		SchemaFunc:  ResourceNetappActiveDirectory,
 	}.Register()
 }
 

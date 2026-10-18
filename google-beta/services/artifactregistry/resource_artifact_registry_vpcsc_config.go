@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_artifact_registry_vpcsc_config",
 		ProductName: "artifactregistry",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceArtifactRegistryVPCSCConfig(),
+		SchemaFunc:  ResourceArtifactRegistryVPCSCConfig,
 	}.Register()
 }
 

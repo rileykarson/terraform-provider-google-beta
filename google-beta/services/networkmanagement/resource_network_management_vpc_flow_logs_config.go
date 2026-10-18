@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_management_vpc_flow_logs_config",
 		ProductName: "networkmanagement",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkManagementVpcFlowLogsConfig(),
+		SchemaFunc:  ResourceNetworkManagementVpcFlowLogsConfig,
 	}.Register()
 }
 

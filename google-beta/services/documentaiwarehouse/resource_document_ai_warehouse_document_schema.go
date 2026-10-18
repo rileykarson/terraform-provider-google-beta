@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_document_ai_warehouse_document_schema",
 		ProductName: "documentaiwarehouse",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDocumentAIWarehouseDocumentSchema(),
+		SchemaFunc:  ResourceDocumentAIWarehouseDocumentSchema,
 	}.Register()
 }
 

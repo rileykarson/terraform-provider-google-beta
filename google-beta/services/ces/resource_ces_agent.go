@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_ces_agent",
 		ProductName: "ces",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCESAgent(),
+		SchemaFunc:  ResourceCESAgent,
 	}.Register()
 }
 

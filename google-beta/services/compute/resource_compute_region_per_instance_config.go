@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_per_instance_config",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionPerInstanceConfig(),
+		SchemaFunc:  ResourceComputeRegionPerInstanceConfig,
 	}.Register()
 }
 

@@ -81,6 +81,6 @@ func init() {
 		Name:        "google_composer_user_workloads_secret",
 		ProductName: "composer",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComposerUserWorkloadsSecret(),
+		SchemaFunc:  DataSourceGoogleComposerUserWorkloadsSecret,
 	}.Register()
 }

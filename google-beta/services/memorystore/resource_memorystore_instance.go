@@ -105,7 +105,7 @@ func init() {
 		Name:        "google_memorystore_instance",
 		ProductName: "memorystore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMemorystoreInstance(),
+		SchemaFunc:  ResourceMemorystoreInstance,
 	}.Register()
 }
 

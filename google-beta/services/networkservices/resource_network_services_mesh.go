@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_mesh",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesMesh(),
+		SchemaFunc:  ResourceNetworkServicesMesh,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_workforce_pool_provider_scim_token",
 		ProductName: "iamworkforcepool",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAMWorkforcePoolWorkforcePoolProviderScimToken(),
+		SchemaFunc:  ResourceIAMWorkforcePoolWorkforcePoolProviderScimToken,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_data_loss_prevention_job_trigger",
 		ProductName: "datalossprevention",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataLossPreventionJobTrigger(),
+		SchemaFunc:  ResourceDataLossPreventionJobTrigger,
 	}.Register()
 }
 

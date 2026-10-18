@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_config_deployment",
 		ProductName: "config",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceConfigDeployment(),
+		SchemaFunc:  ResourceConfigDeployment,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_access_context_manager_access_policy_iam_binding",
 		ProductName: "AccessContextManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer, AccessContextManagerAccessPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer, AccessContextManagerAccessPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_access_context_manager_access_policy_iam_member",
 		ProductName: "AccessContextManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewAccessContextManagerAccessPolicyIamMemberResource(),
+		SchemaFunc:  NewAccessContextManagerAccessPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_access_context_manager_access_policy_iam_policy",
 		ProductName: "AccessContextManager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer, AccessContextManagerAccessPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer, AccessContextManagerAccessPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_access_context_manager_access_policy_iam_policy",
 		ProductName: "AccessContextManager",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(AccessContextManagerAccessPolicyIamSchema, AccessContextManagerAccessPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

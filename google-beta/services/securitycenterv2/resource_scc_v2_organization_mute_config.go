@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_v2_organization_mute_config",
 		ProductName: "securitycenterv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterV2OrganizationMuteConfig(),
+		SchemaFunc:  ResourceSecurityCenterV2OrganizationMuteConfig,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_logging_saved_query",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingSavedQuery(),
+		SchemaFunc:  ResourceLoggingSavedQuery,
 	}.Register()
 }
 

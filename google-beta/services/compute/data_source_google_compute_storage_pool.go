@@ -73,6 +73,6 @@ func init() {
 		Name:        "google_compute_storage_pool",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeStoragePool(),
+		SchemaFunc:  DataSourceGoogleComputeStoragePool,
 	}.Register()
 }

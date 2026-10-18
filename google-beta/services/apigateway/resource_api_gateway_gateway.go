@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_api_gateway_gateway",
 		ProductName: "apigateway",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApiGatewayGateway(),
+		SchemaFunc:  ResourceApiGatewayGateway,
 	}.Register()
 }
 

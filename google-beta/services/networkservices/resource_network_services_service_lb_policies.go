@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_service_lb_policies",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesServiceLbPolicies(),
+		SchemaFunc:  ResourceNetworkServicesServiceLbPolicies,
 	}.Register()
 }
 

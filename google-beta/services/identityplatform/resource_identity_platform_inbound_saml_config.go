@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_identity_platform_inbound_saml_config",
 		ProductName: "identityplatform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIdentityPlatformInboundSamlConfig(),
+		SchemaFunc:  ResourceIdentityPlatformInboundSamlConfig,
 	}.Register()
 }
 

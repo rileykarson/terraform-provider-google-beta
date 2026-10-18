@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_dns_threat_detector",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityDnsThreatDetector(),
+		SchemaFunc:  ResourceNetworkSecurityDnsThreatDetector,
 	}.Register()
 }
 

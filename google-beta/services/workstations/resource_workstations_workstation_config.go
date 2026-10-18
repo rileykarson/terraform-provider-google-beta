@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_workstations_workstation_config",
 		ProductName: "workstations",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceWorkstationsWorkstationConfig(),
+		SchemaFunc:  ResourceWorkstationsWorkstationConfig,
 	}.Register()
 }
 

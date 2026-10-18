@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_monitoring_metric_descriptor",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringMetricDescriptor(),
+		SchemaFunc:  ResourceMonitoringMetricDescriptor,
 	}.Register()
 }
 

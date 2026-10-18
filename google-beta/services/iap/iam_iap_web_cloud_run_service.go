@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iap_web_cloud_run_service_iam_binding",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer, IapWebCloudRunServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer, IapWebCloudRunServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_cloud_run_service_iam_member",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIapWebCloudRunServiceIamMemberResource(),
+		SchemaFunc:  NewIapWebCloudRunServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_cloud_run_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer, IapWebCloudRunServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer, IapWebCloudRunServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iap_web_cloud_run_service_iam_policy",
 		ProductName: "Iap",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IapWebCloudRunServiceIamSchema, IapWebCloudRunServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

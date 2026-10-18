@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_deployment_resource_pool",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIDeploymentResourcePool(),
+		SchemaFunc:  ResourceVertexAIDeploymentResourcePool,
 	}.Register()
 }
 

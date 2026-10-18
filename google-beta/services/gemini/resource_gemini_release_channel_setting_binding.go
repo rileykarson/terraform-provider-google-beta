@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_release_channel_setting_binding",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiReleaseChannelSettingBinding(),
+		SchemaFunc:  ResourceGeminiReleaseChannelSettingBinding,
 	}.Register()
 }
 

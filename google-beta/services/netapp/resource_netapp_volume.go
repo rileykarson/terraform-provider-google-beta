@@ -134,7 +134,7 @@ func init() {
 		Name:        "google_netapp_volume",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappVolume(),
+		SchemaFunc:  ResourceNetappVolume,
 	}.Register()
 }
 

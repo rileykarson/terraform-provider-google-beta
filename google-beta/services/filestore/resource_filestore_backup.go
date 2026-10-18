@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_filestore_backup",
 		ProductName: "filestore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFilestoreBackup(),
+		SchemaFunc:  ResourceFilestoreBackup,
 	}.Register()
 }
 

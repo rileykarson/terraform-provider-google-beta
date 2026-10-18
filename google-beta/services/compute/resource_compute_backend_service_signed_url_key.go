@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_backend_service_signed_url_key",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeBackendServiceSignedUrlKey(),
+		SchemaFunc:  ResourceComputeBackendServiceSignedUrlKey,
 	}.Register()
 }
 

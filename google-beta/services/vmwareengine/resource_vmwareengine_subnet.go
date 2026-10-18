@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vmwareengine_subnet",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVmwareengineSubnet(),
+		SchemaFunc:  ResourceVmwareengineSubnet,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_integration_connectors_endpoint_attachment",
 		ProductName: "integrationconnectors",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIntegrationConnectorsEndpointAttachment(),
+		SchemaFunc:  ResourceIntegrationConnectorsEndpointAttachment,
 	}.Register()
 }
 

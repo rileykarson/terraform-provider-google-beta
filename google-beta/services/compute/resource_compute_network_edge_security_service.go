@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_network_edge_security_service",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNetworkEdgeSecurityService(),
+		SchemaFunc:  ResourceComputeNetworkEdgeSecurityService,
 	}.Register()
 }
 

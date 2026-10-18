@@ -1393,6 +1393,6 @@ func init() {
 		Name:        "google_container_aws_node_pool",
 		ProductName: "containeraws",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContainerAwsNodePool(),
+		SchemaFunc:  ResourceContainerAwsNodePool,
 	}.Register()
 }

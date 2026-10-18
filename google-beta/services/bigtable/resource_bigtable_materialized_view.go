@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigtable_materialized_view",
 		ProductName: "bigtable",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigtableMaterializedView(),
+		SchemaFunc:  ResourceBigtableMaterializedView,
 	}.Register()
 }
 

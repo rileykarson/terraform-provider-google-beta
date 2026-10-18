@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_model_armor_floorsetting",
 		ProductName: "modelarmorglobal",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceModelArmorGlobalFloorsetting(),
+		SchemaFunc:  ResourceModelArmorGlobalFloorsetting,
 	}.Register()
 }
 

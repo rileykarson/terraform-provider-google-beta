@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_logging_linked_dataset",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingLinkedDataset(),
+		SchemaFunc:  ResourceLoggingLinkedDataset,
 	}.Register()
 }
 

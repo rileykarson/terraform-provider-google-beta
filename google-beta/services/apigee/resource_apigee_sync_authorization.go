@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_sync_authorization",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeSyncAuthorization(),
+		SchemaFunc:  ResourceApigeeSyncAuthorization,
 	}.Register()
 }
 

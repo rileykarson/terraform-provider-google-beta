@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_service_connection_policy",
 		ProductName: "networkconnectivityv1",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityv1ServiceConnectionPolicy(),
+		SchemaFunc:  ResourceNetworkConnectivityv1ServiceConnectionPolicy,
 	}.Register()
 }
 

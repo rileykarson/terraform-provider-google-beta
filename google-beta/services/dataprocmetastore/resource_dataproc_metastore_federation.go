@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataproc_metastore_federation",
 		ProductName: "dataprocmetastore",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocMetastoreFederation(),
+		SchemaFunc:  ResourceDataprocMetastoreFederation,
 	}.Register()
 }
 

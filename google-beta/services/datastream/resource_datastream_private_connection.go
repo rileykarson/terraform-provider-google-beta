@@ -123,7 +123,7 @@ func init() {
 		Name:        "google_datastream_private_connection",
 		ProductName: "datastream",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDatastreamPrivateConnection(),
+		SchemaFunc:  ResourceDatastreamPrivateConnection,
 	}.Register()
 }
 

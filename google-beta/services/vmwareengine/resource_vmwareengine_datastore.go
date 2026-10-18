@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vmwareengine_datastore",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVmwareengineDatastore(),
+		SchemaFunc:  ResourceVmwareengineDatastore,
 	}.Register()
 }
 

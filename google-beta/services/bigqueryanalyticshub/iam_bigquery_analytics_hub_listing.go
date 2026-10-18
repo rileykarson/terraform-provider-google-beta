@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_bigquery_analytics_hub_listing_iam_binding",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer, BigqueryAnalyticsHubListingIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer, BigqueryAnalyticsHubListingIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_listing_iam_member",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBigqueryAnalyticsHubListingIamMemberResource(),
+		SchemaFunc:  NewBigqueryAnalyticsHubListingIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_listing_iam_policy",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer, BigqueryAnalyticsHubListingIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer, BigqueryAnalyticsHubListingIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_listing_iam_policy",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BigqueryAnalyticsHubListingIamSchema, BigqueryAnalyticsHubListingIamUpdaterProducer)
+		},
 	}.Register()
 }
 

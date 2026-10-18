@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_kmsconfig",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappkmsconfig(),
+		SchemaFunc:  ResourceNetappkmsconfig,
 	}.Register()
 }
 

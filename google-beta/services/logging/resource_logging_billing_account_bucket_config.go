@@ -57,6 +57,6 @@ func init() {
 		Name:        "google_logging_billing_account_bucket_config",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingBillingAccountBucketConfig(),
+		SchemaFunc:  ResourceLoggingBillingAccountBucketConfig,
 	}.Register()
 }

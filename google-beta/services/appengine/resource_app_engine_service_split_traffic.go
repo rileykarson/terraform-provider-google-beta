@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_service_split_traffic",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineServiceSplitTraffic(),
+		SchemaFunc:  ResourceAppEngineServiceSplitTraffic,
 	}.Register()
 }
 

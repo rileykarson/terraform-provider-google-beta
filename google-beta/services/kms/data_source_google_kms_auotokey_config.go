@@ -57,6 +57,6 @@ func init() {
 		Name:        "google_kms_autokey_config",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleKmsAutokeyConfig(),
+		SchemaFunc:  DataSourceGoogleKmsAutokeyConfig,
 	}.Register()
 }

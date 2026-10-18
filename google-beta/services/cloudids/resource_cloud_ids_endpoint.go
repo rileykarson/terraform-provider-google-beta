@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_ids_endpoint",
 		ProductName: "cloudids",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudIdsEndpoint(),
+		SchemaFunc:  ResourceCloudIdsEndpoint,
 	}.Register()
 }
 

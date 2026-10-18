@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_contact_center_insights_qa_question",
 		ProductName: "contactcenterinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContactCenterInsightsQaQuestion(),
+		SchemaFunc:  ResourceContactCenterInsightsQaQuestion,
 	}.Register()
 }
 

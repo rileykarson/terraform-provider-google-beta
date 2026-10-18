@@ -895,6 +895,6 @@ func init() {
 		Name:        "google_recaptcha_enterprise_key",
 		ProductName: "recaptchaenterprise",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceRecaptchaEnterpriseKey(),
+		SchemaFunc:  ResourceRecaptchaEnterpriseKey,
 	}.Register()
 }

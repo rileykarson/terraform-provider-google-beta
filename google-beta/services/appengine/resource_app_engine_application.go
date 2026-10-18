@@ -475,6 +475,6 @@ func init() {
 		Name:        "google_app_engine_application",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineApplication(),
+		SchemaFunc:  ResourceAppEngineApplication,
 	}.Register()
 }

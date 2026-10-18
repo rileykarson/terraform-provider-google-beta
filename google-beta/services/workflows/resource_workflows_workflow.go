@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_workflows_workflow",
 		ProductName: "workflows",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceWorkflowsWorkflow(),
+		SchemaFunc:  ResourceWorkflowsWorkflow,
 	}.Register()
 }
 

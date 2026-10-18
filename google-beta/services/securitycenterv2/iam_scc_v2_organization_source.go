@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_scc_v2_organization_source_iam_binding",
 		ProductName: "SecurityCenterV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer, SecurityCenterV2OrganizationSourceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer, SecurityCenterV2OrganizationSourceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_v2_organization_source_iam_member",
 		ProductName: "SecurityCenterV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecurityCenterV2OrganizationSourceIamMemberResource(),
+		SchemaFunc:  NewSecurityCenterV2OrganizationSourceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_v2_organization_source_iam_policy",
 		ProductName: "SecurityCenterV2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer, SecurityCenterV2OrganizationSourceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer, SecurityCenterV2OrganizationSourceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_v2_organization_source_iam_policy",
 		ProductName: "SecurityCenterV2",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecurityCenterV2OrganizationSourceIamSchema, SecurityCenterV2OrganizationSourceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

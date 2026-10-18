@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataplex_metadata_feed",
 		ProductName: "dataplex",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataplexMetadataFeed(),
+		SchemaFunc:  ResourceDataplexMetadataFeed,
 	}.Register()
 }
 

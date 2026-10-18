@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_schema",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineSchema(),
+		SchemaFunc:  ResourceDiscoveryEngineSchema,
 	}.Register()
 }
 

@@ -61,6 +61,6 @@ func init() {
 		Name:        "google_vmwareengine_network_policy",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceVmwareengineNetworkPolicy(),
+		SchemaFunc:  DataSourceVmwareengineNetworkPolicy,
 	}.Register()
 }

@@ -88,6 +88,6 @@ func init() {
 		Name:        "google_storage_transfer_project_service_account",
 		ProductName: "storagetransfer",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleStorageTransferProjectServiceAccount(),
+		SchemaFunc:  DataSourceGoogleStorageTransferProjectServiceAccount,
 	}.Register()
 }

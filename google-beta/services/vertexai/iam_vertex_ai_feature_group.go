@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_vertex_ai_feature_group_iam_binding",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer, VertexAIFeatureGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer, VertexAIFeatureGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_group_iam_member",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewVertexAIFeatureGroupIamMemberResource(),
+		SchemaFunc:  NewVertexAIFeatureGroupIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_group_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer, VertexAIFeatureGroupIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer, VertexAIFeatureGroupIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_group_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(VertexAIFeatureGroupIamSchema, VertexAIFeatureGroupIamUpdaterProducer)
+		},
 	}.Register()
 }
 

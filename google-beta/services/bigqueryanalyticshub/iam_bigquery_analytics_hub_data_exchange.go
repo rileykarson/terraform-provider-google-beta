@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_bigquery_analytics_hub_data_exchange_iam_binding",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer, BigqueryAnalyticsHubDataExchangeIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer, BigqueryAnalyticsHubDataExchangeIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_data_exchange_iam_member",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBigqueryAnalyticsHubDataExchangeIamMemberResource(),
+		SchemaFunc:  NewBigqueryAnalyticsHubDataExchangeIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_data_exchange_iam_policy",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer, BigqueryAnalyticsHubDataExchangeIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer, BigqueryAnalyticsHubDataExchangeIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_analytics_hub_data_exchange_iam_policy",
 		ProductName: "BigqueryAnalyticsHub",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BigqueryAnalyticsHubDataExchangeIamSchema, BigqueryAnalyticsHubDataExchangeIamUpdaterProducer)
+		},
 	}.Register()
 }
 

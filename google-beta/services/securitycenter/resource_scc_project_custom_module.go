@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_project_custom_module",
 		ProductName: "securitycenter",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterProjectCustomModule(),
+		SchemaFunc:  ResourceSecurityCenterProjectCustomModule,
 	}.Register()
 }
 

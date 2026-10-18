@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_network",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNetwork(),
+		SchemaFunc:  ResourceComputeNetwork,
 	}.Register()
 }
 

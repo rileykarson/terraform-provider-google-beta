@@ -153,6 +153,6 @@ func init() {
 		Name:        "google_organization_service_identity",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOrganizationServiceIdentity(),
+		SchemaFunc:  ResourceOrganizationServiceIdentity,
 	}.Register()
 }

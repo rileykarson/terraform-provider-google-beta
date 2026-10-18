@@ -101,7 +101,7 @@ func init() {
 		Name:        "google_cloud_run_domain_mapping",
 		ProductName: "cloudrun",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudRunDomainMapping(),
+		SchemaFunc:  ResourceCloudRunDomainMapping,
 	}.Register()
 }
 

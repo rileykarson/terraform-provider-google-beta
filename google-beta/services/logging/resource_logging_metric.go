@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_logging_metric",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingMetric(),
+		SchemaFunc:  ResourceLoggingMetric,
 	}.Register()
 }
 

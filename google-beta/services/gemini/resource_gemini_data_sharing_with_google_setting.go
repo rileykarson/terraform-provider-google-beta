@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_data_sharing_with_google_setting",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiDataSharingWithGoogleSetting(),
+		SchemaFunc:  ResourceGeminiDataSharingWithGoogleSetting,
 	}.Register()
 }
 

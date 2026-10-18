@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_privateca_ca_pool_iam_binding",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer, PrivatecaCaPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer, PrivatecaCaPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_ca_pool_iam_member",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewPrivatecaCaPoolIamMemberResource(),
+		SchemaFunc:  NewPrivatecaCaPoolIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_ca_pool_iam_policy",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer, PrivatecaCaPoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer, PrivatecaCaPoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_ca_pool_iam_policy",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(PrivatecaCaPoolIamSchema, PrivatecaCaPoolIamUpdaterProducer)
+		},
 	}.Register()
 }
 

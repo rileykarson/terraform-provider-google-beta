@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_repository_group",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiRepositoryGroup(),
+		SchemaFunc:  ResourceGeminiRepositoryGroup,
 	}.Register()
 }
 

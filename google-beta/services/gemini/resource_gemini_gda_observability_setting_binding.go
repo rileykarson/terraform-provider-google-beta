@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_gda_observability_setting_binding",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiGdaObservabilitySettingBinding(),
+		SchemaFunc:  ResourceGeminiGdaObservabilitySettingBinding,
 	}.Register()
 }
 

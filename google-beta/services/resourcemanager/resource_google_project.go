@@ -996,6 +996,6 @@ func init() {
 		Name:        "google_project",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGoogleProject(),
+		SchemaFunc:  ResourceGoogleProject,
 	}.Register()
 }

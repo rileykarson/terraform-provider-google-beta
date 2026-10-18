@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_v2_organization_notification_config",
 		ProductName: "securitycenterv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterV2OrganizationNotificationConfig(),
+		SchemaFunc:  ResourceSecurityCenterV2OrganizationNotificationConfig,
 	}.Register()
 }
 

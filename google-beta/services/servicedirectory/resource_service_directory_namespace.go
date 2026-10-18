@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_service_directory_namespace",
 		ProductName: "servicedirectory",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceServiceDirectoryNamespace(),
+		SchemaFunc:  ResourceServiceDirectoryNamespace,
 	}.Register()
 }
 

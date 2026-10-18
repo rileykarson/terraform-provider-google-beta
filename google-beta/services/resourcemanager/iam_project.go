@@ -167,13 +167,15 @@ func init() {
 		Name:        "google_project_iam_audit_config",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamAuditConfig(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithBatching),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamAuditConfig(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithBatching)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_project_iam_member",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      ProjectIamMemberResource(),
+		SchemaFunc:  ProjectIamMemberResource,
 	}.Register()
 	registry.FrameworkListResource{
 		Name:        "google_project_iam_member",
@@ -184,18 +186,24 @@ func init() {
 		Name:        "google_project_iam_binding",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithBatching, tpgiamresource.IamWithParentResourceIdentity(ProjectIamParentResourceIdentityParser)),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithBatching, tpgiamresource.IamWithParentResourceIdentity(ProjectIamParentResourceIdentityParser))
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_project_iam_policy",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithParentResourceIdentity(ProjectIamParentResourceIdentityParser)),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IamProjectSchema, NewProjectIamUpdater, ProjectIdParseFunc, tpgiamresource.IamWithParentResourceIdentity(ProjectIamParentResourceIdentityParser))
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_project_iam_policy",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IamProjectSchema, NewProjectIamUpdater),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IamProjectSchema, NewProjectIamUpdater)
+		},
 	}.Register()
 }

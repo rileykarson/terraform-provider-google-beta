@@ -77,7 +77,7 @@ func init() {
 		Name:        "google_compute_region_target_http_proxy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceComputeRegionTargetHttpProxy(),
+		SchemaFunc:  DataSourceComputeRegionTargetHttpProxy,
 	}.Register()
 }
 

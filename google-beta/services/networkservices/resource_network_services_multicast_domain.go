@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_multicast_domain",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesMulticastDomain(),
+		SchemaFunc:  ResourceNetworkServicesMulticastDomain,
 	}.Register()
 }
 

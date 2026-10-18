@@ -105,7 +105,7 @@ func init() {
 		Name:        "google_bigquery_analytics_hub_query_template",
 		ProductName: "bigqueryanalyticshub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryAnalyticsHubQueryTemplate(),
+		SchemaFunc:  ResourceBigqueryAnalyticsHubQueryTemplate,
 	}.Register()
 }
 

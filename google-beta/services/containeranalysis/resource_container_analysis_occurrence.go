@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_container_analysis_occurrence",
 		ProductName: "containeranalysis",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContainerAnalysisOccurrence(),
+		SchemaFunc:  ResourceContainerAnalysisOccurrence,
 	}.Register()
 }
 

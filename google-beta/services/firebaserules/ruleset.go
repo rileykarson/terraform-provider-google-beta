@@ -551,6 +551,6 @@ func init() {
 		Name:        "google_firebaserules_ruleset",
 		ProductName: "firebaserules",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaserulesRuleset(),
+		SchemaFunc:  ResourceFirebaserulesRuleset,
 	}.Register()
 }

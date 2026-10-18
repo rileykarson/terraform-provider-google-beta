@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_oracle_database_odb_subnet",
 		ProductName: "oracledatabase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOracleDatabaseOdbSubnet(),
+		SchemaFunc:  ResourceOracleDatabaseOdbSubnet,
 	}.Register()
 }
 

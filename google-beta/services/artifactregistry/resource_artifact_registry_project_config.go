@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_artifact_registry_project_config",
 		ProductName: "artifactregistry",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceArtifactRegistryProjectConfig(),
+		SchemaFunc:  ResourceArtifactRegistryProjectConfig,
 	}.Register()
 }
 

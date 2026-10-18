@@ -137,7 +137,7 @@ func init() {
 		Name:        "google_tpu_v2_vm",
 		ProductName: "tpuv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceTpuV2Vm(),
+		SchemaFunc:  ResourceTpuV2Vm,
 	}.Register()
 }
 

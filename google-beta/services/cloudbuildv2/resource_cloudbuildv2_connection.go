@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloudbuildv2_connection",
 		ProductName: "cloudbuildv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudbuildv2Connection(),
+		SchemaFunc:  ResourceCloudbuildv2Connection,
 	}.Register()
 }
 

@@ -33,7 +33,7 @@ func init() {
 		Name:        "google_apigee_environment_debugmask",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeEnvironmentDebugmask(),
+		SchemaFunc:  ResourceApigeeEnvironmentDebugmask,
 	}.Register()
 }
 

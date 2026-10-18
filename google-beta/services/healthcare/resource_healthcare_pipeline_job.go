@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_pipeline_job",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcarePipelineJob(),
+		SchemaFunc:  ResourceHealthcarePipelineJob,
 	}.Register()
 }
 

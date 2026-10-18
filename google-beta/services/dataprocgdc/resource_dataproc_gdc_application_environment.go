@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataproc_gdc_application_environment",
 		ProductName: "dataprocgdc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocGdcApplicationEnvironment(),
+		SchemaFunc:  ResourceDataprocGdcApplicationEnvironment,
 	}.Register()
 }
 

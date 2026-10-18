@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_secure_source_manager_repository",
 		ProductName: "securesourcemanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecureSourceManagerRepository(),
+		SchemaFunc:  ResourceSecureSourceManagerRepository,
 	}.Register()
 }
 

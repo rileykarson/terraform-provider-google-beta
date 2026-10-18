@@ -112,7 +112,7 @@ func init() {
 		Name:        "google_iam_workforce_pool",
 		ProductName: "iamworkforcepool",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAMWorkforcePoolWorkforcePool(),
+		SchemaFunc:  ResourceIAMWorkforcePoolWorkforcePool,
 	}.Register()
 }
 

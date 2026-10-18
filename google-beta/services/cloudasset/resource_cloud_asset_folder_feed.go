@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_asset_folder_feed",
 		ProductName: "cloudasset",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudAssetFolderFeed(),
+		SchemaFunc:  ResourceCloudAssetFolderFeed,
 	}.Register()
 }
 

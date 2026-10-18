@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_artifact_registry_repository_iam_binding",
 		ProductName: "ArtifactRegistry",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer, ArtifactRegistryRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer, ArtifactRegistryRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_artifact_registry_repository_iam_member",
 		ProductName: "ArtifactRegistry",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewArtifactRegistryRepositoryIamMemberResource(),
+		SchemaFunc:  NewArtifactRegistryRepositoryIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_artifact_registry_repository_iam_policy",
 		ProductName: "ArtifactRegistry",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer, ArtifactRegistryRepositoryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer, ArtifactRegistryRepositoryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_artifact_registry_repository_iam_policy",
 		ProductName: "ArtifactRegistry",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ArtifactRegistryRepositoryIamSchema, ArtifactRegistryRepositoryIamUpdaterProducer)
+		},
 	}.Register()
 }
 

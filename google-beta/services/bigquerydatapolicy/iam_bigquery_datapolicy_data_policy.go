@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_bigquery_datapolicy_data_policy_iam_binding",
 		ProductName: "BigqueryDatapolicy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer, BigqueryDatapolicyDataPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer, BigqueryDatapolicyDataPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicy_data_policy_iam_member",
 		ProductName: "BigqueryDatapolicy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBigqueryDatapolicyDataPolicyIamMemberResource(),
+		SchemaFunc:  NewBigqueryDatapolicyDataPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicy_data_policy_iam_policy",
 		ProductName: "BigqueryDatapolicy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer, BigqueryDatapolicyDataPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer, BigqueryDatapolicyDataPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_bigquery_datapolicy_data_policy_iam_policy",
 		ProductName: "BigqueryDatapolicy",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BigqueryDatapolicyDataPolicyIamSchema, BigqueryDatapolicyDataPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

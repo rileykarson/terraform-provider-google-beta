@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_compute_region_network_firewall_policy_iam_binding",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer, ComputeRegionNetworkFirewallPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer, ComputeRegionNetworkFirewallPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_network_firewall_policy_iam_member",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewComputeRegionNetworkFirewallPolicyIamMemberResource(),
+		SchemaFunc:  NewComputeRegionNetworkFirewallPolicyIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_network_firewall_policy_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer, ComputeRegionNetworkFirewallPolicyIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer, ComputeRegionNetworkFirewallPolicyIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_compute_region_network_firewall_policy_iam_policy",
 		ProductName: "Compute",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ComputeRegionNetworkFirewallPolicyIamSchema, ComputeRegionNetworkFirewallPolicyIamUpdaterProducer)
+		},
 	}.Register()
 }
 

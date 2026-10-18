@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_data_loss_prevention_deidentify_template",
 		ProductName: "datalossprevention",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataLossPreventionDeidentifyTemplate(),
+		SchemaFunc:  ResourceDataLossPreventionDeidentifyTemplate,
 	}.Register()
 }
 

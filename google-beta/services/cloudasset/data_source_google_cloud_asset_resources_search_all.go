@@ -237,6 +237,6 @@ func init() {
 		Name:        "google_cloud_asset_resources_search_all",
 		ProductName: "cloudasset",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleCloudAssetResourcesSearchAll(),
+		SchemaFunc:  DataSourceGoogleCloudAssetResourcesSearchAll,
 	}.Register()
 }

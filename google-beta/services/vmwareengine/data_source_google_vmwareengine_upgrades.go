@@ -491,6 +491,6 @@ func init() {
 		Name:        "google_vmwareengine_upgrades",
 		ProductName: "vmwareengine",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceVmwareengineUpgrades(),
+		SchemaFunc:  DataSourceVmwareengineUpgrades,
 	}.Register()
 }

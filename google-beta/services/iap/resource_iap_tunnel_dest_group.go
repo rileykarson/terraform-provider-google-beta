@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iap_tunnel_dest_group",
 		ProductName: "iap",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIapTunnelDestGroup(),
+		SchemaFunc:  ResourceIapTunnelDestGroup,
 	}.Register()
 }
 

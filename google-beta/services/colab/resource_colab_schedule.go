@@ -110,7 +110,7 @@ func init() {
 		Name:        "google_colab_schedule",
 		ProductName: "colab",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceColabSchedule(),
+		SchemaFunc:  ResourceColabSchedule,
 	}.Register()
 }
 

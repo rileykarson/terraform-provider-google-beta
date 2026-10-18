@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_privateca_ca_pool",
 		ProductName: "privateca",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePrivatecaCaPool(),
+		SchemaFunc:  ResourcePrivatecaCaPool,
 	}.Register()
 }
 

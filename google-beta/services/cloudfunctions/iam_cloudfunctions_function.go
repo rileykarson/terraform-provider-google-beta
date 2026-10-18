@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_cloudfunctions_function_iam_binding",
 		ProductName: "CloudFunctions",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer, CloudFunctionsCloudFunctionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer, CloudFunctionsCloudFunctionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudfunctions_function_iam_member",
 		ProductName: "CloudFunctions",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewCloudFunctionsCloudFunctionIamMemberResource(),
+		SchemaFunc:  NewCloudFunctionsCloudFunctionIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudfunctions_function_iam_policy",
 		ProductName: "CloudFunctions",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer, CloudFunctionsCloudFunctionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer, CloudFunctionsCloudFunctionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudfunctions_function_iam_policy",
 		ProductName: "CloudFunctions",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(CloudFunctionsCloudFunctionIamSchema, CloudFunctionsCloudFunctionIamUpdaterProducer)
+		},
 	}.Register()
 }
 

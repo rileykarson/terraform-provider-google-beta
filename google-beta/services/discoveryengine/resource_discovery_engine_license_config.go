@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_discovery_engine_license_config",
 		ProductName: "discoveryengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDiscoveryEngineLicenseConfig(),
+		SchemaFunc:  ResourceDiscoveryEngineLicenseConfig,
 	}.Register()
 }
 

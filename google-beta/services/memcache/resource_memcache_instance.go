@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_memcache_instance",
 		ProductName: "memcache",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMemcacheInstance(),
+		SchemaFunc:  ResourceMemcacheInstance,
 	}.Register()
 }
 

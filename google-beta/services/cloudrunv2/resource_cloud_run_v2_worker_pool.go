@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_cloud_run_v2_worker_pool",
 		ProductName: "cloudrunv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudRunV2WorkerPool(),
+		SchemaFunc:  ResourceCloudRunV2WorkerPool,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_management_network_monitoring_provider",
 		ProductName: "networkmanagementv1",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkManagementv1NetworkMonitoringProvider(),
+		SchemaFunc:  ResourceNetworkManagementv1NetworkMonitoringProvider,
 	}.Register()
 }
 

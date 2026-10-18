@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_security_monitoring_condition",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeSecurityMonitoringCondition(),
+		SchemaFunc:  ResourceApigeeSecurityMonitoringCondition,
 	}.Register()
 }
 

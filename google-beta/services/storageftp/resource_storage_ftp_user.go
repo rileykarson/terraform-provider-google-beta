@@ -113,7 +113,7 @@ func init() {
 		Name:        "google_storage_ftp_user",
 		ProductName: "storageftp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageFtpUser(),
+		SchemaFunc:  ResourceStorageFtpUser,
 	}.Register()
 }
 

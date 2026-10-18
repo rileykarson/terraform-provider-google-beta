@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_bucket_access_control",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageBucketAccessControl(),
+		SchemaFunc:  ResourceStorageBucketAccessControl,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_service_perimeters",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerServicePerimeters(),
+		SchemaFunc:  ResourceAccessContextManagerServicePerimeters,
 	}.Register()
 }
 

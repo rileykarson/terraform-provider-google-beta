@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_model_garden_enable_model",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIModelGardenEnableModel(),
+		SchemaFunc:  ResourceVertexAIModelGardenEnableModel,
 	}.Register()
 }
 

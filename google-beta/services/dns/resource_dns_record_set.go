@@ -1052,6 +1052,6 @@ func init() {
 		Name:        "google_dns_record_set",
 		ProductName: "dns",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDnsRecordSet(),
+		SchemaFunc:  ResourceDnsRecordSet,
 	}.Register()
 }

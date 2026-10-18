@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_developer_connect_insights_config",
 		ProductName: "developerconnect",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDeveloperConnectInsightsConfig(),
+		SchemaFunc:  ResourceDeveloperConnectInsightsConfig,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_egress_policy",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerEgressPolicy(),
+		SchemaFunc:  ResourceAccessContextManagerEgressPolicy,
 	}.Register()
 }
 

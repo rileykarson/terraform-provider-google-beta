@@ -174,7 +174,7 @@ func init() {
 		Name:        "google_compute_health_check",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeHealthCheck(),
+		SchemaFunc:  ResourceComputeHealthCheck,
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_apigee_environment_iam_binding",
 		ProductName: "Apigee",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer, ApigeeEnvironmentIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer, ApigeeEnvironmentIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_apigee_environment_iam_member",
 		ProductName: "Apigee",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewApigeeEnvironmentIamMemberResource(),
+		SchemaFunc:  NewApigeeEnvironmentIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_apigee_environment_iam_policy",
 		ProductName: "Apigee",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer, ApigeeEnvironmentIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer, ApigeeEnvironmentIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_apigee_environment_iam_policy",
 		ProductName: "Apigee",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ApigeeEnvironmentIamSchema, ApigeeEnvironmentIamUpdaterProducer)
+		},
 	}.Register()
 }
 

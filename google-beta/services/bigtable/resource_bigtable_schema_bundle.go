@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigtable_schema_bundle",
 		ProductName: "bigtable",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigtableSchemaBundle(),
+		SchemaFunc:  ResourceBigtableSchemaBundle,
 	}.Register()
 }
 

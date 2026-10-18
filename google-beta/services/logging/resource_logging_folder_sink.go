@@ -172,6 +172,6 @@ func init() {
 		Name:        "google_logging_folder_sink",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingFolderSink(),
+		SchemaFunc:  ResourceLoggingFolderSink,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_migration_center_preference_set",
 		ProductName: "migrationcenter",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMigrationCenterPreferenceSet(),
+		SchemaFunc:  ResourceMigrationCenterPreferenceSet,
 	}.Register()
 }
 

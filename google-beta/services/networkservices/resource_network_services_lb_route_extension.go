@@ -108,7 +108,7 @@ func init() {
 		Name:        "google_network_services_lb_route_extension",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesLbRouteExtension(),
+		SchemaFunc:  ResourceNetworkServicesLbRouteExtension,
 	}.Register()
 }
 

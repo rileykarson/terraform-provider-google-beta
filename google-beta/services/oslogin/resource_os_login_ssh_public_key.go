@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_os_login_ssh_public_key",
 		ProductName: "oslogin",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOSLoginSSHPublicKey(),
+		SchemaFunc:  ResourceOSLoginSSHPublicKey,
 	}.Register()
 }
 

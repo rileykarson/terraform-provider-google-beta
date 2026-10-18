@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_security_scanner_scan_config",
 		ProductName: "securityscanner",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityScannerScanConfig(),
+		SchemaFunc:  ResourceSecurityScannerScanConfig,
 	}.Register()
 }
 

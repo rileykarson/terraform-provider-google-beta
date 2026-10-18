@@ -112,7 +112,7 @@ func init() {
 		Name:        "google_storage_transfer_agent_pool",
 		ProductName: "storagetransfer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageTransferAgentPool(),
+		SchemaFunc:  ResourceStorageTransferAgentPool,
 	}.Register()
 }
 

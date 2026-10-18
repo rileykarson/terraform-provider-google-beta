@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_network_peering_routes_config",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeNetworkPeeringRoutesConfig(),
+		SchemaFunc:  ResourceComputeNetworkPeeringRoutesConfig,
 	}.Register()
 }
 

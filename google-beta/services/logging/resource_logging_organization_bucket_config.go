@@ -57,6 +57,6 @@ func init() {
 		Name:        "google_logging_organization_bucket_config",
 		ProductName: "logging",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLoggingOrganizationBucketConfig(),
+		SchemaFunc:  ResourceLoggingOrganizationBucketConfig,
 	}.Register()
 }

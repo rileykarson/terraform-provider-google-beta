@@ -117,7 +117,7 @@ func init() {
 		Name:        "google_data_loss_prevention_stored_info_type",
 		ProductName: "datalossprevention",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataLossPreventionStoredInfoType(),
+		SchemaFunc:  ResourceDataLossPreventionStoredInfoType,
 	}.Register()
 }
 

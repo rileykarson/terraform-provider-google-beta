@@ -55,6 +55,6 @@ func init() {
 		Name:        "google_sql_database_instance",
 		ProductName: "sql",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceSqlDatabaseInstance(),
+		SchemaFunc:  DataSourceSqlDatabaseInstance,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gkeonprem_bare_metal_node_pool",
 		ProductName: "gkeonprem",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGkeonpremBareMetalNodePool(),
+		SchemaFunc:  ResourceGkeonpremBareMetalNodePool,
 	}.Register()
 }
 

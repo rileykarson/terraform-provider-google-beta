@@ -211,7 +211,7 @@ func init() {
 		Name:        "google_compute_forwarding_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeForwardingRule(),
+		SchemaFunc:  ResourceComputeForwardingRule,
 	}.Register()
 }
 

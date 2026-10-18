@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_reference_list",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleReferenceList(),
+		SchemaFunc:  ResourceChronicleReferenceList,
 	}.Register()
 }
 

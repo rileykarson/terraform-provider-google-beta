@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_connectivity_multicloud_data_transfer_config",
 		ProductName: "networkconnectivity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkConnectivityMulticloudDataTransferConfig(),
+		SchemaFunc:  ResourceNetworkConnectivityMulticloudDataTransferConfig,
 	}.Register()
 }
 

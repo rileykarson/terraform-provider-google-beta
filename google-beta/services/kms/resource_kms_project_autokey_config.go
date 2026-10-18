@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_kms_project_autokey_config",
 		ProductName: "kms",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceKMSProjectAutokeyConfig(),
+		SchemaFunc:  ResourceKMSProjectAutokeyConfig,
 	}.Register()
 }
 

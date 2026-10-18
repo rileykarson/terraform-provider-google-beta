@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_agent_registry_service",
 		ProductName: "agentregistry",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAgentRegistryService(),
+		SchemaFunc:  ResourceAgentRegistryService,
 	}.Register()
 }
 

@@ -244,7 +244,7 @@ func init() {
 		Name:        "google_dataplex_entry_link",
 		ProductName: "dataplex",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataplexEntryLink(),
+		SchemaFunc:  ResourceDataplexEntryLink,
 	}.Register()
 }
 

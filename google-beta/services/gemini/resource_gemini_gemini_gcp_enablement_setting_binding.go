@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_gemini_gcp_enablement_setting_binding",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiGeminiGcpEnablementSettingBinding(),
+		SchemaFunc:  ResourceGeminiGeminiGcpEnablementSettingBinding,
 	}.Register()
 }
 

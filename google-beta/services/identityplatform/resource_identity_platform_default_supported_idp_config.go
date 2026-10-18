@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_identity_platform_default_supported_idp_config",
 		ProductName: "identityplatform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIdentityPlatformDefaultSupportedIdpConfig(),
+		SchemaFunc:  ResourceIdentityPlatformDefaultSupportedIdpConfig,
 	}.Register()
 }
 

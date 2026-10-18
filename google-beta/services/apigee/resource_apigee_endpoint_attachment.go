@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_endpoint_attachment",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeEndpointAttachment(),
+		SchemaFunc:  ResourceApigeeEndpointAttachment,
 	}.Register()
 }
 

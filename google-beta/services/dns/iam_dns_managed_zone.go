@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dns_managed_zone_iam_binding",
 		ProductName: "DNS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer, DNSManagedZoneIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer, DNSManagedZoneIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dns_managed_zone_iam_member",
 		ProductName: "DNS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDNSManagedZoneIamMemberResource(),
+		SchemaFunc:  NewDNSManagedZoneIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dns_managed_zone_iam_policy",
 		ProductName: "DNS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer, DNSManagedZoneIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer, DNSManagedZoneIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dns_managed_zone_iam_policy",
 		ProductName: "DNS",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DNSManagedZoneIamSchema, DNSManagedZoneIamUpdaterProducer)
+		},
 	}.Register()
 }
 

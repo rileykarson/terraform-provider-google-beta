@@ -32,8 +32,20 @@ import (
 	"github.com/hashicorp/terraform-provider-google-beta/version"
 )
 
-// Provider returns a *schema.Provider.
+// Provider returns a *schema.Provider with all resource and data source schemas resolved.
 func Provider() *schema.Provider {
+	return newProvider(registry.DatasourceMap(), registry.ResourceMap())
+}
+
+// LazyProvider returns a *schema.Provider whose ResourcesMap and DataSourcesMap
+// contain all registered type names without resolving deferred SchemaFunc entries
+// up front. Use with NewFastValidateProviderServer so processes that never call
+// GetProviderSchema only construct the schemas of resources referenced in config.
+func LazyProvider() *schema.Provider {
+	return newProvider(registry.DatasourceNamesMap(), registry.ResourceNamesMap())
+}
+
+func newProvider(dataSourcesMap, resourcesMap map[string]*schema.Resource) *schema.Provider {
 	provider := &schema.Provider{
 		// See: https://developer.hashicorp.com/terraform/plugin/framework/migrating/mux
 		// "The schema and configuration handling must exactly match between all underlying providers of the mux server"
@@ -1190,8 +1202,8 @@ func Provider() *schema.Provider {
 			},
 		},
 
-		DataSourcesMap: registry.DatasourceMap(),
-		ResourcesMap:   registry.ResourceMap(),
+		DataSourcesMap: dataSourcesMap,
+		ResourcesMap:   resourcesMap,
 	}
 
 	provider.ConfigureContextFunc = func(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {

@@ -135,7 +135,7 @@ func init() {
 		Name:        "google_compute_service_attachment",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeServiceAttachment(),
+		SchemaFunc:  ResourceComputeServiceAttachment,
 	}.Register()
 }
 

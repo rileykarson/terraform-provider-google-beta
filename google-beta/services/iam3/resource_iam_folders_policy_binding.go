@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_folders_policy_binding",
 		ProductName: "iam3",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAM3FoldersPolicyBinding(),
+		SchemaFunc:  ResourceIAM3FoldersPolicyBinding,
 	}.Register()
 }
 

@@ -77,7 +77,7 @@ func init() {
 		Name:        "google_storage_control_project_intelligence_config",
 		ProductName: "storagecontrol",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceStorageControlProjectIntelligenceConfig(),
+		SchemaFunc:  DataSourceStorageControlProjectIntelligenceConfig,
 	}.Register()
 }
 

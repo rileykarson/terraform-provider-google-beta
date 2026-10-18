@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_hosting_version",
 		ProductName: "firebasehosting",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseHostingVersion(),
+		SchemaFunc:  ResourceFirebaseHostingVersion,
 	}.Register()
 }
 

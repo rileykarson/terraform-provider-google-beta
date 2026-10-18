@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_access_context_manager_gcp_user_access_binding",
 		ProductName: "accesscontextmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessContextManagerGcpUserAccessBinding(),
+		SchemaFunc:  ResourceAccessContextManagerGcpUserAccessBinding,
 	}.Register()
 }
 

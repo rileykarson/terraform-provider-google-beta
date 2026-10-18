@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_big_query_export",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleBigQueryExport(),
+		SchemaFunc:  ResourceChronicleBigQueryExport,
 	}.Register()
 }
 

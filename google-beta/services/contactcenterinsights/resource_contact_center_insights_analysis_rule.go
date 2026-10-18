@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_contact_center_insights_analysis_rule",
 		ProductName: "contactcenterinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContactCenterInsightsAnalysisRule(),
+		SchemaFunc:  ResourceContactCenterInsightsAnalysisRule,
 	}.Register()
 }
 

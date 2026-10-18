@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gke_hub_membership_binding",
 		ProductName: "gkehub2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGKEHub2MembershipBinding(),
+		SchemaFunc:  ResourceGKEHub2MembershipBinding,
 	}.Register()
 }
 

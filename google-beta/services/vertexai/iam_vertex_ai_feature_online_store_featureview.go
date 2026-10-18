@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_vertex_ai_feature_online_store_featureview_iam_binding",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer, VertexAIFeatureOnlineStoreFeatureviewIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer, VertexAIFeatureOnlineStoreFeatureviewIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_online_store_featureview_iam_member",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewVertexAIFeatureOnlineStoreFeatureviewIamMemberResource(),
+		SchemaFunc:  NewVertexAIFeatureOnlineStoreFeatureviewIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_online_store_featureview_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer, VertexAIFeatureOnlineStoreFeatureviewIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer, VertexAIFeatureOnlineStoreFeatureviewIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_feature_online_store_featureview_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(VertexAIFeatureOnlineStoreFeatureviewIamSchema, VertexAIFeatureOnlineStoreFeatureviewIamUpdaterProducer)
+		},
 	}.Register()
 }
 

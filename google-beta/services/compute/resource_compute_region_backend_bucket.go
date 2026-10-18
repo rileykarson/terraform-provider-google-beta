@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_backend_bucket",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionBackendBucket(),
+		SchemaFunc:  ResourceComputeRegionBackendBucket,
 	}.Register()
 }
 

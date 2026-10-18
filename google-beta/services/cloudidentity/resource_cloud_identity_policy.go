@@ -120,7 +120,7 @@ func init() {
 		Name:        "google_cloud_identity_policy",
 		ProductName: "cloudidentity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudIdentityPolicy(),
+		SchemaFunc:  ResourceCloudIdentityPolicy,
 	}.Register()
 }
 

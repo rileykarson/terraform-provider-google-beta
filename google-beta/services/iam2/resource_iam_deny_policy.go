@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_iam_deny_policy",
 		ProductName: "iam2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAM2DenyPolicy(),
+		SchemaFunc:  ResourceIAM2DenyPolicy,
 	}.Register()
 }
 

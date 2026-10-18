@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_privateca_certificate_template_iam_binding",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer, PrivatecaCertificateTemplateIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer, PrivatecaCertificateTemplateIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_certificate_template_iam_member",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewPrivatecaCertificateTemplateIamMemberResource(),
+		SchemaFunc:  NewPrivatecaCertificateTemplateIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_certificate_template_iam_policy",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer, PrivatecaCertificateTemplateIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer, PrivatecaCertificateTemplateIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_privateca_certificate_template_iam_policy",
 		ProductName: "Privateca",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(PrivatecaCertificateTemplateIamSchema, PrivatecaCertificateTemplateIamUpdaterProducer)
+		},
 	}.Register()
 }
 

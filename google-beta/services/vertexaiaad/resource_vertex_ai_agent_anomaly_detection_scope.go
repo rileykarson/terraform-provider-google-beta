@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_agent_anomaly_detection_scope",
 		ProductName: "vertexaiaad",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAiAadAgentAnomalyDetectionScope(),
+		SchemaFunc:  ResourceVertexAiAadAgentAnomalyDetectionScope,
 	}.Register()
 }
 

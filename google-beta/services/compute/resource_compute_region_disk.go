@@ -95,7 +95,7 @@ func init() {
 		Name:        "google_compute_region_disk",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionDisk(),
+		SchemaFunc:  ResourceComputeRegionDisk,
 	}.Register()
 }
 

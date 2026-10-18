@@ -4262,7 +4262,7 @@ func init() {
 		Name:        "google_dataproc_cluster",
 		ProductName: "dataproc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocCluster(),
+		SchemaFunc:  ResourceDataprocCluster,
 	}.Register()
 }
 

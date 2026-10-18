@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_code_tools_setting",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiCodeToolsSetting(),
+		SchemaFunc:  ResourceGeminiCodeToolsSetting,
 	}.Register()
 }
 

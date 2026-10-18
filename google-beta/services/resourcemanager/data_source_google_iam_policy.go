@@ -283,6 +283,6 @@ func init() {
 		Name:        "google_iam_policy",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleIamPolicy(),
+		SchemaFunc:  DataSourceGoogleIamPolicy,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_billing_project_info",
 		ProductName: "cloudbilling",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCloudBillingProjectInfo(),
+		SchemaFunc:  ResourceCloudBillingProjectInfo,
 	}.Register()
 }
 

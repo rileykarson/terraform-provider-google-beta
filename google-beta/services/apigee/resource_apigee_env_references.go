@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_env_references",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeEnvReferences(),
+		SchemaFunc:  ResourceApigeeEnvReferences,
 	}.Register()
 }
 

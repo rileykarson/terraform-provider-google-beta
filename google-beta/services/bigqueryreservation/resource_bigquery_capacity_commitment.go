@@ -98,7 +98,7 @@ func init() {
 		Name:        "google_bigquery_capacity_commitment",
 		ProductName: "bigqueryreservation",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryReservationCapacityCommitment(),
+		SchemaFunc:  ResourceBigqueryReservationCapacityCommitment,
 	}.Register()
 }
 

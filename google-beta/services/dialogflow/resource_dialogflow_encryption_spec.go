@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_encryption_spec",
 		ProductName: "dialogflow",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowEncryptionSpec(),
+		SchemaFunc:  ResourceDialogflowEncryptionSpec,
 	}.Register()
 }
 

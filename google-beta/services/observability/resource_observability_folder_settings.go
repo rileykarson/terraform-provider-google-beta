@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_observability_folder_settings",
 		ProductName: "observability",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceObservabilityFolderSettings(),
+		SchemaFunc:  ResourceObservabilityFolderSettings,
 	}.Register()
 }
 

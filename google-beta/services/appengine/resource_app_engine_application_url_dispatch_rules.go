@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_application_url_dispatch_rules",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineApplicationUrlDispatchRules(),
+		SchemaFunc:  ResourceAppEngineApplicationUrlDispatchRules,
 	}.Register()
 }
 

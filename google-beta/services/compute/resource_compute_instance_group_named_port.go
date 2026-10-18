@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_instance_group_named_port",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInstanceGroupNamedPort(),
+		SchemaFunc:  ResourceComputeInstanceGroupNamedPort,
 	}.Register()
 }
 

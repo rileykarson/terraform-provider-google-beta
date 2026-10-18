@@ -107,7 +107,7 @@ func init() {
 		Name:        "google_dataproc_batch",
 		ProductName: "dataproc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocBatch(),
+		SchemaFunc:  ResourceDataprocBatch,
 	}.Register()
 }
 

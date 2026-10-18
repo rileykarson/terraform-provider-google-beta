@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_oracle_database_goldengate_connection_assignment",
 		ProductName: "oracledatabase",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOracleDatabaseGoldengateConnectionAssignment(),
+		SchemaFunc:  ResourceOracleDatabaseGoldengateConnectionAssignment,
 	}.Register()
 }
 

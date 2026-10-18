@@ -314,6 +314,6 @@ func init() {
 		Name:        "google_compute_project_metadata_item",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeProjectMetadataItem(),
+		SchemaFunc:  ResourceComputeProjectMetadataItem,
 	}.Register()
 }

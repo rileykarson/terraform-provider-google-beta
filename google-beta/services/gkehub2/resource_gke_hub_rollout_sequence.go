@@ -324,7 +324,7 @@ func init() {
 		Name:        "google_gke_hub_rollout_sequence",
 		ProductName: "gkehub2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGKEHub2RolloutSequence(),
+		SchemaFunc:  ResourceGKEHub2RolloutSequence,
 	}.Register()
 }
 

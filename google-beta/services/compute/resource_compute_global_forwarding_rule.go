@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_global_forwarding_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeGlobalForwardingRule(),
+		SchemaFunc:  ResourceComputeGlobalForwardingRule,
 	}.Register()
 }
 

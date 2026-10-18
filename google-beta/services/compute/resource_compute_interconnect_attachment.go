@@ -110,7 +110,7 @@ func init() {
 		Name:        "google_compute_interconnect_attachment",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeInterconnectAttachment(),
+		SchemaFunc:  ResourceComputeInterconnectAttachment,
 	}.Register()
 }
 

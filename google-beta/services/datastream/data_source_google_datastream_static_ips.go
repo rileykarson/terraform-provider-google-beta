@@ -99,6 +99,6 @@ func init() {
 		Name:        "google_datastream_static_ips",
 		ProductName: "datastream",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleDatastreamStaticIps(),
+		SchemaFunc:  DataSourceGoogleDatastreamStaticIps,
 	}.Register()
 }

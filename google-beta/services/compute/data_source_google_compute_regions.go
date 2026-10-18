@@ -135,6 +135,6 @@ func init() {
 		Name:        "google_compute_regions",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeRegions(),
+		SchemaFunc:  DataSourceGoogleComputeRegions,
 	}.Register()
 }

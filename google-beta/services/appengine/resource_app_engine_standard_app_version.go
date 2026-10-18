@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_app_engine_standard_app_version",
 		ProductName: "appengine",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAppEngineStandardAppVersion(),
+		SchemaFunc:  ResourceAppEngineStandardAppVersion,
 	}.Register()
 }
 

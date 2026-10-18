@@ -212,7 +212,7 @@ func init() {
 		Name:        "google_service_usage_v2_consumer_policy",
 		ProductName: "serviceusagev2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceServiceUsageV2ConsumerPolicy(),
+		SchemaFunc:  ResourceServiceUsageV2ConsumerPolicy,
 	}.Register()
 }
 

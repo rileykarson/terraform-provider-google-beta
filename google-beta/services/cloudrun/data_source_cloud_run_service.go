@@ -77,7 +77,7 @@ func init() {
 		Name:        "google_cloud_run_service",
 		ProductName: "cloudrun",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceCloudRunService(),
+		SchemaFunc:  DataSourceCloudRunService,
 	}.Register()
 }
 

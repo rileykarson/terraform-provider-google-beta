@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_organization_security_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeOrganizationSecurityPolicy(),
+		SchemaFunc:  ResourceComputeOrganizationSecurityPolicy,
 	}.Register()
 }
 

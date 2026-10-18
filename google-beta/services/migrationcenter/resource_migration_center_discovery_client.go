@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_migration_center_discovery_client",
 		ProductName: "migrationcenter",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMigrationCenterDiscoveryClient(),
+		SchemaFunc:  ResourceMigrationCenterDiscoveryClient,
 	}.Register()
 }
 

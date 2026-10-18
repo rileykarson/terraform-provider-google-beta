@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_ces_guardrail",
 		ProductName: "ces",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceCESGuardrail(),
+		SchemaFunc:  ResourceCESGuardrail,
 	}.Register()
 }
 

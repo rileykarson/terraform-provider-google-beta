@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_remote_config_remote_config",
 		ProductName: "firebaseremoteconfig",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseRemoteConfigRemoteConfig(),
+		SchemaFunc:  ResourceFirebaseRemoteConfigRemoteConfig,
 	}.Register()
 }
 

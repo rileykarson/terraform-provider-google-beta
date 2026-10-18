@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_active_directory_peering",
 		ProductName: "activedirectory",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceActiveDirectoryPeering(),
+		SchemaFunc:  ResourceActiveDirectoryPeering,
 	}.Register()
 }
 

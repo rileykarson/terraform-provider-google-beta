@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_project_access_approval_settings",
 		ProductName: "accessapproval",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAccessApprovalProjectSettings(),
+		SchemaFunc:  ResourceAccessApprovalProjectSettings,
 	}.Register()
 }
 

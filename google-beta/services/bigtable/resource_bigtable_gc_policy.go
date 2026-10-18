@@ -670,6 +670,6 @@ func init() {
 		Name:        "google_bigtable_gc_policy",
 		ProductName: "bigtable",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigtableGCPolicy(),
+		SchemaFunc:  ResourceBigtableGCPolicy,
 	}.Register()
 }

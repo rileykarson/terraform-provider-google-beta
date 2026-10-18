@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_sql_source_representation_instance",
 		ProductName: "sql",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSQLSourceRepresentationInstance(),
+		SchemaFunc:  ResourceSQLSourceRepresentationInstance,
 	}.Register()
 }
 

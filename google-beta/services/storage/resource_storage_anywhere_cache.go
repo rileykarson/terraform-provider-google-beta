@@ -101,7 +101,7 @@ func init() {
 		Name:        "google_storage_anywhere_cache",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageAnywhereCache(),
+		SchemaFunc:  ResourceStorageAnywhereCache,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_contact_center_insights_auto_labeling_rule",
 		ProductName: "contactcenterinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContactCenterInsightsAutoLabelingRule(),
+		SchemaFunc:  ResourceContactCenterInsightsAutoLabelingRule,
 	}.Register()
 }
 

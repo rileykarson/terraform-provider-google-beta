@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_edgenetwork_network",
 		ProductName: "edgenetwork",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceEdgenetworkNetwork(),
+		SchemaFunc:  ResourceEdgenetworkNetwork,
 	}.Register()
 }
 

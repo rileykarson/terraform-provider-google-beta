@@ -72,6 +72,6 @@ func init() {
 		Name:        "google_compute_resource_policy",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeResourcePolicy(),
+		SchemaFunc:  DataSourceGoogleComputeResourcePolicy,
 	}.Register()
 }

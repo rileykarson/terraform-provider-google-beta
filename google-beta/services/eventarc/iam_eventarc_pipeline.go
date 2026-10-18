@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_eventarc_pipeline_iam_binding",
 		ProductName: "Eventarc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer, EventarcPipelineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer, EventarcPipelineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_eventarc_pipeline_iam_member",
 		ProductName: "Eventarc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewEventarcPipelineIamMemberResource(),
+		SchemaFunc:  NewEventarcPipelineIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_eventarc_pipeline_iam_policy",
 		ProductName: "Eventarc",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer, EventarcPipelineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer, EventarcPipelineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_eventarc_pipeline_iam_policy",
 		ProductName: "Eventarc",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(EventarcPipelineIamSchema, EventarcPipelineIamUpdaterProducer)
+		},
 	}.Register()
 }
 

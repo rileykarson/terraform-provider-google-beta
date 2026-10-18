@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gke_hub_feature",
 		ProductName: "gkehub2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGKEHub2Feature(),
+		SchemaFunc:  ResourceGKEHub2Feature,
 	}.Register()
 }
 

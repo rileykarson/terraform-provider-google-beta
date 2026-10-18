@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_alloydb_backup",
 		ProductName: "alloydb",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceAlloydbBackup(),
+		SchemaFunc:  ResourceAlloydbBackup,
 	}.Register()
 }
 

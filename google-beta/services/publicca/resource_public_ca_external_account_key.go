@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_public_ca_external_account_key",
 		ProductName: "publicca",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePublicCAExternalAccountKey(),
+		SchemaFunc:  ResourcePublicCAExternalAccountKey,
 	}.Register()
 }
 

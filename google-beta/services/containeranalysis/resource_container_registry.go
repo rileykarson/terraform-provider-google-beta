@@ -154,6 +154,6 @@ func init() {
 		Name:        "google_container_registry",
 		ProductName: "containeranalysis",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceContainerRegistry(),
+		SchemaFunc:  ResourceContainerRegistry,
 	}.Register()
 }

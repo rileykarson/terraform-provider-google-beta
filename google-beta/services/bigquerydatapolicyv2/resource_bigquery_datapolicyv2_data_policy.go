@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_datapolicyv2_data_policy",
 		ProductName: "bigquerydatapolicyv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryDatapolicyv2DataPolicy(),
+		SchemaFunc:  ResourceBigqueryDatapolicyv2DataPolicy,
 	}.Register()
 }
 

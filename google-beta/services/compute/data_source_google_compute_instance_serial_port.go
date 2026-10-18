@@ -109,6 +109,6 @@ func init() {
 		Name:        "google_compute_instance_serial_port",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeInstanceSerialPort(),
+		SchemaFunc:  DataSourceGoogleComputeInstanceSerialPort,
 	}.Register()
 }

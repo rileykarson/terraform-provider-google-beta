@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_biglake_hive_catalog_iam_binding",
 		ProductName: "BiglakeHive",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer, BiglakeHiveHiveCatalogIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer, BiglakeHiveHiveCatalogIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_hive_catalog_iam_member",
 		ProductName: "BiglakeHive",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBiglakeHiveHiveCatalogIamMemberResource(),
+		SchemaFunc:  NewBiglakeHiveHiveCatalogIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_hive_catalog_iam_policy",
 		ProductName: "BiglakeHive",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer, BiglakeHiveHiveCatalogIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer, BiglakeHiveHiveCatalogIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_hive_catalog_iam_policy",
 		ProductName: "BiglakeHive",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BiglakeHiveHiveCatalogIamSchema, BiglakeHiveHiveCatalogIamUpdaterProducer)
+		},
 	}.Register()
 }
 

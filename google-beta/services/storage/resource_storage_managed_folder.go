@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_managed_folder",
 		ProductName: "storage",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageManagedFolder(),
+		SchemaFunc:  ResourceStorageManagedFolder,
 	}.Register()
 }
 

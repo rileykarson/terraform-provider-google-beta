@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_parser",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleParser(),
+		SchemaFunc:  ResourceChronicleParser,
 	}.Register()
 }
 

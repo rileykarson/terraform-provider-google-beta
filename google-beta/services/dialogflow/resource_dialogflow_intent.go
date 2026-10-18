@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dialogflow_intent",
 		ProductName: "dialogflow",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDialogflowIntent(),
+		SchemaFunc:  ResourceDialogflowIntent,
 	}.Register()
 }
 

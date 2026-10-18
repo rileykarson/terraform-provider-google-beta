@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_public_delegated_prefix",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputePublicDelegatedPrefix(),
+		SchemaFunc:  ResourceComputePublicDelegatedPrefix,
 	}.Register()
 }
 

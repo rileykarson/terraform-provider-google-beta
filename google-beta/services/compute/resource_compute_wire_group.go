@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_wire_group",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeWireGroup(),
+		SchemaFunc:  ResourceComputeWireGroup,
 	}.Register()
 }
 

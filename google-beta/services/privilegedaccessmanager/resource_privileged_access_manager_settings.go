@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_privileged_access_manager_settings",
 		ProductName: "privilegedaccessmanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePrivilegedAccessManagerSettings(),
+		SchemaFunc:  ResourcePrivilegedAccessManagerSettings,
 	}.Register()
 }
 

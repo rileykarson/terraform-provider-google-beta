@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_storage_pool",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeStoragePool(),
+		SchemaFunc:  ResourceComputeStoragePool,
 	}.Register()
 }
 

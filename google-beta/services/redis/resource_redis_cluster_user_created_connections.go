@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_redis_cluster_user_created_connections",
 		ProductName: "redis",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceRedisClusterUserCreatedConnections(),
+		SchemaFunc:  ResourceRedisClusterUserCreatedConnections,
 	}.Register()
 }
 

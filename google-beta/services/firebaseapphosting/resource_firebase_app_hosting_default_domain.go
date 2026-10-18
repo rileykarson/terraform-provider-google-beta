@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_hosting_default_domain",
 		ProductName: "firebaseapphosting",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppHostingDefaultDomain(),
+		SchemaFunc:  ResourceFirebaseAppHostingDefaultDomain,
 	}.Register()
 }
 

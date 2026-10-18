@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_future_reservation",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeFutureReservation(),
+		SchemaFunc:  ResourceComputeFutureReservation,
 	}.Register()
 }
 

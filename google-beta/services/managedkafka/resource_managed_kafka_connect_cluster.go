@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_managed_kafka_connect_cluster",
 		ProductName: "managedkafka",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceManagedKafkaConnectCluster(),
+		SchemaFunc:  ResourceManagedKafkaConnectCluster,
 	}.Register()
 }
 

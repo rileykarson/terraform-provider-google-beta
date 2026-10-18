@@ -2099,6 +2099,6 @@ func init() {
 		Name:        "google_storage_transfer_job",
 		ProductName: "storagetransfer",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageTransferJob(),
+		SchemaFunc:  ResourceStorageTransferJob,
 	}.Register()
 }

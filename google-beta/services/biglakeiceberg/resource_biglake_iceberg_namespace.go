@@ -104,7 +104,7 @@ func init() {
 		Name:        "google_biglake_iceberg_namespace",
 		ProductName: "biglakeiceberg",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBiglakeIcebergIcebergNamespace(),
+		SchemaFunc:  ResourceBiglakeIcebergIcebergNamespace,
 	}.Register()
 }
 

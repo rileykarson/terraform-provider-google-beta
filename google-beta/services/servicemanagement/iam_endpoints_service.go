@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_endpoints_service_iam_binding",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer, ServiceManagementServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer, ServiceManagementServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_iam_member",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewServiceManagementServiceIamMemberResource(),
+		SchemaFunc:  NewServiceManagementServiceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_iam_policy",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer, ServiceManagementServiceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer, ServiceManagementServiceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_endpoints_service_iam_policy",
 		ProductName: "ServiceManagement",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ServiceManagementServiceIamSchema, ServiceManagementServiceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

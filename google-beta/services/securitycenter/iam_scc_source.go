@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_scc_source_iam_binding",
 		ProductName: "SecurityCenter",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer, SecurityCenterSourceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer, SecurityCenterSourceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_source_iam_member",
 		ProductName: "SecurityCenter",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewSecurityCenterSourceIamMemberResource(),
+		SchemaFunc:  NewSecurityCenterSourceIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_source_iam_policy",
 		ProductName: "SecurityCenter",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer, SecurityCenterSourceIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer, SecurityCenterSourceIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_scc_source_iam_policy",
 		ProductName: "SecurityCenter",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(SecurityCenterSourceIamSchema, SecurityCenterSourceIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_chronicle_custom_list",
 		ProductName: "chronicle",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceChronicleCustomList(),
+		SchemaFunc:  ResourceChronicleCustomList,
 	}.Register()
 }
 

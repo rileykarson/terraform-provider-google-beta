@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_iam_workforce_pool_iam_binding",
 		ProductName: "IAMWorkforcePool",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer, IAMWorkforcePoolWorkforcePoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer, IAMWorkforcePoolWorkforcePoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workforce_pool_iam_member",
 		ProductName: "IAMWorkforcePool",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewIAMWorkforcePoolWorkforcePoolIamMemberResource(),
+		SchemaFunc:  NewIAMWorkforcePoolWorkforcePoolIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workforce_pool_iam_policy",
 		ProductName: "IAMWorkforcePool",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer, IAMWorkforcePoolWorkforcePoolIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer, IAMWorkforcePoolWorkforcePoolIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_iam_workforce_pool_iam_policy",
 		ProductName: "IAMWorkforcePool",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(IAMWorkforcePoolWorkforcePoolIamSchema, IAMWorkforcePoolWorkforcePoolIamUpdaterProducer)
+		},
 	}.Register()
 }
 

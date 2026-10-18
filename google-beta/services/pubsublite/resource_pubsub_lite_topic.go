@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_pubsub_lite_topic",
 		ProductName: "pubsublite",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourcePubsubLiteTopic(),
+		SchemaFunc:  ResourcePubsubLiteTopic,
 	}.Register()
 }
 

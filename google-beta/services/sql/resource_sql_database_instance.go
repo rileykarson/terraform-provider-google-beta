@@ -4185,6 +4185,6 @@ func init() {
 		Name:        "google_sql_database_instance",
 		ProductName: "sql",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSqlDatabaseInstance(),
+		SchemaFunc:  ResourceSqlDatabaseInstance,
 	}.Register()
 }

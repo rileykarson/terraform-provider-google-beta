@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_kms_ekm_connection_iam_binding",
 		ProductName: "KMS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer, KMSEkmConnectionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer, KMSEkmConnectionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_kms_ekm_connection_iam_member",
 		ProductName: "KMS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewKMSEkmConnectionIamMemberResource(),
+		SchemaFunc:  NewKMSEkmConnectionIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_kms_ekm_connection_iam_policy",
 		ProductName: "KMS",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer, KMSEkmConnectionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer, KMSEkmConnectionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_kms_ekm_connection_iam_policy",
 		ProductName: "KMS",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(KMSEkmConnectionIamSchema, KMSEkmConnectionIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_bi_reservation",
 		ProductName: "bigqueryreservation",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryReservationBiReservation(),
+		SchemaFunc:  ResourceBigqueryReservationBiReservation,
 	}.Register()
 }
 

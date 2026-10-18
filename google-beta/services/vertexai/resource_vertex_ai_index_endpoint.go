@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_index_endpoint",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIIndexEndpoint(),
+		SchemaFunc:  ResourceVertexAIIndexEndpoint,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_volume_quota_rule",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappVolumeQuotaRule(),
+		SchemaFunc:  ResourceNetappVolumeQuotaRule,
 	}.Register()
 }
 

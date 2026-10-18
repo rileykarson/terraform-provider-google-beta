@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gemini_logging_setting",
 		ProductName: "gemini",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGeminiLoggingSetting(),
+		SchemaFunc:  ResourceGeminiLoggingSetting,
 	}.Register()
 }
 

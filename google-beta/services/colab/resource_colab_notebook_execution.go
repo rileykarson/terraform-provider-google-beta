@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_colab_notebook_execution",
 		ProductName: "colab",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceColabNotebookExecution(),
+		SchemaFunc:  ResourceColabNotebookExecution,
 	}.Register()
 }
 

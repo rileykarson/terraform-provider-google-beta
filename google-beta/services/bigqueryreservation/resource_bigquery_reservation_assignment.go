@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_bigquery_reservation_assignment",
 		ProductName: "bigqueryreservation",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryReservationReservationAssignment(),
+		SchemaFunc:  ResourceBigqueryReservationReservationAssignment,
 	}.Register()
 }
 

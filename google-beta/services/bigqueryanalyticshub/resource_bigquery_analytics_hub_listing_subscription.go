@@ -97,7 +97,7 @@ func init() {
 		Name:        "google_bigquery_analytics_hub_listing_subscription",
 		ProductName: "bigqueryanalyticshub",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBigqueryAnalyticsHubListingSubscription(),
+		SchemaFunc:  ResourceBigqueryAnalyticsHubListingSubscription,
 	}.Register()
 }
 

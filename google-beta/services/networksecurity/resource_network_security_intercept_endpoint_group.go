@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_intercept_endpoint_group",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityInterceptEndpointGroup(),
+		SchemaFunc:  ResourceNetworkSecurityInterceptEndpointGroup,
 	}.Register()
 }
 

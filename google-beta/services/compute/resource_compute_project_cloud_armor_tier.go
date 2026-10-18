@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_project_cloud_armor_tier",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeProjectCloudArmorTier(),
+		SchemaFunc:  ResourceComputeProjectCloudArmorTier,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_developer_connect_git_repository_link",
 		ProductName: "developerconnect",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDeveloperConnectGitRepositoryLink(),
+		SchemaFunc:  ResourceDeveloperConnectGitRepositoryLink,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_lustre_instance",
 		ProductName: "lustre",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceLustreInstance(),
+		SchemaFunc:  ResourceLustreInstance,
 	}.Register()
 }
 

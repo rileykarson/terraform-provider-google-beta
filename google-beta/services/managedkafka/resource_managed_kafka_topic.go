@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_managed_kafka_topic",
 		ProductName: "managedkafka",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceManagedKafkaTopic(),
+		SchemaFunc:  ResourceManagedKafkaTopic,
 	}.Register()
 }
 

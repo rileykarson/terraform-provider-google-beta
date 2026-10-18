@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_clouddeploy_target_iam_binding",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer, ClouddeployTargetIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer, ClouddeployTargetIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_target_iam_member",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewClouddeployTargetIamMemberResource(),
+		SchemaFunc:  NewClouddeployTargetIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_target_iam_policy",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer, ClouddeployTargetIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer, ClouddeployTargetIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_clouddeploy_target_iam_policy",
 		ProductName: "Clouddeploy",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ClouddeployTargetIamSchema, ClouddeployTargetIamUpdaterProducer)
+		},
 	}.Register()
 }
 

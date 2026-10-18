@@ -381,6 +381,6 @@ func init() {
 		Name:        "google_compute_attached_disk",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeAttachedDisk(),
+		SchemaFunc:  ResourceComputeAttachedDisk,
 	}.Register()
 }

@@ -253,6 +253,6 @@ func init() {
 		Name:        "google_alloydb_supported_database_flags",
 		ProductName: "alloydb",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceAlloydbSupportedDatabaseFlags(),
+		SchemaFunc:  DataSourceAlloydbSupportedDatabaseFlags,
 	}.Register()
 }

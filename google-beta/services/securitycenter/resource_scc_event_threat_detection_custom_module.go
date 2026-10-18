@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_event_threat_detection_custom_module",
 		ProductName: "securitycenter",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterEventThreatDetectionCustomModule(),
+		SchemaFunc:  ResourceSecurityCenterEventThreatDetectionCustomModule,
 	}.Register()
 }
 

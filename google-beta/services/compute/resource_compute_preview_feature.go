@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_preview_feature",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputePreviewFeature(),
+		SchemaFunc:  ResourceComputePreviewFeature,
 	}.Register()
 }
 

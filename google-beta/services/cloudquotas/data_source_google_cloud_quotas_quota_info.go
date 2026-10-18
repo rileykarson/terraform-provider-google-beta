@@ -267,6 +267,6 @@ func init() {
 		Name:        "google_cloud_quotas_quota_info",
 		ProductName: "cloudquotas",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleCloudQuotasQuotaInfo(),
+		SchemaFunc:  DataSourceGoogleCloudQuotasQuotaInfo,
 	}.Register()
 }

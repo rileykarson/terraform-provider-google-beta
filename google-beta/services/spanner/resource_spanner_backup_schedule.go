@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_spanner_backup_schedule",
 		ProductName: "spanner",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSpannerBackupSchedule(),
+		SchemaFunc:  ResourceSpannerBackupSchedule,
 	}.Register()
 }
 

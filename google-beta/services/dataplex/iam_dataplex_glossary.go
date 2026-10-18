@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dataplex_glossary_iam_binding",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer, DataplexGlossaryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer, DataplexGlossaryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_glossary_iam_member",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataplexGlossaryIamMemberResource(),
+		SchemaFunc:  NewDataplexGlossaryIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_glossary_iam_policy",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer, DataplexGlossaryIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer, DataplexGlossaryIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_glossary_iam_policy",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataplexGlossaryIamSchema, DataplexGlossaryIamUpdaterProducer)
+		},
 	}.Register()
 }
 

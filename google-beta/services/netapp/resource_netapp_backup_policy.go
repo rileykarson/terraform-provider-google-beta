@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_backup_policy",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappBackupPolicy(),
+		SchemaFunc:  ResourceNetappBackupPolicy,
 	}.Register()
 }
 

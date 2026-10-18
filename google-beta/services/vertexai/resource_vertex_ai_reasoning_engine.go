@@ -127,7 +127,7 @@ func init() {
 		Name:        "google_vertex_ai_reasoning_engine",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAIReasoningEngine(),
+		SchemaFunc:  ResourceVertexAIReasoningEngine,
 	}.Register()
 }
 

@@ -65,6 +65,6 @@ func init() {
 		Name:        "google_pubsub_subscription",
 		ProductName: "pubsub",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGooglePubsubSubscription(),
+		SchemaFunc:  DataSourceGooglePubsubSubscription,
 	}.Register()
 }

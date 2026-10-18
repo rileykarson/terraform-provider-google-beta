@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dataplex_datascan_iam_binding",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer, DataplexDatascanIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer, DataplexDatascanIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_datascan_iam_member",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataplexDatascanIamMemberResource(),
+		SchemaFunc:  NewDataplexDatascanIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_datascan_iam_policy",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer, DataplexDatascanIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer, DataplexDatascanIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataplex_datascan_iam_policy",
 		ProductName: "Dataplex",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataplexDatascanIamSchema, DataplexDatascanIamUpdaterProducer)
+		},
 	}.Register()
 }
 

@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_gke_hub_scope_iam_binding",
 		ProductName: "GKEHub2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer, GKEHub2ScopeIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer, GKEHub2ScopeIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_hub_scope_iam_member",
 		ProductName: "GKEHub2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewGKEHub2ScopeIamMemberResource(),
+		SchemaFunc:  NewGKEHub2ScopeIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_hub_scope_iam_policy",
 		ProductName: "GKEHub2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer, GKEHub2ScopeIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer, GKEHub2ScopeIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_gke_hub_scope_iam_policy",
 		ProductName: "GKEHub2",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(GKEHub2ScopeIamSchema, GKEHub2ScopeIamUpdaterProducer)
+		},
 	}.Register()
 }
 

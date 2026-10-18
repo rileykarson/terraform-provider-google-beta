@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_monitoring_snooze",
 		ProductName: "monitoring",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceMonitoringSnooze(),
+		SchemaFunc:  ResourceMonitoringSnooze,
 	}.Register()
 }
 

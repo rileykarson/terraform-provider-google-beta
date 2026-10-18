@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_container_analysis_note_iam_binding",
 		ProductName: "ContainerAnalysis",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer, ContainerAnalysisNoteIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer, ContainerAnalysisNoteIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_container_analysis_note_iam_member",
 		ProductName: "ContainerAnalysis",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewContainerAnalysisNoteIamMemberResource(),
+		SchemaFunc:  NewContainerAnalysisNoteIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_container_analysis_note_iam_policy",
 		ProductName: "ContainerAnalysis",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer, ContainerAnalysisNoteIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer, ContainerAnalysisNoteIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_container_analysis_note_iam_policy",
 		ProductName: "ContainerAnalysis",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(ContainerAnalysisNoteIamSchema, ContainerAnalysisNoteIamUpdaterProducer)
+		},
 	}.Register()
 }
 

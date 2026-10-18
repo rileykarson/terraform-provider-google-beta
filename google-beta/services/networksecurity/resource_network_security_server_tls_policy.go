@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_security_server_tls_policy",
 		ProductName: "networksecurity",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkSecurityServerTlsPolicy(),
+		SchemaFunc:  ResourceNetworkSecurityServerTlsPolicy,
 	}.Register()
 }
 

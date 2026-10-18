@@ -67,6 +67,6 @@ func init() {
 		Name:        "google_firebase_hosting_channel",
 		ProductName: "firebasehosting",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleFirebaseHostingChannel(),
+		SchemaFunc:  DataSourceGoogleFirebaseHostingChannel,
 	}.Register()
 }

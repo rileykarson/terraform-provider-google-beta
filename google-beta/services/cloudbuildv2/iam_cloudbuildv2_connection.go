@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_cloudbuildv2_connection_iam_binding",
 		ProductName: "Cloudbuildv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer, Cloudbuildv2ConnectionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer, Cloudbuildv2ConnectionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudbuildv2_connection_iam_member",
 		ProductName: "Cloudbuildv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewCloudbuildv2ConnectionIamMemberResource(),
+		SchemaFunc:  NewCloudbuildv2ConnectionIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudbuildv2_connection_iam_policy",
 		ProductName: "Cloudbuildv2",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer, Cloudbuildv2ConnectionIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer, Cloudbuildv2ConnectionIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_cloudbuildv2_connection_iam_policy",
 		ProductName: "Cloudbuildv2",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(Cloudbuildv2ConnectionIamSchema, Cloudbuildv2ConnectionIamUpdaterProducer)
+		},
 	}.Register()
 }
 

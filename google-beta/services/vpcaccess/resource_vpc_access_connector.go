@@ -100,7 +100,7 @@ func init() {
 		Name:        "google_vpc_access_connector",
 		ProductName: "vpcaccess",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVPCAccessConnector(),
+		SchemaFunc:  ResourceVPCAccessConnector,
 	}.Register()
 }
 

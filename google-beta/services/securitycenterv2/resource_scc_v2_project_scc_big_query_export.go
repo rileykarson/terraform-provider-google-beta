@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_scc_v2_project_scc_big_query_export",
 		ProductName: "securitycenterv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSecurityCenterV2ProjectSccBigQueryExport(),
+		SchemaFunc:  ResourceSecurityCenterV2ProjectSccBigQueryExport,
 	}.Register()
 }
 

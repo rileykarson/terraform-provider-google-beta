@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_dataproc_metastore_federation_iam_binding",
 		ProductName: "DataprocMetastore",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer, DataprocMetastoreFederationIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer, DataprocMetastoreFederationIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_metastore_federation_iam_member",
 		ProductName: "DataprocMetastore",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewDataprocMetastoreFederationIamMemberResource(),
+		SchemaFunc:  NewDataprocMetastoreFederationIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_metastore_federation_iam_policy",
 		ProductName: "DataprocMetastore",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer, DataprocMetastoreFederationIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer, DataprocMetastoreFederationIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_dataproc_metastore_federation_iam_policy",
 		ProductName: "DataprocMetastore",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(DataprocMetastoreFederationIamSchema, DataprocMetastoreFederationIamUpdaterProducer)
+		},
 	}.Register()
 }
 

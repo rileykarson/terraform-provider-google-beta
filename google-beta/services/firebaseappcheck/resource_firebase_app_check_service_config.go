@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_service_config",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckServiceConfig(),
+		SchemaFunc:  ResourceFirebaseAppCheckServiceConfig,
 	}.Register()
 }
 

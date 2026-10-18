@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_gkeonprem_vmware_admin_cluster",
 		ProductName: "gkeonprem",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceGkeonpremVmwareAdminCluster(),
+		SchemaFunc:  ResourceGkeonpremVmwareAdminCluster,
 	}.Register()
 }
 

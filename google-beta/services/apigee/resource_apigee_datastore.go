@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_datastore",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeDatastore(),
+		SchemaFunc:  ResourceApigeeDatastore,
 	}.Register()
 }
 

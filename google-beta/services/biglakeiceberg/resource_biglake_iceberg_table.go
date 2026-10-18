@@ -187,7 +187,7 @@ func init() {
 		Name:        "google_biglake_iceberg_table",
 		ProductName: "biglakeiceberg",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBiglakeIcebergIcebergTable(),
+		SchemaFunc:  ResourceBiglakeIcebergIcebergTable,
 	}.Register()
 }
 

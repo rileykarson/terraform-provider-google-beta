@@ -102,7 +102,7 @@ func init() {
 		Name:        "google_billing_budget",
 		ProductName: "billingbudgets",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBillingBudgetsBudget(),
+		SchemaFunc:  ResourceBillingBudgetsBudget,
 	}.Register()
 }
 

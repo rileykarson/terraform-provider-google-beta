@@ -69,6 +69,6 @@ func init() {
 		Name:        "google_compute_region_ssl_certificate",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleRegionComputeSslCertificate(),
+		SchemaFunc:  DataSourceGoogleRegionComputeSslCertificate,
 	}.Register()
 }

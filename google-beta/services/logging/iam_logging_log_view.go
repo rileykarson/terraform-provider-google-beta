@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_logging_log_view_iam_binding",
 		ProductName: "Logging",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer, LoggingLogViewIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer, LoggingLogViewIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_logging_log_view_iam_member",
 		ProductName: "Logging",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewLoggingLogViewIamMemberResource(),
+		SchemaFunc:  NewLoggingLogViewIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_logging_log_view_iam_policy",
 		ProductName: "Logging",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer, LoggingLogViewIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer, LoggingLogViewIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_logging_log_view_iam_policy",
 		ProductName: "Logging",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(LoggingLogViewIamSchema, LoggingLogViewIamUpdaterProducer)
+		},
 	}.Register()
 }
 

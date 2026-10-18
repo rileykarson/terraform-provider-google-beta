@@ -70,6 +70,6 @@ func init() {
 		Name:        "google_spanner_instance",
 		ProductName: "spanner",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceSpannerInstance(),
+		SchemaFunc:  DataSourceSpannerInstance,
 	}.Register()
 }

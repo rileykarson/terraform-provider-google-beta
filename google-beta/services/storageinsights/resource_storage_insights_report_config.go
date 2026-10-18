@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_storage_insights_report_config",
 		ProductName: "storageinsights",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceStorageInsightsReportConfig(),
+		SchemaFunc:  ResourceStorageInsightsReportConfig,
 	}.Register()
 }
 

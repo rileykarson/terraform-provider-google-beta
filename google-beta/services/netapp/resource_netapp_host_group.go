@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_netapp_host_group",
 		ProductName: "netapp",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetappHostGroup(),
+		SchemaFunc:  ResourceNetappHostGroup,
 	}.Register()
 }
 

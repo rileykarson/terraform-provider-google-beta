@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_compute_region_resize_request",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRegionResizeRequest(),
+		SchemaFunc:  ResourceComputeRegionResizeRequest,
 	}.Register()
 }
 

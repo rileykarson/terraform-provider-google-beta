@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataform_config",
 		ProductName: "dataform",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataformConfig(),
+		SchemaFunc:  ResourceDataformConfig,
 	}.Register()
 }
 

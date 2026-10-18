@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_parameter_manager_parameter_version",
 		ProductName: "parametermanager",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceParameterManagerParameterVersion(),
+		SchemaFunc:  ResourceParameterManagerParameterVersion,
 	}.Register()
 }
 

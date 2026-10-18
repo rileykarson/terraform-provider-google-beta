@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_biglake_iceberg_table_iam_binding",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer, BiglakeIcebergIcebergTableIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer, BiglakeIcebergIcebergTableIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_table_iam_member",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewBiglakeIcebergIcebergTableIamMemberResource(),
+		SchemaFunc:  NewBiglakeIcebergIcebergTableIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_table_iam_policy",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer, BiglakeIcebergIcebergTableIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer, BiglakeIcebergIcebergTableIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_biglake_iceberg_table_iam_policy",
 		ProductName: "BiglakeIceberg",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(BiglakeIcebergIcebergTableIamSchema, BiglakeIcebergIcebergTableIamUpdaterProducer)
+		},
 	}.Register()
 }
 

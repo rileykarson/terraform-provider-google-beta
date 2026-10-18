@@ -127,6 +127,6 @@ func init() {
 		Name:        "google_organizations",
 		ProductName: "resourcemanager",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleOrganizations(),
+		SchemaFunc:  DataSourceGoogleOrganizations,
 	}.Register()
 }

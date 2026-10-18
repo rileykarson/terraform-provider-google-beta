@@ -110,7 +110,7 @@ func init() {
 		Name:        "google_iam_workforce_pool_provider_key",
 		ProductName: "iamworkforcepool",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceIAMWorkforcePoolWorkforcePoolProviderKey(),
+		SchemaFunc:  ResourceIAMWorkforcePoolWorkforcePoolProviderKey,
 	}.Register()
 }
 

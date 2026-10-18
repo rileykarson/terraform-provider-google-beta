@@ -46,25 +46,31 @@ func init() {
 		Name:        "google_vertex_ai_reasoning_engine_iam_binding",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamBinding(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer, VertexAIReasoningEngineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamBinding(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer, VertexAIReasoningEngineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_reasoning_engine_iam_member",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      NewVertexAIReasoningEngineIamMemberResource(),
+		SchemaFunc:  NewVertexAIReasoningEngineIamMemberResource,
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_reasoning_engine_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMResource,
-		Schema:      tpgiamresource.ResourceIamPolicy(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer, VertexAIReasoningEngineIdParseFunc),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.ResourceIamPolicy(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer, VertexAIReasoningEngineIdParseFunc)
+		},
 	}.Register()
 	registry.Schema{
 		Name:        "google_vertex_ai_reasoning_engine_iam_policy",
 		ProductName: "VertexAI",
 		Type:        registry.SchemaTypeIAMDataSource,
-		Schema:      tpgiamresource.DataSourceIamPolicy(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer),
+		SchemaFunc: func() *schema.Resource {
+			return tpgiamresource.DataSourceIamPolicy(VertexAIReasoningEngineIamSchema, VertexAIReasoningEngineIamUpdaterProducer)
+		},
 	}.Register()
 }
 

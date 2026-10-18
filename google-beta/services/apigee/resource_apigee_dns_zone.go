@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_apigee_dns_zone",
 		ProductName: "apigee",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceApigeeDnsZone(),
+		SchemaFunc:  ResourceApigeeDnsZone,
 	}.Register()
 }
 

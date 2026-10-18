@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_vertex_ai_cache_config",
 		ProductName: "vertexai",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceVertexAICacheConfig(),
+		SchemaFunc:  ResourceVertexAICacheConfig,
 	}.Register()
 }
 

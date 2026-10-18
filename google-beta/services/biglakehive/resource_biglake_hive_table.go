@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_biglake_hive_table",
 		ProductName: "biglakehive",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBiglakeHiveHiveTable(),
+		SchemaFunc:  ResourceBiglakeHiveHiveTable,
 	}.Register()
 }
 

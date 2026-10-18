@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_os_config_v2_policy_orchestrator_for_organization",
 		ProductName: "osconfigv2",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceOSConfigV2PolicyOrchestratorForOrganization(),
+		SchemaFunc:  ResourceOSConfigV2PolicyOrchestratorForOrganization,
 	}.Register()
 }
 

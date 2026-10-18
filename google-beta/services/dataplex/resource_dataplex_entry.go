@@ -285,7 +285,7 @@ func init() {
 		Name:        "google_dataplex_entry",
 		ProductName: "dataplex",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataplexEntry(),
+		SchemaFunc:  ResourceDataplexEntry,
 	}.Register()
 }
 

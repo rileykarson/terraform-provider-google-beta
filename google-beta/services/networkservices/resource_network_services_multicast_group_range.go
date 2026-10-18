@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_network_services_multicast_group_range",
 		ProductName: "networkservices",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceNetworkServicesMulticastGroupRange(),
+		SchemaFunc:  ResourceNetworkServicesMulticastGroupRange,
 	}.Register()
 }
 

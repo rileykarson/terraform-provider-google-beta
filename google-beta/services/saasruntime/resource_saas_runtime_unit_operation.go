@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_saas_runtime_unit_operation",
 		ProductName: "saasruntime",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceSaasRuntimeUnitOperation(),
+		SchemaFunc:  ResourceSaasRuntimeUnitOperation,
 	}.Register()
 }
 

@@ -171,7 +171,7 @@ func init() {
 		Name:        "google_compute_router_nat_address",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceComputeRouterNatAddress(),
+		SchemaFunc:  ResourceComputeRouterNatAddress,
 	}.Register()
 }
 

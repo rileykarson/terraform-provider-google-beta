@@ -100,7 +100,7 @@ func init() {
 		Name:        "google_hypercomputecluster_cluster",
 		ProductName: "hypercomputecluster",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHypercomputeclusterCluster(),
+		SchemaFunc:  ResourceHypercomputeclusterCluster,
 	}.Register()
 }
 

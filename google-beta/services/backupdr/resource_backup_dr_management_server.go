@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_backup_dr_management_server",
 		ProductName: "backupdr",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceBackupDRManagementServer(),
+		SchemaFunc:  ResourceBackupDRManagementServer,
 	}.Register()
 }
 

@@ -80,6 +80,6 @@ func init() {
 		Name:        "google_compute_forwarding_rule",
 		ProductName: "compute",
 		Type:        registry.SchemaTypeDataSource,
-		Schema:      DataSourceGoogleComputeForwardingRule(),
+		SchemaFunc:  DataSourceGoogleComputeForwardingRule,
 	}.Register()
 }

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_firebase_app_check_resource_policy",
 		ProductName: "firebaseappcheck",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceFirebaseAppCheckResourcePolicy(),
+		SchemaFunc:  ResourceFirebaseAppCheckResourcePolicy,
 	}.Register()
 }
 

@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_clouddeploy_deploy_policy",
 		ProductName: "clouddeploy",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceClouddeployDeployPolicy(),
+		SchemaFunc:  ResourceClouddeployDeployPolicy,
 	}.Register()
 }
 

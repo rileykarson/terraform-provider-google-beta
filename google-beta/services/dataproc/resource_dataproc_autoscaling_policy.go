@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_dataproc_autoscaling_policy",
 		ProductName: "dataproc",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDataprocAutoscalingPolicy(),
+		SchemaFunc:  ResourceDataprocAutoscalingPolicy,
 	}.Register()
 }
 

@@ -102,7 +102,7 @@ func init() {
 		Name:        "google_datastream_connection_profile",
 		ProductName: "datastream",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceDatastreamConnectionProfile(),
+		SchemaFunc:  ResourceDatastreamConnectionProfile,
 	}.Register()
 }
 

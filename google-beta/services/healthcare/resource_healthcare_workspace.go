@@ -91,7 +91,7 @@ func init() {
 		Name:        "google_healthcare_workspace",
 		ProductName: "healthcare",
 		Type:        registry.SchemaTypeResource,
-		Schema:      ResourceHealthcareWorkspace(),
+		SchemaFunc:  ResourceHealthcareWorkspace,
 	}.Register()
 }
 

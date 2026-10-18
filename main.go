@@ -28,9 +28,16 @@ import (
 
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/fwprovider"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/provider"
+	transport_tpg "github.com/hashicorp/terraform-provider-google-beta/google-beta/transport"
 )
 
+func tunePluginSDKLogging() {
+	transport_tpg.TunePluginSDKLogging()
+}
+
 func main() {
+	tunePluginSDKLogging()
+
 	var debug bool
 
 	flag.BoolVar(&debug, "debug", false, "set to true to run the provider with support for debuggers like delve")

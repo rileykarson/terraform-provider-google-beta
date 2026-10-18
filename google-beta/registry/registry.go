@@ -216,6 +216,17 @@ func (d FrameworkDataSource) Register() {
 	framework.dataSource[d.Name] = d
 }
 
+func FrameworkDataSourceNames() []string {
+	framework.RLock()
+	defer framework.RUnlock()
+	names := make([]string, 0, len(framework.dataSource))
+	for name := range framework.dataSource {
+		names = append(names, name)
+	}
+	slices.Sort(names)
+	return names
+}
+
 func FrameworkDataSourceFuncs() []func() datasource.DataSource {
 	framework.RLock()
 	defer framework.RUnlock()
@@ -247,6 +258,17 @@ func (r FrameworkResource) Register() {
 		log.Fatalf("Duplicate registration attempt for framework resource %q", r.Name)
 	}
 	framework.resource[r.Name] = r
+}
+
+func FrameworkResourceNames() []string {
+	framework.RLock()
+	defer framework.RUnlock()
+	names := make([]string, 0, len(framework.resource))
+	for name := range framework.resource {
+		names = append(names, name)
+	}
+	slices.Sort(names)
+	return names
 }
 
 func FrameworkResourceFuncs() []func() resource.Resource {
@@ -282,6 +304,17 @@ func (r FrameworkEphemeralResource) Register() {
 	framework.ephemeral[r.Name] = r
 }
 
+func FrameworkEphemeralResourceNames() []string {
+	framework.RLock()
+	defer framework.RUnlock()
+	names := make([]string, 0, len(framework.ephemeral))
+	for name := range framework.ephemeral {
+		names = append(names, name)
+	}
+	slices.Sort(names)
+	return names
+}
+
 func FrameworkEphemeralResourceFuncs() []func() ephemeral.EphemeralResource {
 	framework.RLock()
 	defer framework.RUnlock()
@@ -313,6 +346,17 @@ func (r FrameworkListResource) Register() {
 		log.Fatalf("Duplicate registration attempt for framework list resource %q", r.Name)
 	}
 	framework.list[r.Name] = r
+}
+
+func FrameworkListResourceNames() []string {
+	framework.RLock()
+	defer framework.RUnlock()
+	names := make([]string, 0, len(framework.list))
+	for name := range framework.list {
+		names = append(names, name)
+	}
+	slices.Sort(names)
+	return names
 }
 
 func FrameworkListResourceFuncs() []func() list.ListResource {
